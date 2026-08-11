@@ -4,7 +4,7 @@ import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
-import { ArrowRight, ShieldCheck, HeartHandshake, MapPin, MessageCircle, Star, Compass } from "lucide-react";
+import { ArrowRight, ShieldCheck, HeartHandshake, MessageCircle, Star, Compass } from "lucide-react";
 
 export function HeroSection() {
   const { language, t } = useLanguage();
@@ -36,9 +36,9 @@ export function HeroSection() {
         {/* Title with Ocean Blue Highlight */}
         <FadeInScroll direction="up" delay={0.2}>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[var(--text-primary)] leading-[1.1]">
-            Descubra a Rocinha com{" "}
+            {t("hero.titlePrefix")}
             <span className="text-[var(--brand-blue)] font-black">
-              Quem Vive Aqui
+              {t("hero.titleHighlight")}
             </span>
           </h1>
         </FadeInScroll>
@@ -83,7 +83,7 @@ export function HeroSection() {
               </div>
               <div>
                 <span className="block text-sm font-bold text-[var(--text-primary)]">{t("hero.statTourists")}</span>
-                <span className="text-xs text-[var(--text-secondary)]">Experiência nota máxima</span>
+                <span className="text-xs text-[var(--text-secondary)]">{t("hero.statTouristsSub")}</span>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ export function HeroSection() {
               </div>
               <div>
                 <span className="block text-sm font-bold text-[var(--text-primary)]">{t("hero.statGuides")}</span>
-                <span className="text-xs text-[var(--text-secondary)]">Moradores de nascença</span>
+                <span className="text-xs text-[var(--text-secondary)]">{t("hero.statGuidesSub")}</span>
               </div>
             </div>
 
@@ -103,7 +103,7 @@ export function HeroSection() {
               </div>
               <div>
                 <span className="block text-sm font-bold text-[var(--text-primary)]">{t("hero.statRating")}</span>
-                <span className="text-xs text-[var(--text-secondary)]">Avaliação de clientes</span>
+                <span className="text-xs text-[var(--text-secondary)]">{t("hero.statRatingSub")}</span>
               </div>
             </div>
 

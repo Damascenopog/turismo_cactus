@@ -12,13 +12,17 @@
   },
   "hero": {
     "badge": "Authentisches & Sicheres Erlebnis",
-    "title": "Entdecke Rocinha mit Einheimischen",
+    "titlePrefix": "Entdecke Rocinha mit ",
+    "titleHighlight": "Einheimischen",
     "subtitle": "Erlebe Südamerikas größte Favela durch Kunst, Kultur, Gastronomie und echte Geschichten von Bewohnern der Community.",
     "ctaWhatsApp": "Per WhatsApp buchen",
     "ctaExplore": "Erlebnis entdecken",
     "statTourists": "Über 10.000 begeisterte Gäste",
+    "statTouristsSub": "Höchstbewertetes Erlebnis",
     "statGuides": "Zertifizierte lokale Guides",
-    "statRating": "4.9/5★ Bewertung"
+    "statGuidesSub": "Einheimische Bewohner",
+    "statRating": "4.9/5★ Bewertung",
+    "statRatingSub": "Verifizierte Kundenbewertungen"
   },
   "miolo": {
     "tag": "Kulturelle Immersion",

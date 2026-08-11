@@ -12,17 +12,21 @@
   },
   "hero": {
     "badge": "Experiência Autêntica & Segura",
-    "title": "Descubra a Rocinha com Quem Vive Aqui",
+    "titlePrefix": "Descubra a Rocinha com ",
+    "titleHighlight": "Quem Vive Aqui",
     "subtitle": "Conheça a maior favela da América Latina através da arte, cultura, gastronomia e histórias de vida dos próprios moradores.",
     "ctaWhatsApp": "Agendar via WhatsApp",
     "ctaExplore": "Conhecer a Experiência",
     "statTourists": "Mais de 10.000 turistas acolhidos",
+    "statTouristsSub": "Experiência nota máxima",
     "statGuides": "Guias locais certificados",
-    "statRating": "Avaliação 4.9/5★"
+    "statGuidesSub": "Moradores de nascença",
+    "statRating": "Avaliação 4.9/5★",
+    "statRatingSub": "Avaliação de clientes"
   },
   "miolo": {
     "tag": "Imersão Cultural",
-    "title": "O Miolo: Vielas & Mirantes Secreta",
+    "title": "O Miolo: Vielas & Mirantes Secretos",
     "description": "Caminhe pelos becos históricos, entenda a arquitetura viva e contemple as vistas mais espetaculares do Rio de Janeiro.",
     "card1Title": "Arquitetura Orgânica",
     "card1Desc": "Engenharia popular única desenvolvida ao longo de décadas.",

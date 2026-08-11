@@ -12,13 +12,17 @@
   },
   "hero": {
     "badge": "Experiencia Auténtica y Segura",
-    "title": "Descubre Rocinha con Habitantes Locales",
+    "titlePrefix": "Descubre Rocinha con ",
+    "titleHighlight": "Habitantes Locales",
     "subtitle": "Conoce la favela más grande de América Latina a través del arte, la cultura, la gastronomía y las historias reales de sus residentes.",
     "ctaWhatsApp": "Reservar por WhatsApp",
     "ctaExplore": "Explorar Experiencia",
     "statTourists": "Más de 10.000 turistas acogidos",
+    "statTouristsSub": "Experiencia de máxima nota",
     "statGuides": "Guías locales certificados",
-    "statRating": "Calificación 4.9/5★"
+    "statGuidesSub": "Habitantes nacidos y criados",
+    "statRating": "Calificación 4.9/5★",
+    "statRatingSub": "Opiniones verificadas de clientes"
   },
   "miolo": {
     "tag": "Inmersión Cultural",

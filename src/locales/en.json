@@ -12,13 +12,17 @@
   },
   "hero": {
     "badge": "Authentic & Safe Experience",
-    "title": "Discover Rocinha with Local Residents",
+    "titlePrefix": "Discover Rocinha with ",
+    "titleHighlight": "Local Residents",
     "subtitle": "Explore Latin America's largest favela through art, culture, gastronomy, and real stories from community members.",
     "ctaWhatsApp": "Book via WhatsApp",
     "ctaExplore": "Explore Experience",
     "statTourists": "Over 10,000 happy tourists",
+    "statTouristsSub": "Top-rated experience",
     "statGuides": "Certified local guides",
-    "statRating": "4.9/5★ Customer Rating"
+    "statGuidesSub": "Born & raised residents",
+    "statRating": "4.9/5★ Customer Rating",
+    "statRatingSub": "Verified guest reviews"
   },
   "miolo": {
     "tag": "Cultural Immersion",
