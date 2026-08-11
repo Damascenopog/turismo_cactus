@@ -5,6 +5,28 @@
 
 ---
 
+## [2026-08-10] - Adição do Conjunto de Skills (antigravity-skills)
+
+### 1. Instalação das Skills do Antigravity Vault (rmyndharis/antigravity-skills)
+- **O que foi feito:**
+  - Clonado e instalado o repositório [`rmyndharis/antigravity-skills`](https://github.com/rmyndharis/antigravity-skills.git) contendo mais de 300 skills especializadas para o agente Antigravity no diretório `.agents/skills/`.
+- **Como funciona e Formas de Ativação:**
+  1. **Ativação Automática por Contexto (Progressive Disclosure):**
+     - O Antigravity lê o nome e a descrição de todas as skills instaladas em `.agents/skills/` no início de cada sessão.
+     - Quando o seu prompt em linguagem natural corresponde ao propósito de uma skill (ex: *"Revise a segurança do backend"*, *"Otimize o bundle do Next.js"*, *"Escreva um pipeline CI/CD"*), o agente ativa a skill correspondente automaticamente.
+  2. **Ativação Explícita no Chat:**
+     - Você pode solicitar diretamente na conversa:
+       `Use a skill <nome-da-skill> para <tarefa>`
+       - *Exemplo:* `"Use a skill nextjs-app-router-patterns para refatorar esta rota"`
+       - *Exemplo:* `"Use a skill security-auditor para analisar vulnerabilidades"`
+  3. **Gerenciamento via CLI (npx):**
+     - Você pode pesquisar, listar ou instalar novas skills individualmente pelo terminal:
+       - Pesquisar: `npx @rmyndharis/antigravity-skills search <termo>`
+       - Listar: `npx @rmyndharis/antigravity-skills list`
+       - Instalar: `npx @rmyndharis/antigravity-skills install <skill-name>`
+
+---
+
 ## [2026-08-10] - Setup Inicial, Componentes Core e Imersão Impeccable
 
 ### 1. Suporte a 4 Idiomas (i18n) e Correção de Título Dinâmico
@@ -12,31 +34,18 @@
   - Criada a infraestrutura de i18n com `LanguageContext.tsx` e arquivos de tradução em JSON (`pt.json`, `en.json`, `es.json`, `de.json`).
   - Atualizada a `HeroSection.tsx` para separar o título principal nas chaves `hero.titlePrefix` e `hero.titleHighlight`.
 - **Como funciona:**
-  - O usuário seleciona o idioma no Navbar (`PT`, `EN`, `ES`, `DE`). O estado é salvo no `localStorage` e reflete instantaneamente em toda a página (textos principais, badges, estatísticas, botões e mensagens do WhatsApp).
-- **Modificação de Comportamento:**
-  - *Antes:* O título da Hero Section possuía texto estático em português ("Descubra a Rocinha com Quem Vive Aqui").
-  - *Depois:* O título agora é 100% dinâmico e traduzível para os 4 idiomas.
+  - O usuário seleciona o idioma no Navbar (`PT`, `EN`, `ES`, `DE`). O estado é salvo no `localStorage` e reflete instantaneamente em toda a página.
 
 ### 2. Tema Claro e Escuro (Dark/Light Mode) com Token "Azul Rio"
 - **O que foi feito:**
   - Configurado `next-themes` e registradas as variáveis CSS no `globals.css`.
   - Adicionada a cor de destaque **Azul Rio / Ocean Blue** (`#1E40AF` / `#2563EB` no Tema Claro; `#3B82F6` no Tema Escuro).
-- **Como funciona:**
-  - Alternância manual pelo ícone de Sol/Lua no Navbar ou sincronização automática com as preferências do sistema operacional.
-- **Modificação de Comportamento:**
-  - *Antes:* O tema claro utilizava apenas preto/cinza e amarelo.
-  - *Depois:* O tema claro agora inclui a cor Azul Rio em badges de localização, no texto em destaque do título, no card do Mirante do Laboriaux (representando a vista 360° do oceano), nos pins do mapa e nos destaques do FAQ.
 
 ### 3. Integração com WhatsApp Dinâmico
 - **O que foi feito:**
   - Criado o utilitário `src/lib/whatsapp.ts` e o componente flutuante `WhatsAppButton.tsx`.
-- **Como funciona:**
-  - Ao clicar no botão flutuante ou nos botões de CTA, uma conversa do WhatsApp é aberta com mensagem pré-preenchida no idioma ativo do usuário.
 
 ### 4. Análise e Auditoria de Design (Skill Impeccable)
 - **O que foi feito:**
   - Instalada a skill Impeccable em `.agents/skills/impeccable`.
   - Executada auditoria de anti-patterns com o script `detect.mjs`.
-- **Modificação de Comportamento:**
-  - *Antes:* O título da Hero utilizava um gradiente de texto (`bg-clip-text text-transparent`).
-  - *Depois:* O gradiente foi removido conforme a regra de anti-patterns do Impeccable, substituído pela cor sólida **Azul Rio** para maior contraste e autoridade visual.
