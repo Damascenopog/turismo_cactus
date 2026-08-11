@@ -3,10 +3,12 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
-import { Compass, Footprints, Eye, Users } from "lucide-react";
+import { Compass, Footprints, Eye, Users, ArrowRight } from "lucide-react";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 export function MioloSection() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const whatsappUrl = getWhatsAppLink(language);
 
   const cards = [
     {
@@ -14,27 +16,24 @@ export function MioloSection() {
       title: t("miolo.card1Title"),
       desc: t("miolo.card1Desc"),
       accent: "from-amber-500/20 to-amber-500/5 text-amber-500",
-      borderColor: "hover:border-amber-500/50",
     },
     {
       icon: Eye,
       title: t("miolo.card2Title"),
       desc: t("miolo.card2Desc"),
       accent: "from-[var(--brand-blue)]/20 to-[var(--brand-blue)]/5 text-[var(--brand-blue)]",
-      borderColor: "hover:border-[var(--brand-blue)] border-[var(--brand-blue)]/30",
     },
     {
       icon: Users,
       title: t("miolo.card3Title"),
       desc: t("miolo.card3Desc"),
       accent: "from-rose-500/20 to-rose-500/5 text-rose-500",
-      borderColor: "hover:border-rose-500/50",
     },
   ];
 
   return (
-    <section id="miolo" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] relative scroll-mt-20">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section id="miolo" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] relative scroll-mt-20">
+      <div className="max-w-6xl mx-auto space-y-16">
         
         {/* Section Header */}
         <FadeInScroll direction="up" delay={0.1}>
@@ -54,35 +53,75 @@ export function MioloSection() {
           </div>
         </FadeInScroll>
 
-        {/* 3 Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cards.map((card, idx) => {
-            const Icon = card.icon;
-            return (
-              <FadeInScroll key={idx} direction="up" delay={0.2 + idx * 0.15}>
-                <div className={`group relative p-8 rounded-3xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-lg hover:shadow-2xl ${card.borderColor} transition-all duration-300 flex flex-col justify-between h-full`}>
-                  <div className="space-y-4">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${card.accent} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-7 h-7" />
-                    </div>
-
-                    <h3 className="text-xl font-bold text-[var(--text-primary)]">
-                      {card.title}
-                    </h3>
-
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      {card.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-6 mt-6 border-t border-[var(--border-color)]/60 flex items-center text-xs font-bold text-[var(--brand-blue)] group-hover:translate-x-1 transition-transform">
-                    <span>Explorar trecho</span>
-                    <span className="ml-1">→</span>
-                  </div>
+        {/* Zig-Zag Grid Block 1: Image Left, Text Right (Desktop) / Stacked (Mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          {/* Image Block with Negative Space */}
+          <div className="md:col-span-6">
+            <FadeInScroll direction="left" delay={0.2}>
+              <div className="relative w-full h-80 sm:h-96 rounded-3xl bg-gradient-to-br from-amber-500/10 via-[var(--bg-surface)] to-[var(--brand-blue-light)] border border-[var(--border-color)] overflow-hidden shadow-xl p-8 flex flex-col justify-between group">
+                <div className="absolute inset-0 bg-[radial-gradient(#D97706_1px,transparent_1px)] opacity-20 [background-size:20px_20px]"></div>
+                
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="text-xs font-black uppercase tracking-widest text-[var(--brand-yellow)]">
+                    Passo 01 • Vielas & Mirante
+                  </span>
+                  <span className="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
                 </div>
-              </FadeInScroll>
-            );
-          })}
+
+                <div className="relative z-10 space-y-2 max-w-xs">
+                  <h4 className="text-2xl font-black text-[var(--text-primary)] leading-snug">
+                    Vistas Espectaculares 360°
+                  </h4>
+                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                    Fotografia com amplo espaço negativo destacando a imponência da Pedra da Gávea e o mar.
+                  </p>
+                </div>
+              </div>
+            </FadeInScroll>
+          </div>
+
+          {/* Content Block Right */}
+          <div className="md:col-span-6 space-y-6">
+            <FadeInScroll direction="right" delay={0.3}>
+              <div className="space-y-4">
+                {cards.map((card, idx) => {
+                  const Icon = card.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-sm hover:shadow-md hover:border-[var(--brand-blue)]/40 transition-all flex items-start space-x-4"
+                    >
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.accent} flex items-center justify-center flex-shrink-0`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="font-bold text-base text-[var(--text-primary)]">
+                          {card.title}
+                        </h3>
+                        <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                          {card.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-[var(--brand-blue)] text-white font-bold text-xs uppercase tracking-wider hover:bg-[var(--brand-blue-hover)] transition-all shadow-md"
+                >
+                  <span>Agendar Passeio pelas Vielas</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </FadeInScroll>
+          </div>
+
         </div>
 
       </div>

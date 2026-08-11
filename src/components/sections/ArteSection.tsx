@@ -43,13 +43,13 @@ export function ArteSection() {
   ];
 
   return (
-    <section id="arte" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] bg-[var(--bg-surface)]/40 scroll-mt-20">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section id="arte" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] bg-[var(--bg-surface)]/40 scroll-mt-20">
+      <div className="max-w-6xl mx-auto space-y-16">
         
         {/* Section Header */}
         <FadeInScroll direction="up" delay={0.1}>
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-lg bg-[var(--brand-blue-light)] text-[var(--brand-blue)] text-xs font-bold uppercase tracking-wider border border-[var(--brand-blue)]/20">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[var(--brand-blue-light)] text-[var(--brand-blue)] text-xs font-bold uppercase tracking-wider border border-[var(--brand-blue)]/20">
               <Sparkles className="w-4 h-4 text-[var(--brand-blue)]" />
               <span>{t("arte.tag")}</span>
             </div>
@@ -64,18 +64,52 @@ export function ArteSection() {
           </div>
         </FadeInScroll>
 
-        {/* Interactive Hotspot Map / Grid Layout */}
+        {/* Zig-Zag Grid Block 2: Text Left, Map Canvas Right (Desktop) / Stacked (Mobile) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Interactive Canvas / Map Simulator */}
-          <div className="lg:col-span-7">
-            <FadeInScroll direction="left" delay={0.2}>
+          {/* Content Block Left */}
+          <div className="lg:col-span-5 order-2 lg:order-1 space-y-4">
+            {pins.map((pin, idx) => {
+              const Icon = pin.icon;
+              const isSelected = activePin === pin.id;
+              return (
+                <FadeInScroll key={pin.id} direction="left" delay={0.2 + idx * 0.1}>
+                  <div
+                    onClick={() => setActivePin(pin.id)}
+                    className={`p-6 rounded-2xl border transition-all cursor-pointer ${
+                      isSelected
+                        ? "bg-[var(--bg-surface)] border-[var(--brand-blue)] shadow-xl scale-[1.02]"
+                        : "bg-[var(--bg-surface)]/50 border-[var(--border-color)] opacity-75 hover:opacity-100"
+                    }`}
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className={`p-3 rounded-xl bg-slate-900 text-white flex-shrink-0 ${pin.color}`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className={`font-bold text-lg text-[var(--text-primary)] ${isSelected ? pin.textColor : ""}`}>
+                          {pin.title}
+                        </h3>
+                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                          {pin.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </FadeInScroll>
+              );
+            })}
+          </div>
+
+          {/* Map Canvas Right with Negative Space */}
+          <div className="lg:col-span-7 order-1 lg:order-2">
+            <FadeInScroll direction="right" delay={0.2}>
               <div className="relative w-full h-80 sm:h-96 rounded-3xl bg-[var(--bg-surface)] border border-[var(--border-color)] overflow-hidden shadow-xl p-6 flex flex-col justify-between">
                 <div className="absolute inset-0 opacity-15 dark:opacity-25 bg-[radial-gradient(#1E40AF_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
                 <div className="relative z-10 flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)]">
-                    Mapa de Experiências Culturais
+                    Passo 02 • Circuito Cultural
                   </span>
                   <span className="text-xs px-3 py-1 rounded-full bg-[var(--brand-blue)] text-white font-bold shadow-sm flex items-center space-x-1">
                     <MapPin className="w-3 h-3" />
@@ -109,40 +143,6 @@ export function ArteSection() {
                 </div>
               </div>
             </FadeInScroll>
-          </div>
-
-          {/* Right Detail Card for Selected Pin */}
-          <div className="lg:col-span-5 space-y-4">
-            {pins.map((pin, idx) => {
-              const Icon = pin.icon;
-              const isSelected = activePin === pin.id;
-              return (
-                <FadeInScroll key={pin.id} direction="right" delay={0.2 + idx * 0.1}>
-                  <div
-                    onClick={() => setActivePin(pin.id)}
-                    className={`p-6 rounded-2xl border transition-all cursor-pointer ${
-                      isSelected
-                        ? "bg-[var(--bg-surface)] border-[var(--brand-blue)] shadow-xl scale-[1.02]"
-                        : "bg-[var(--bg-surface)]/50 border-[var(--border-color)] opacity-75 hover:opacity-100"
-                    }`}
-                  >
-                    <div className="flex items-start space-x-4">
-                      <div className={`p-3 rounded-xl bg-slate-900 text-white flex-shrink-0 ${pin.color}`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className={`font-bold text-lg text-[var(--text-primary)] ${isSelected ? pin.textColor : ""}`}>
-                          {pin.title}
-                        </h3>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                          {pin.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </FadeInScroll>
-              );
-            })}
           </div>
 
         </div>

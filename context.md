@@ -7,6 +7,17 @@ Landing page imersiva para o **Tour Rocinha** da Cactus Turismo. O objetivo é a
 - Turistas brasileiros e internacionais visitando o Rio de Janeiro.
 - Acesso predominantemente via smartphones em conexões móveis -> Foco total em **Performance Mobile-First**, carregamento rápido e micro-interações fluidas.
 
+## Diretrizes de Arquitetura Visual e Layout (Zig-Zag & Fotografia)
+1. **Hero Section Panorâmica:** Mantém o topo de alto impacto com apresentação geral da experiência.
+2. **Layout em Padrão Zig-Zag (Desktop):** Após a Hero, a página não utiliza vídeos contínuos de fundo ou canvas pesados. O layout utiliza seções estáticas com "blocos alternados" (imagem/mídia de um lado e texto explicativo do outro, formando um padrão em "Z" no desktop).
+3. **Responsividade Mobile:** No mobile, os blocos são empilhados em uma única coluna vertical limpa (imagem acima, texto abaixo).
+4. **Fotografia com Espaço Negativo:** As imagens e ilustrações utilizam forte "espaço negativo" (áreas vazias, como céu, mar ou asfalto) para alocação de textos e títulos com contraste elevado e máxima legibilidade.
+5. **Trilha de Pegadas SVG (Animação de Scroll):**
+   - O indicador de progresso do tour ao longo da página é representado por ilustrações minimalistas de "solas de sapato" vetorizadas (SVG).
+   - **Desktop:** As pegadas criam um trajeto curvo interligando os blocos alternados em "Z".
+   - **Mobile:** As pegadas formam uma linha reta alinhada na margem esquerda (timeline vertical).
+   - **Comportamento:** O preenchimento do vetor/trilha (`stroke-dashoffset`) ocorre dinamicamente no ritmo do scroll do visitante.
+
 ## Internacionalização (i18n) - 4 Idiomas
 1. **PT** - Português (Brasil) [Default]
 2. **EN** - English
