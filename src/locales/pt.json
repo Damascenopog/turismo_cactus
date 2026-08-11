@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "brand": "Tour Rocinha",
+    "hero": "Início",
+    "miolo": "O Miolo",
+    "arte": "Arte & Cultura",
+    "base": "A Base",
+    "faq": "FAQ",
+    "bookNow": "Agendar Passeio",
+    "selectLanguage": "Idioma",
+    "toggleTheme": "Alternar tema"
+  },
+  "hero": {
+    "badge": "Experiência Autêntica & Segura",
+    "title": "Descubra a Rocinha com Quem Vive Aqui",
+    "subtitle": "Conheça a maior favela da América Latina através da arte, cultura, gastronomia e histórias de vida dos próprios moradores.",
+    "ctaWhatsApp": "Agendar via WhatsApp",
+    "ctaExplore": "Conhecer a Experiência",
+    "statTourists": "Mais de 10.000 turistas acolhidos",
+    "statGuides": "Guias locais certificados",
+    "statRating": "Avaliação 4.9/5★"
+  },
+  "miolo": {
+    "tag": "Imersão Cultural",
+    "title": "O Miolo: Vielas & Mirantes Secreta",
+    "description": "Caminhe pelos becos históricos, entenda a arquitetura viva e contemple as vistas mais espetaculares do Rio de Janeiro.",
+    "card1Title": "Arquitetura Orgânica",
+    "card1Desc": "Engenharia popular única desenvolvida ao longo de décadas.",
+    "card2Title": "Mirante do Laboriaux",
+    "card2Desc": "Visão panorâmica 360° de São Conrado, Pedra da Gávea e oceano.",
+    "card3Title": "Conexão Humana",
+    "card3Desc": "Conversas sinceras com comerciantes, artesãos e famílias locais."
+  },
+  "arte": {
+    "tag": "Expressão Viva",
+    "title": "Arte, Música & Gastronomia",
+    "description": "Uma explosão de cores e ritmos no coração da comunidade.",
+    "pin1Title": "Grafite & Murais",
+    "pin1Desc": "Galeria a céu aberto com obras de artistas renomados da favela.",
+    "pin2Title": "Roda de Capoeira & Hip-Hop",
+    "pin2Desc": "Ritmo e tradição ancestral mantidos pelas novas gerações.",
+    "pin3Title": "Sabor da Favela",
+    "pin3Desc": "Prove a culinária típica nos melhores botecos tradicionais."
+  },
+  "base": {
+    "tag": "Turismo Responsável",
+    "title": "A Base: Economia Local & Impacto Positivo",
+    "description": "Seu passeio gera renda direta para famílias, projetos sociais e pequenos empreendedores da Rocinha.",
+    "ctaTitle": "Pronto para viver essa experiência transformadora?",
+    "ctaDesc": "Garanta sua vaga com atendimento personalizado pelo WhatsApp no seu idioma.",
+    "whatsappBtn": "Falar com Guia no WhatsApp"
+  },
+  "footer": {
+    "faqTitle": "Perguntas Frequentes (FAQ)",
+    "faqQ1": "O passeio é seguro?",
+    "faqA1": "Sim! Nosso tour é feito exclusivamente com guias credenciados que nasceram e vivem na Rocinha. A segurança e o respeito à comunidade são nossa prioridade máxima.",
+    "faqQ2": "Qual é a duração e o nível de esforço?",
+    "faqA2": "Aproximadamente 3 a 4 horas. Caminhada moderada com paradas frequentes, adequada para todas as idades.",
+    "faqQ3": "Como funciona o agendamento e pagamento?",
+    "faqA3": "Você escolhe o dia no WhatsApp, tira suas dúvidas diretamente com o guia e confirma sem complicações.",
+    "rights": "© 2026 Tour Rocinha - Cactus Turismo. Todos os direitos reservados."
+  },
+  "whatsapp": {
+    "defaultMsg": "Olá! Gostaria de agendar o Tour Rocinha. Poderia me passar mais informações?"
+  }
+}

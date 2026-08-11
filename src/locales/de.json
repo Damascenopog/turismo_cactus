@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "brand": "Tour Rocinha",
+    "hero": "Startseite",
+    "miolo": "Die Gassen",
+    "arte": "Kunst & Kultur",
+    "base": "Gemeinschaft",
+    "faq": "FAQ",
+    "bookNow": "Tour Buchen",
+    "selectLanguage": "Sprache",
+    "toggleTheme": "Design wechseln"
+  },
+  "hero": {
+    "badge": "Authentisches & Sicheres Erlebnis",
+    "title": "Entdecke Rocinha mit Einheimischen",
+    "subtitle": "Erlebe Südamerikas größte Favela durch Kunst, Kultur, Gastronomie und echte Geschichten von Bewohnern der Community.",
+    "ctaWhatsApp": "Per WhatsApp buchen",
+    "ctaExplore": "Erlebnis entdecken",
+    "statTourists": "Über 10.000 begeisterte Gäste",
+    "statGuides": "Zertifizierte lokale Guides",
+    "statRating": "4.9/5★ Bewertung"
+  },
+  "miolo": {
+    "tag": "Kulturelle Immersion",
+    "title": "Die Gassen & Geheime Aussichtspunkte",
+    "description": "Schlendere durch historische Gassen, verstehe die lebendige Architektur und genieße spektakuläre Panoramablicke über Rio de Janeiro.",
+    "card1Title": "Organische Architektur",
+    "card1Desc": "Einzigartige Gemeinschaftsarchitektur, gewachsen über Jahrzehnte.",
+    "card2Title": "Laboriaux Aussichtspunkt",
+    "card2Desc": "360°-Panoramablick auf São Conrado, den Pedra da Gávea und den Atlantik.",
+    "card3Title": "Menschliche Begegnung",
+    "card3Desc": "Herzlicher Austausch mit Händlern, Künstlern und einheimischen Familien."
+  },
+  "arte": {
+    "tag": "Lebendige Kunst",
+    "title": "Kunst, Musik & Favela-Kulinarik",
+    "description": "Eine Explosion von Farben und Rhythmen im Herzen der Favela.",
+    "pin1Title": "Graffiti & Wandbilder",
+    "pin1Desc": "Open-Air-Street-Art-Galerie mit Werken renommierter lokaler Künstler.",
+    "pin2Title": "Capoeira & Hip-Hop",
+    "pin2Desc": "Traditioneller Rhythmus und moderne Straßenkultur von Generation zu Generation.",
+    "pin3Title": "Favela-Spezialitäten",
+    "pin3Desc": "Probiere authentische Gerichte in traditionellen Lokalen der Community."
+  },
+  "base": {
+    "tag": "Verantwortungsvoller Tourismus",
+    "title": "Die Basis: Lokale Wirtschaft & Positiver Impuls",
+    "description": "Dein Besuch unterstützt direkt Familien, soziale Projekte und Mikro-Unternehmer in Rocinha.",
+    "ctaTitle": "Bereit für ein unvergessliches Erlebnis?",
+    "ctaDesc": "Sichere dir deinen Platz mit persönlicher WhatsApp-Betreuung in deiner Sprache.",
+    "whatsappBtn": "Mit Guide auf WhatsApp chatten"
+  },
+  "footer": {
+    "faqTitle": "Häufig gestellte Fragen (FAQ)",
+    "faqQ1": "Ist die Tour sicher?",
+    "faqA1": "Ja! Unsere Touren werden ausschließlich von zertifizierten Guides durchgeführt, die in Rocinha geboren und aufgewachsen sind. Sicherheit und Respekt stehen an erster Stelle.",
+    "faqQ2": "Wie lange dauert die Tour und wie anstrengend ist sie?",
+    "faqA2": "Ca. 3 bis 4 Stunden. Moderater Spaziergang mit regelmäßigen Pausen, geeignet für jedes Alter.",
+    "faqQ3": "Wie funktionieren Buchung und Bezahlung?",
+    "faqA3": "Du wählst das Datum per WhatsApp, besprichst Details direkt mit deinem Guide und bestätigst unkompliziert.",
+    "rights": "© 2026 Tour Rocinha - Cactus Turismo. Alle Rechte vorbehalten."
+  },
+  "whatsapp": {
+    "defaultMsg": "Hallo! Ich möchte die Rocinha Favela Tour buchen. Könnten Sie mir bitte weitere Informationen senden?"
+  }
+}

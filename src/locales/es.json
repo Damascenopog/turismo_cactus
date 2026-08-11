@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "brand": "Tour Rocinha",
+    "hero": "Inicio",
+    "miolo": "Las Callejuelas",
+    "arte": "Arte y Cultura",
+    "base": "La Base",
+    "faq": "FAQ",
+    "bookNow": "Reservar Tour",
+    "selectLanguage": "Idioma",
+    "toggleTheme": "Cambiar tema"
+  },
+  "hero": {
+    "badge": "Experiencia Auténtica y Segura",
+    "title": "Descubre Rocinha con Habitantes Locales",
+    "subtitle": "Conoce la favela más grande de América Latina a través del arte, la cultura, la gastronomía y las historias reales de sus residentes.",
+    "ctaWhatsApp": "Reservar por WhatsApp",
+    "ctaExplore": "Explorar Experiencia",
+    "statTourists": "Más de 10.000 turistas acogidos",
+    "statGuides": "Guías locales certificados",
+    "statRating": "Calificación 4.9/5★"
+  },
+  "miolo": {
+    "tag": "Inmersión Cultural",
+    "title": "Las Callejuelas y Miradores Secretos",
+    "description": "Camina por callejones históricos, comprende la arquitectura viva y admira los miradores más espectaculares de Río de Janeiro.",
+    "card1Title": "Arquitectura Orgánica",
+    "card1Desc": "Ingeniería comunitaria única desarrollada a lo largo de décadas.",
+    "card2Title": "Mirador de Laboriaux",
+    "card2Desc": "Vista panorámica de 360° de São Conrado, Piedra de Gávea y el Océano Atlántico.",
+    "card3Title": "Conexión Humana",
+    "card3Desc": "Conversaciones sinceras con comerciantes, artesanos y familias locales."
+  },
+  "arte": {
+    "tag": "Expresión Viva",
+    "title": "Arte, Música y Gastronomía",
+    "description": "Una explosión de colores y ritmos en el corazón de la comunidad.",
+    "pin1Title": "Grafite y Murales",
+    "pin1Desc": "Galería de arte callejero al aire libre con obras de reconocidos artistas locales.",
+    "pin2Title": "Capoeira y Hip-Hop",
+    "pin2Desc": "Ritmo y tradición ancestral preservados por las nuevas generaciones.",
+    "pin3Title": "Sabor de la Favela",
+    "pin3Desc": "Prueba la gastronomía típica en los mejores restaurantes tradicionales de la comunidad."
+  },
+  "base": {
+    "tag": "Turismo Responsable",
+    "title": "La Base: Economía Local e Impacto Positivo",
+    "description": "Tu visita genera ingresos directos para familias, proyectos sociales y pequeños emprendedores de Rocinha.",
+    "ctaTitle": "¿Listo para vivir esta experiencia transformadora?",
+    "ctaDesc": "Asegura tu lugar con atención personalizada por WhatsApp en tu idioma.",
+    "whatsappBtn": "Hablar con Guía en WhatsApp"
+  },
+  "footer": {
+    "faqTitle": "Preguntas Frecuentes (FAQ)",
+    "faqQ1": "¿Es seguro el recorrido?",
+    "faqA1": "¡Sí! Nuestro tour es realizado exclusivamente con guías acreditados nacidos y criados en Rocinha. La seguridad y el respeto a la comunidad son nuestra máxima prioridad.",
+    "faqQ2": "¿Cuál es la duración y el nivel de esfuerzo?",
+    "faqA2": "Aproximadamente 3 a 4 horas. Caminata moderada con paradas frecuentes, apta para todas las edades.",
+    "faqQ3": "¿Cómo funciona la reserva y el pago?",
+    "faqA3": "Eliges la fecha por WhatsApp, resuelves tus dudas directamente con el guía y confirmas sin complicaciones.",
+    "rights": "© 2026 Tour Rocinha - Cactus Turismo. Todos los derechos reservados."
+  },
+  "whatsapp": {
+    "defaultMsg": "¡Hola! Me gustaría reservar el Tour por la Favela Rocinha. ¿Podrías enviarme más información?"
+  }
+}
