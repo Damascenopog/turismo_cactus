@@ -172,7 +172,7 @@ export function Navbar() {
                   <button
                     key={lang}
                     onClick={() => setLanguage(lang)}
-                    className={`px-3 py-1 font-bold rounded-lg uppercase transition-all ${
+                    className={`px-2 sm:px-3 py-1 font-bold rounded-lg uppercase transition-all ${
                       language === lang
                         ? "bg-[var(--brand-blue)] text-white shadow-sm"
                         : "text-[var(--text-secondary)] hover:text-[var(--brand-blue)]"

@@ -1,43 +1,53 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
-import { ArrowRight, ShieldCheck, HeartHandshake, MessageCircle, Star, Compass } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function HeroSection() {
   const { language, t } = useLanguage();
   const whatsappUrl = getWhatsAppLink(language);
 
   return (
-    <section id="hero" className="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-      {/* Background Decorative Glows */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--brand-blue)]/15 dark:bg-[var(--brand-blue)]/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[var(--brand-yellow)]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="hero" className="relative min-h-[75vh] sm:min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-12 sm:py-20 scroll-mt-20 overflow-hidden">
+      {/* Background Hero Image - Dynamic Day/Night Mode */}
+      <div className="absolute inset-0 z-0">
+        {/* Day Photograph (Light Mode) */}
+        <Image
+          src="/image/hero_rocinha_hd.jpg"
+          alt="Vista panorâmica da Rocinha de dia"
+          fill
+          priority
+          quality={100}
+          unoptimized
+          sizes="100vw"
+          className="dark:hidden block object-cover object-center transition-opacity duration-700"
+        />
+        {/* Night Photograph (Dark Mode) */}
+        <Image
+          src="/image/hero_rocinha_night_hd.jpg"
+          alt="Vista panorâmica da Rocinha à noite"
+          fill
+          priority
+          quality={100}
+          unoptimized
+          sizes="100vw"
+          className="hidden dark:block object-cover object-center transition-opacity duration-700"
+        />
+        {/* Dark Tint Overlay for High Legibility (No white bleed in Light mode) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/20 to-slate-950/40 dark:from-slate-950/70 dark:via-slate-950/40 dark:to-[var(--bg-primary)]"></div>
+      </div>
 
-      <div className="relative z-10 max-w-4xl w-full mx-auto space-y-8">
-        
-        {/* Badges Bar */}
-        <FadeInScroll direction="down" delay={0.1}>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[var(--brand-blue-light)] border border-[var(--brand-blue)]/30 text-xs font-extrabold uppercase tracking-wider text-[var(--brand-blue)] shadow-sm">
-              <Compass className="w-3.5 h-3.5 text-[var(--brand-blue)]" />
-              <span>Rio de Janeiro • Favela Tour</span>
-            </div>
+      <div className="relative z-10 max-w-4xl w-full mx-auto space-y-6 sm:space-y-8">
 
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[var(--bg-surface)] border border-[var(--border-color)] text-xs font-extrabold uppercase tracking-wider text-[var(--brand-yellow)] shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-              <span>{t("hero.badge")}</span>
-            </div>
-          </div>
-        </FadeInScroll>
-
-        {/* Title with Ocean Blue Highlight */}
+        {/* Title with High-Contrast Highlight */}
         <FadeInScroll direction="up" delay={0.2}>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[var(--text-primary)] leading-[1.1]">
+          <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.15] sm:leading-[1.1] drop-shadow-md">
             {t("hero.titlePrefix")}
-            <span className="text-[var(--brand-blue)] font-black">
+            <span className="text-[var(--brand-yellow)] font-black drop-shadow-sm block sm:inline sm:ml-2 mt-1 sm:mt-0">
               {t("hero.titleHighlight")}
             </span>
           </h1>
@@ -45,19 +55,19 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <FadeInScroll direction="up" delay={0.3}>
-          <p className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-base sm:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-sm px-2">
             {t("hero.subtitle")}
           </p>
         </FadeInScroll>
 
         {/* CTAs */}
         <FadeInScroll direction="up" delay={0.4}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold text-base shadow-xl shadow-emerald-500/25 transition-all flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all flex items-center justify-center space-x-2"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
               <span>{t("hero.ctaWhatsApp")}</span>
@@ -65,48 +75,11 @@ export function HeroSection() {
 
             <a
               href="#miolo"
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--brand-blue)]/40 text-[var(--brand-blue)] font-bold text-base hover:bg-[var(--brand-blue-light)] active:scale-95 transition-all shadow-md flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base hover:bg-white/25 active:scale-95 transition-all shadow-lg flex items-center justify-center space-x-2"
             >
               <span>{t("hero.ctaExplore")}</span>
               <ArrowRight className="w-5 h-5" />
             </a>
-          </div>
-        </FadeInScroll>
-
-        {/* Trust & Social Proof Bar */}
-        <FadeInScroll direction="up" delay={0.5}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-12 border-t border-[var(--border-color)] max-w-3xl mx-auto">
-            
-            <div className="p-5 rounded-2xl bg-[var(--bg-surface)]/80 backdrop-blur-sm border border-[var(--border-color)] flex items-center space-x-4 text-left shadow-sm hover:border-[var(--brand-blue)] transition-all">
-              <div className="p-3 rounded-xl bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] flex-shrink-0">
-                <HeartHandshake className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="block text-sm font-bold text-[var(--text-primary)]">{t("hero.statTourists")}</span>
-                <span className="text-xs text-[var(--text-secondary)]">{t("hero.statTouristsSub")}</span>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-[var(--bg-surface)]/80 backdrop-blur-sm border border-[var(--border-color)] flex items-center space-x-4 text-left shadow-sm hover:border-[var(--brand-yellow)] transition-all">
-              <div className="p-3 rounded-xl bg-[var(--brand-yellow)]/10 text-[var(--brand-yellow)] flex-shrink-0">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="block text-sm font-bold text-[var(--text-primary)]">{t("hero.statGuides")}</span>
-                <span className="text-xs text-[var(--text-secondary)]">{t("hero.statGuidesSub")}</span>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-[var(--bg-surface)]/80 backdrop-blur-sm border border-[var(--border-color)] flex items-center space-x-4 text-left shadow-sm hover:border-emerald-500 transition-all">
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500 flex-shrink-0">
-                <Star className="w-6 h-6 fill-current" />
-              </div>
-              <div>
-                <span className="block text-sm font-bold text-[var(--text-primary)]">{t("hero.statRating")}</span>
-                <span className="text-xs text-[var(--text-secondary)]">{t("hero.statRatingSub")}</span>
-              </div>
-            </div>
-
           </div>
         </FadeInScroll>
 

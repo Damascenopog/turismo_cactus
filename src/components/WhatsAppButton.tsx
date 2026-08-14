@@ -12,10 +12,10 @@ export function WhatsAppButton() {
   const whatsappUrl = getWhatsAppLink(language);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center group">
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center group">
       {/* Tooltip / Badge on Hover & Mobile Focus */}
       <div
-        className={`mr-3 px-3 py-1.5 bg-[var(--bg-surface)] text-[var(--text-primary)] text-xs font-semibold rounded-xl border border-[var(--border-color)] shadow-xl transition-all duration-300 pointer-events-none ${
+        className={`hidden sm:block mr-3 px-3 py-1.5 bg-[var(--bg-surface)] text-[var(--text-primary)] text-xs font-semibold rounded-xl border border-[var(--border-color)] shadow-xl transition-all duration-300 pointer-events-none ${
           hovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
         }`}
       >
@@ -33,13 +33,13 @@ export function WhatsAppButton() {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         aria-label={t("hero.ctaWhatsApp")}
-        className="relative flex items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all duration-300"
+        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all duration-300"
       >
         {/* Pulse Glow Ring */}
         <span className="absolute -inset-1 rounded-full bg-emerald-500 opacity-40 animate-ping pointer-events-none"></span>
 
         {/* WhatsApp Icon */}
-        <MessageCircle className="w-7 h-7 fill-current relative z-10" />
+        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-current relative z-10" />
       </a>
     </div>
   );

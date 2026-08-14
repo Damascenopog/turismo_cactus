@@ -3,6 +3,55 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comportamento em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-11] - Associação das Fotos Reais aos Murais (`hexa.jpg` e `crianca_futebol.jpg`)
+
+### 1. Atualização do Mural de Arte & Cultura (`ArteSection.tsx`)
+- **O que foi feito:**
+  - Associada a imagem [`/image/hexa.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/hexa.jpg) à categoria **"Arte pintada no chão"** (Grafite e intervenções de rua no asfalto).
+  - Associada a imagem [`/image/crianca_futebol.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/crianca_futebol.jpg) à categoria **"Cultura & Vivência"** (Futebol de rua e cotidiano da favela).
+  - Associada a imagem [`/image/esquina_casas.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/esquina_casas.jpg) à categoria **"Gastronomia & Esquinas"** e à seção [`MioloSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/MioloSection.tsx).
+  - Removidas as legendas/subtítulos (*"Arte pintada no chão"*, *"Cultura & Vivência"*, *"Sabor da Favela"*) dos cartões e tags em [`ArteSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/ArteSection.tsx) a pedido do usuário.
+  - Mantidas as fotografias reais correspondentes de fundo e ajustada a responsividade móvel de todos os componentes.
+- **Como funciona:**
+  - No mural interativo de [`ArteSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/ArteSection.tsx), o layout exibe agora apenas o título limpo e a descrição traduzida de cada pin, mantendo a foto real de alta qualidade em destaque.
+- **Modificação de Comportamento:**
+  - *Antes:* Cada cartão possuía um badge extra com subtítulo (ex: "Arte pintada no chão").
+  - *Depois:* As legendas foram removidas, deixando a apresentação mais limpa.
+
+---
+
+## [2026-08-11] - Nova Seção Horizontal de Estatísticas e Métricas (`StatsSection.tsx`)
+
+### 1. Criação do Componente `StatsSection.tsx` e Integração
+- **O que foi feito:**
+  - Criado o componente [`StatsSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/StatsSection.tsx) para abrigar a barra de métricas e prova social de forma 100% horizontal.
+  - Removido o bloco interno de estatísticas da [`HeroSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/HeroSection.tsx).
+  - Incluída a [`StatsSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/StatsSection.tsx) em [`page.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/page.tsx) logo abaixo da Hero.
+- **Como funciona:**
+  - Exibe os três indicadores (*"Mais de 10.000 turistas acolhidos"*, *"Guias locais certificados"*, *"Avaliação 4.9/5★"*) alinhados horizontalmente em um container de borda a borda com divisores sutis e adaptado aos temas Dark/Light.
+- **Modificação de Comportamento:**
+  - *Antes:* Os dados ficavam acoplados na parte inferior da HeroSection sobre a imagem de fundo.
+  - *Depois:* Os dados agora possuem uma seção horizontal própria e dedicada com fundo neutro, dando maior respiro e destaque às métricas.
+
+---
+
+## [2026-08-11] - Substituição da Hero Section por Imagem Panorâmica com Desfoque (Referência Santorini/Guesthouse)
+
+### 1. Atualização do Componente HeroSection (`HeroSection.tsx`)
+- **O que foi feito:**
+  - Substituídos os círculos decorativos (*glows*) abstratos do fundo da Hero pela imagem panorâmica [`/image/topo_light.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/topo_light.jpg).
+  - Adicionada a nova fotografia panorâmica de alta definição noturna da Rocinha em [`public/image/hero_rocinha_night_hd.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/hero_rocinha_night_hd.jpg).
+  - Configurada a alternância dinâmica de fundo no [`HeroSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/HeroSection.tsx): o **Light Mode** exibe a foto diurna (`hero_rocinha_hd.jpg`) e o **Dark Mode** exibe a foto noturna (`hero_rocinha_night_hd.jpg`).
+  - Corrigido o overlay gradiente no **Light Mode**: removida a transição para `var(--bg-primary)` (que causava uma névoa/esbranquiçado forte na base da imagem), mantendo um tom escuro sutil e uniforme (`from-slate-950/50 via-slate-950/20 to-slate-950/40`) para visual 100% limpo, natural e de alto contraste.
+  - Removidas as pílulas/badges superiores ("Rio de Janeiro • Favela Tour" e "Experiência Autêntica & Segura") a pedido do usuário.
+  - Atualizados os cartões de estatísticas e textos para tipografia em alto contraste com efeito *glassmorphism* (`backdrop-blur-md bg-slate-900/60`).
+- **Como funciona:**
+  - O componente `next/image` carrega a imagem panorâmica preenchendo a tela inteira em modo `object-cover`.
+  - Uma camada de overlay escuro gradiente sobrepõe a imagem para garantir a máxima legibilidade do texto e dos botões CTA.
+- **Modificação de Comportamento:**
+  - *Antes:* O Hero possuía pílulas/badges no topo e manchas decorativas abstratas de fundo.
+  - *Depois:* O Hero agora exibe a imagem panorâmica limpa de fundo com foco direto no título, subtítulo e botões CTA.
+
 ---
 
 ## [2026-08-10] - Nova Arquitetura Visual (Grid Zig-Zag & Trilha de Pegadas SVG)

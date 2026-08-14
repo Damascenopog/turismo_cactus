@@ -15,7 +15,8 @@
 
 ## Fase 3: Desenvolvimento da Narrativa (Seções em Padrão Zig-Zag)
 - [x] Desenvolver **Hero Section** (Topo).
-- [x] Desenvolver grid alternado (Zig-Zag) para as seções do Miolo, Cultura e Base (Desktop) e empilhado (Mobile).
+- [x] Atualizar **Hero Section** com imagem panorâmica de fundo (`topo_light.jpg`), desfoque sutil e overlay escuro gradiente de alto contraste.
+- [x] Criar componente de métricas em seção horizontal dedicada (`StatsSection.tsx`) posicionada após a Hero Section.
 - [x] Desenvolver Seção **O Miolo** (Vielas).
 - [x] Desenvolver Seção **Arte & Cultura** (com componentes de pins/hotspots).
 - [x] Desenvolver Seção **A Base** (Comércio e desfecho).

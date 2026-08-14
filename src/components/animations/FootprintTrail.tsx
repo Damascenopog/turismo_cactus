@@ -93,25 +93,28 @@ export function FootprintTrail() {
         {/* Footprint Waypoint 1 (Top Hero / Miolo) */}
         <motion.div
           style={{ opacity: useTransform(smoothProgress, [0.1, 0.25], [0.3, 1]) }}
-          className="absolute top-[20%] left-6 md:left-[80%] -translate-x-1/2 text-[var(--brand-yellow)]"
+          className="absolute top-[20%] left-5 md:left-[80%] -translate-x-1/2 text-[var(--brand-yellow)]"
         >
-          <ShoeFootprint size={32} flip={false} />
+          <ShoeFootprint size={24} className="sm:hidden" flip={false} />
+          <ShoeFootprint size={32} className="hidden sm:block" flip={false} />
         </motion.div>
 
         {/* Footprint Waypoint 2 (Miolo / Arte) */}
         <motion.div
           style={{ opacity: useTransform(smoothProgress, [0.35, 0.55], [0.3, 1]) }}
-          className="absolute top-[48%] left-6 md:left-[18%] -translate-x-1/2 text-[var(--brand-blue)]"
+          className="absolute top-[48%] left-5 md:left-[18%] -translate-x-1/2 text-[var(--brand-blue)]"
         >
-          <ShoeFootprint size={32} flip={true} />
+          <ShoeFootprint size={24} className="sm:hidden" flip={true} />
+          <ShoeFootprint size={32} className="hidden sm:block" flip={true} />
         </motion.div>
 
         {/* Footprint Waypoint 3 (Arte / Base) */}
         <motion.div
           style={{ opacity: useTransform(smoothProgress, [0.65, 0.85], [0.3, 1]) }}
-          className="absolute top-[78%] left-6 md:left-[78%] -translate-x-1/2 text-emerald-500"
+          className="absolute top-[78%] left-5 md:left-[78%] -translate-x-1/2 text-emerald-500"
         >
-          <ShoeFootprint size={32} flip={false} />
+          <ShoeFootprint size={24} className="sm:hidden" flip={false} />
+          <ShoeFootprint size={32} className="hidden sm:block" flip={false} />
         </motion.div>
       </div>
 

@@ -8,8 +8,9 @@ Landing page imersiva para o **Tour Rocinha** da Cactus Turismo. O objetivo é a
 - Acesso predominantemente via smartphones em conexões móveis -> Foco total em **Performance Mobile-First**, carregamento rápido e micro-interações fluidas.
 
 ## Diretrizes de Arquitetura Visual e Layout (Zig-Zag & Fotografia)
-1. **Hero Section Panorâmica:** Mantém o topo de alto impacto com apresentação geral da experiência.
-2. **Layout em Padrão Zig-Zag (Desktop):** Após a Hero, a página não utiliza vídeos contínuos de fundo ou canvas pesados. O layout utiliza seções estáticas com "blocos alternados" (imagem/mídia de um lado e texto explicativo do outro, formando um padrão em "Z" no desktop).
+1. **Hero Section Panorâmica:** Exibe fotografia panorâmica HD dinâmica (foto diurna no Light Mode e noturna no Dark Mode) com overlay escuro sutil e uniforme (sem névoa esbranquiçada inferior no modo claro) e tipografia de alto contraste.
+1.1 **Seção Horizontal de Estatísticas (`StatsSection.tsx`):** Localizada logo abaixo da Hero Section, exibe os 3 indicadores de prova social de forma 100% horizontal com divisores elegantes e ícones com micro-animação de hover.
+2. **Seção Arte & Cultura (`ArteSection.tsx`):** Mural interativo que exibe fotografias reais associadas a cada modalidade: [`hexa.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/hexa.jpg) em **"Arte pintada no chão"** e [`crianca_futebol.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/crianca_futebol.jpg) em **"Cultura & Vivência"**.
 3. **Responsividade Mobile:** No mobile, os blocos são empilhados em uma única coluna vertical limpa (imagem acima, texto abaixo).
 4. **Fotografia com Espaço Negativo:** As imagens e ilustrações utilizam forte "espaço negativo" (áreas vazias, como céu, mar ou asfalto) para alocação de textos e títulos com contraste elevado e máxima legibilidade.
 5. **Trilha de Pegadas SVG (Animação de Scroll):**
