@@ -2,6 +2,7 @@
   "nav": {
     "brand": "Tour Rocinha",
     "hero": "Início",
+    "booking": "Agendar",
     "miolo": "O Miolo",
     "arte": "Arte & Cultura",
     "base": "A Base",
@@ -23,6 +24,24 @@
     "statGuidesSub": "Moradores de nascença",
     "statRating": "Avaliação 4.9/5★",
     "statRatingSub": "Avaliação de clientes"
+  },
+  "booking": {
+    "tag": "Disponibilidade em Tempo Real",
+    "title": "Escolha o Dia da Sua Experiência",
+    "subtitle": "Selecione a data ideal no calendário e informe seu nome para receber o atendimento personalizado direto com o guia.",
+    "nameLabel": "Seu Nome Completo",
+    "namePlaceholder": "Ex: Maria Silva ou John Doe",
+    "dateLabel": "Selecione a Data no Calendário",
+    "peopleLabel": "Quantidade de Pessoas",
+    "peopleUnit": "pessoa(s)",
+    "quickTomorrow": "Amanhã",
+    "quickSaturday": "Próximo Sábado",
+    "quickSunday": "Próximo Domingo",
+    "selectedSummary": "Resumo do Agendamento",
+    "forText": "Para",
+    "onDate": "no dia",
+    "ctaBtn": "Continuar no WhatsApp",
+    "helperNote": "Atendimento direto com guia nativo credenciado • Sem taxas antecipadas"
   },
   "miolo": {
     "tag": "Imersão Cultural",

@@ -8,17 +8,17 @@
 - [x] Configurar variáveis CSS globais com a paleta de cores definida no CONTEXT.md.
 
 ## Fase 2: Componentes Core e Layout Base
-- [x] Inicializar projeto Next.js com Tailwind CSS e TypeScript.
 - [x] Criar o Navbar responsivo com seletor de idioma e botão de troca de tema.
 - [x] Criar o botão flutuante de CTA para o WhatsApp.
 - [x] Configurar utilitário de link dinâmico para WhatsApp (gerando mensagem baseada no idioma selecionado).
 
 ## Fase 3: Desenvolvimento da Narrativa (Seções em Padrão Zig-Zag)
-- [x] Desenvolver **Hero Section** (Topo).
-- [x] Atualizar **Hero Section** com imagem panorâmica de fundo (`topo_light.jpg`), desfoque sutil e overlay escuro gradiente de alto contraste.
-- [x] Criar componente de métricas em seção horizontal dedicada (`StatsSection.tsx`) posicionada após a Hero Section.
+- [x] Desenvolver **Hero Section** (Topo) com fotografia HD dia/noite e animação DiaTextReveal.
+- [x] Desenvolver **Seção de Agendamento Interativo** com Calendário de Datas, Nome do Turista e WhatsApp Dinâmico.
+- [x] Desenvolver Seção de Estatísticas Horizontal (**StatsSection**).
+- [x] Desenvolver grid alternado (Zig-Zag) para as seções do Miolo, Cultura e Base (Desktop) e empilhado (Mobile).
 - [x] Desenvolver Seção **O Miolo** (Vielas).
-- [x] Desenvolver Seção **Arte & Cultura** (com componentes de pins/hotspots).
+- [x] Desenvolver Seção **Arte & Cultura** (com componentes de pins/hotspots e fotos reais).
 - [x] Desenvolver Seção **A Base** (Comércio e desfecho).
 - [x] Desenvolver Footer com FAQ e blocos de confiabilidade/segurança.
 

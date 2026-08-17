@@ -2,6 +2,7 @@
   "nav": {
     "brand": "Tour Rocinha",
     "hero": "Inicio",
+    "booking": "Reservar",
     "miolo": "Las Callejuelas",
     "arte": "Arte y Cultura",
     "base": "La Base",
@@ -24,6 +25,24 @@
     "statRating": "Calificación 4.9/5★",
     "statRatingSub": "Opiniones verificadas de clientes"
   },
+  "booking": {
+    "tag": "Disponibilidad en Tiempo Real",
+    "title": "Elige el Día de Tu Experiencia",
+    "subtitle": "Selecciona la fecha ideal en el calendario e ingresa tu nombre para recibir atención personalizada directa de tu guía local.",
+    "nameLabel": "Tu Nombre Completo",
+    "namePlaceholder": "Ej: Juan Pérez o María Silva",
+    "dateLabel": "Selecciona la Fecha en el Calendario",
+    "peopleLabel": "Número de Personas",
+    "peopleUnit": "persona(s)",
+    "quickTomorrow": "Mañana",
+    "quickSaturday": "Próximo Sábado",
+    "quickSunday": "Próximo Domingo",
+    "selectedSummary": "Resumen de Reserva",
+    "forText": "Para",
+    "onDate": "el día",
+    "ctaBtn": "Continuar en WhatsApp",
+    "helperNote": "Atención directa con guía nativo certificado • Sin pagos adelantados"
+  },
   "miolo": {
     "tag": "Inmersión Cultural",
     "title": "Las Callejuelas y Miradores Secretos",
@@ -38,7 +57,7 @@
   "arte": {
     "tag": "Expresión Viva",
     "title": "Arte, Música y Gastronomía",
-    "description": "Una explosión de colores y ritmos en el corazón de la comunidad.",
+    "description": "Una explosão de cores e ritmos en el corazón de la comunidad.",
     "pin1Title": "Grafite y Murales",
     "pin1Desc": "Galería de arte callejero al aire libre con obras de reconocidos artistas locales.",
     "pin2Title": "Capoeira y Hip-Hop",

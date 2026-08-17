@@ -2,6 +2,7 @@
   "nav": {
     "brand": "Tour Rocinha",
     "hero": "Home",
+    "booking": "Book Tour",
     "miolo": "The Alleys",
     "arte": "Art & Culture",
     "base": "Community Base",
@@ -23,6 +24,24 @@
     "statGuidesSub": "Born & raised residents",
     "statRating": "4.9/5★ Customer Rating",
     "statRatingSub": "Verified guest reviews"
+  },
+  "booking": {
+    "tag": "Live Availability",
+    "title": "Choose Your Experience Date",
+    "subtitle": "Pick your ideal date on the calendar and enter your name to connect directly with your certified local guide.",
+    "nameLabel": "Your Full Name",
+    "namePlaceholder": "E.g. John Doe or Maria Silva",
+    "dateLabel": "Select Date on the Calendar",
+    "peopleLabel": "Number of Guests",
+    "peopleUnit": "guest(s)",
+    "quickTomorrow": "Tomorrow",
+    "quickSaturday": "Next Saturday",
+    "quickSunday": "Next Sunday",
+    "selectedSummary": "Booking Summary",
+    "forText": "For",
+    "onDate": "on",
+    "ctaBtn": "Continue to WhatsApp",
+    "helperNote": "Direct communication with certified native guide • No advance deposit fees"
   },
   "miolo": {
     "tag": "Cultural Immersion",

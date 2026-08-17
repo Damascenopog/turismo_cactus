@@ -4,6 +4,7 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { BookingSection } from "@/components/sections/BookingSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { MioloSection } from "@/components/sections/MioloSection";
 import { ArteSection } from "@/components/sections/ArteSection";
@@ -20,9 +21,10 @@ export default function Home() {
       {/* Dynamic Animated Footprint SVG Trail (Curved on Desktop, Vertical on Mobile) */}
       <FootprintTrail />
 
-      {/* Main Narrative Sections in Zig-Zag Pattern */}
+      {/* Main Narrative Sections */}
       <main className="flex-1 w-full relative z-20">
         <HeroSection />
+        <BookingSection />
         <StatsSection />
         <MioloSection />
         <ArteSection />

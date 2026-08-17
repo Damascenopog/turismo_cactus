@@ -26,6 +26,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: "#hero", label: t("nav.hero") },
+    { href: "#booking", label: t("nav.booking") },
     { href: "#miolo", label: t("nav.miolo") },
     { href: "#arte", label: t("nav.arte") },
     { href: "#base", label: t("nav.base") },

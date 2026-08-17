@@ -2,6 +2,7 @@
   "nav": {
     "brand": "Tour Rocinha",
     "hero": "Startseite",
+    "booking": "Buchen",
     "miolo": "Die Gassen",
     "arte": "Kunst & Kultur",
     "base": "Gemeinschaft",
@@ -23,6 +24,24 @@
     "statGuidesSub": "Einheimische Bewohner",
     "statRating": "4.9/5★ Bewertung",
     "statRatingSub": "Verifizierte Kundenbewertungen"
+  },
+  "booking": {
+    "tag": "Echtzeit-Verfügbarkeit",
+    "title": "Wähle das Datum Deines Erlebnisses",
+    "subtitle": "Wähle Dein Wunschdatum im Kalender und gib Deinen Namen ein, um direkt von Deinem zertifizierten Guide betreut zu werden.",
+    "nameLabel": "Dein Vollständiger Name",
+    "namePlaceholder": "Z.B. Max Mustermann oder Maria Silva",
+    "dateLabel": "Datum im Kalender auswählen",
+    "peopleLabel": "Anzahl der Personen",
+    "peopleUnit": "Person(en)",
+    "quickTomorrow": "Morgen",
+    "quickSaturday": "Nächster Samstag",
+    "quickSunday": "Nächster Sonntag",
+    "selectedSummary": "Buchungsübersicht",
+    "forText": "Für",
+    "onDate": "am",
+    "ctaBtn": "Weiter auf WhatsApp",
+    "helperNote": "Direkter Kontakt mit zertifiziertem einheimischem Guide • Keine Vorauszahlungsgebühren"
   },
   "miolo": {
     "tag": "Kulturelle Immersion",
@@ -61,7 +80,7 @@
     "faqQ2": "Wie lange dauert die Tour und wie anstrengend ist sie?",
     "faqA2": "Ca. 3 bis 4 Stunden. Moderater Spaziergang mit regelmäßigen Pausen, geeignet für jedes Alter.",
     "faqQ3": "Wie funktionieren Buchung und Bezahlung?",
-    "faqA3": "Du wählst das Datum per WhatsApp, besprichst Details direkt mit deinem Guide und bestätigst unkompliziert.",
+    "faqA3": "Du wählst das Datum per WhatsApp, besprichst Details direkt com deinem Guide und bestätigst unkompliziert.",
     "rights": "© 2026 Tour Rocinha - Cactus Turismo. Alle Rechte vorbehalten."
   },
   "whatsapp": {
