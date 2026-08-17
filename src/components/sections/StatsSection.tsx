@@ -13,21 +13,21 @@ export function StatsSection() {
       icon: HeartHandshake,
       title: t("hero.statTourists"),
       sub: t("hero.statTouristsSub"),
-      accent: "text-amber-500 bg-amber-500/10 dark:bg-amber-400/20 dark:text-amber-300",
+      accent: "text-amber-800 dark:text-amber-300 bg-amber-500/15 dark:bg-amber-400/20",
       borderHover: "hover:border-amber-500/50",
     },
     {
       icon: ShieldCheck,
       title: t("hero.statGuides"),
       sub: t("hero.statGuidesSub"),
-      accent: "text-[var(--brand-blue)] bg-[var(--brand-blue)]/10 dark:bg-blue-400/20 dark:text-blue-300",
-      borderHover: "hover:border-[var(--brand-blue)]/50",
+      accent: "text-blue-800 dark:text-blue-300 bg-blue-500/15 dark:bg-blue-400/20",
+      borderHover: "hover:border-blue-500/50",
     },
     {
       icon: Star,
       title: t("hero.statRating"),
       sub: t("hero.statRatingSub"),
-      accent: "text-emerald-500 bg-emerald-500/10 dark:bg-emerald-400/20 dark:text-emerald-300",
+      accent: "text-emerald-800 dark:text-emerald-300 bg-emerald-500/15 dark:bg-emerald-400/20",
       borderHover: "hover:border-emerald-500/50",
     },
   ];
@@ -45,13 +45,13 @@ export function StatsSection() {
                   className="py-3.5 md:py-2 px-2 md:px-8 flex items-center justify-start space-x-3.5 sm:space-x-4 group transition-colors"
                 >
                   <div className={`p-2.5 sm:p-3.5 rounded-2xl ${item.accent} flex-shrink-0 transition-transform group-hover:scale-110`}>
-                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 stroke-[2.25]" />
+                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 stroke-[2.25]" aria-hidden="true" />
                   </div>
                   <div className="text-left">
                     <span className="block font-black text-sm sm:text-lg text-[var(--text-primary)] leading-tight tracking-tight">
                       {item.title}
                     </span>
-                    <span className="block text-xs sm:text-sm font-medium text-[var(--text-secondary)] mt-0.5">
+                    <span className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mt-0.5">
                       {item.sub}
                     </span>
                   </div>

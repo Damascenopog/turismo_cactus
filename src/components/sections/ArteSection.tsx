@@ -17,8 +17,8 @@ export function ArteSection() {
       title: t("arte.pin1Title"),
       desc: "Murais vibrantes e intervenções artísticas no asfalto e becos tradicionais da favela.",
       image: "/image/hexa.jpg",
-      color: "bg-[var(--brand-blue)]",
-      textColor: "text-[var(--brand-blue)]",
+      color: "bg-blue-600",
+      textColor: "text-blue-700 dark:text-blue-400",
     },
     {
       id: 1,
@@ -26,8 +26,8 @@ export function ArteSection() {
       title: t("arte.pin2Title"),
       desc: "O futebol de rua, ritmos e a alegria contagiante da rotina comunitária.",
       image: "/image/crianca_futebol.jpg",
-      color: "bg-emerald-500",
-      textColor: "text-emerald-500",
+      color: "bg-emerald-600",
+      textColor: "text-emerald-700 dark:text-emerald-400",
     },
     {
       id: 2,
@@ -35,8 +35,8 @@ export function ArteSection() {
       title: t("arte.pin3Title"),
       desc: "Prove a gastronomia autêntica e aprecie as esquinas e comércios locais.",
       image: "/image/esquina_casas.jpg",
-      color: "bg-amber-500",
-      textColor: "text-amber-500",
+      color: "bg-amber-600",
+      textColor: "text-amber-800 dark:text-amber-300",
     },
   ];
 
@@ -47,8 +47,8 @@ export function ArteSection() {
         {/* Section Header */}
         <FadeInScroll direction="up" delay={0.1}>
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[var(--brand-blue-light)] text-[var(--brand-blue)] text-xs font-bold uppercase tracking-wider border border-[var(--brand-blue)]/20">
-              <Sparkles className="w-4 h-4 text-[var(--brand-blue)]" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-800 dark:text-blue-300 text-xs font-black uppercase tracking-wider border border-blue-500/30">
+              <Sparkles className="w-4 h-4 text-blue-700 dark:text-blue-400" aria-hidden="true" />
               <span>{t("arte.tag")}</span>
             </div>
 
@@ -74,21 +74,29 @@ export function ArteSection() {
                 <FadeInScroll key={pin.id} direction="left" delay={0.2 + idx * 0.1}>
                   <div
                     onClick={() => setActivePin(pin.id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        setActivePin(pin.id);
+                      }
+                    }}
+                    aria-pressed={isSelected}
                     className={`p-6 rounded-2xl border transition-all cursor-pointer ${
                       isSelected
-                        ? "bg-[var(--bg-surface)] border-[var(--brand-blue)] shadow-xl scale-[1.02]"
-                        : "bg-[var(--bg-surface)]/50 border-[var(--border-color)] opacity-75 hover:opacity-100"
+                        ? "bg-[var(--bg-surface)] border-blue-600 dark:border-blue-400 shadow-xl scale-[1.02]"
+                        : "bg-[var(--bg-surface)]/50 border-[var(--border-color)] opacity-85 hover:opacity-100"
                     }`}
                   >
                     <div className="flex items-start space-x-4">
                       <div className={`p-3 rounded-xl bg-slate-900 text-white flex-shrink-0 ${pin.color}`}>
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-6 h-6" aria-hidden="true" />
                       </div>
                       <div className="space-y-1">
-                        <h3 className={`font-bold text-lg text-[var(--text-primary)] ${isSelected ? pin.textColor : ""}`}>
+                        <h3 className={`font-extrabold text-lg text-[var(--text-primary)] ${isSelected ? pin.textColor : ""}`}>
                           {pin.title}
                         </h3>
-                        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
                           {pin.desc}
                         </p>
                       </div>
@@ -133,10 +141,10 @@ export function ArteSection() {
                 {/* Bottom Caption Overlay */}
                 <div className="relative z-10 space-y-1.5 bg-slate-950/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/10 w-full max-w-md shadow-2xl">
                   <div className="flex items-center space-x-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                    <span className="text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wider block">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400" aria-hidden="true"></span>
+                    <h3 className="text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wider block">
                       {pins[activePin].title}
-                    </span>
+                    </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
                     {pins[activePin].desc}

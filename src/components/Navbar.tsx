@@ -44,19 +44,19 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <a href="#hero" className="flex items-center group">
+        <a href="#hero" className="flex items-center group" aria-label="Tour Cactus - Início">
           <div className="flex flex-col">
-            <span className="font-black text-lg sm:text-xl tracking-tight text-emerald-500 dark:text-emerald-400 group-hover:opacity-90 transition-opacity">
+            <span className="font-black text-lg sm:text-xl tracking-tight text-emerald-700 dark:text-emerald-400 group-hover:opacity-90 transition-opacity">
               Tour Cactus
             </span>
-            <span className="text-[10px] uppercase font-extrabold tracking-widest text-[var(--brand-blue)]">
+            <span className="text-xs uppercase font-extrabold tracking-wider text-blue-900 dark:text-blue-300">
               Turismo pela Rocinha • Rio
             </span>
           </div>
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold text-[var(--text-secondary)]">
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-bold text-[var(--text-secondary)]" aria-label="Navegação Principal">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -72,16 +72,17 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           
           {/* Language Selector with Azul Rio highlights */}
-          <div className="flex items-center bg-[var(--bg-surface-hover)] border border-[var(--border-color)] rounded-xl p-1 text-xs">
-            <Globe className="w-4 h-4 ml-2 mr-1 text-[var(--brand-blue)]" />
+          <div className="flex items-center bg-[var(--bg-surface-hover)] border border-[var(--border-color)] rounded-xl p-1 text-xs" role="group" aria-label="Seletor de idioma">
+            <Globe className="w-4 h-4 ml-2 mr-1 text-[var(--brand-blue)]" aria-hidden="true" />
             {(["pt", "en", "es", "de"] as Language[]).map((lang) => (
               <button
                 key={lang}
                 onClick={() => setLanguage(lang)}
-                className={`px-2.5 py-1 font-bold rounded-lg uppercase transition-all ${
+                aria-label={`Selecionar idioma ${lang.toUpperCase()}`}
+                className={`px-2.5 py-1 rounded-lg font-extrabold uppercase transition-all ${
                   language === lang
-                    ? "bg-[var(--brand-blue)] text-white shadow-md"
-                    : "text-[var(--text-secondary)] hover:text-[var(--brand-blue)]"
+                    ? "bg-[var(--brand-blue)] text-white shadow-sm"
+                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 {lang}
@@ -89,36 +90,36 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Theme Toggle */}
+          {/* Theme Switcher Button */}
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2.5 rounded-xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)] hover:border-[var(--brand-blue)] hover:scale-105 transition-all"
-              title={t("nav.toggleTheme")}
+              className="p-2.5 rounded-xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)] hover:border-[var(--brand-blue)] transition-all flex items-center justify-center"
               aria-label={t("nav.toggleTheme")}
             >
               {theme === "dark" ? (
-                <Sun className="w-4.5 h-4.5 text-amber-400" />
+                <Sun className="w-4 h-4 text-[var(--brand-yellow)]" aria-hidden="true" />
               ) : (
-                <Moon className="w-4.5 h-4.5 text-[var(--brand-blue)]" />
+                <Moon className="w-4 h-4 text-[var(--brand-blue)]" aria-hidden="true" />
               )}
             </button>
           )}
 
-          {/* Book Now WhatsApp CTA */}
+          {/* Header WhatsApp Direct CTA */}
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-xl bg-[var(--brand-yellow)] text-slate-950 font-bold text-xs uppercase tracking-wider hover:bg-[var(--brand-yellow-hover)] active:scale-95 transition-all shadow-md flex items-center space-x-2"
+            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md"
+            aria-label="Agendar passeio via WhatsApp"
           >
-            <MessageCircle className="w-4 h-4 fill-current" />
+            <MessageCircle className="w-4 h-4 fill-current" aria-hidden="true" />
             <span>{t("nav.bookNow")}</span>
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex md:hidden items-center space-x-2">
+        {/* Mobile Menu Button */}
+        <div className="flex items-center space-x-2 md:hidden">
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -126,19 +127,19 @@ export function Navbar() {
               aria-label={t("nav.toggleTheme")}
             >
               {theme === "dark" ? (
-                <Sun className="w-4 h-4 text-amber-400" />
+                <Sun className="w-4 h-4 text-[var(--brand-yellow)]" aria-hidden="true" />
               ) : (
-                <Moon className="w-4 h-4 text-[var(--brand-blue)]" />
+                <Moon className="w-4 h-4 text-[var(--brand-blue)]" aria-hidden="true" />
               )}
             </button>
           )}
-
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)]"
-            aria-label="Toggle Menu"
+            className="p-2 rounded-xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)]"
+            aria-label={mobileMenuOpen ? "Fechar Menu" : "Abrir Menu"}
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-[var(--brand-blue)]" /> : <Menu className="w-6 h-6 text-[var(--brand-blue)]" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
 
@@ -146,14 +147,14 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[var(--bg-surface)] border-b border-[var(--border-color)] px-6 py-6 space-y-6 shadow-2xl animate-in slide-in-from-top duration-200">
-          <nav className="flex flex-col space-y-4 text-base font-semibold text-[var(--text-primary)]">
+        <div className="md:hidden border-b border-[var(--border-color)] bg-[var(--bg-primary)]/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-4 animate-in slide-in-from-top-4 duration-200">
+          <nav className="flex flex-col space-y-3" aria-label="Menu Mobile">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-[var(--brand-blue)] transition-colors py-1"
+                className="px-3 py-2 rounded-xl text-base font-bold text-[var(--text-primary)] hover:bg-[var(--bg-surface-hover)]"
               >
                 {link.label}
               </a>
@@ -162,18 +163,20 @@ export function Navbar() {
 
           <div className="pt-4 border-t border-[var(--border-color)] space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase text-[var(--text-secondary)]">
-                {t("nav.selectLanguage")}:
-              </span>
+              <span className="text-xs font-extrabold text-[var(--text-secondary)]">{t("nav.selectLanguage")}</span>
               <div className="flex items-center bg-[var(--bg-surface-hover)] border border-[var(--border-color)] rounded-xl p-1 text-xs">
                 {(["pt", "en", "es", "de"] as Language[]).map((lang) => (
                   <button
                     key={lang}
-                    onClick={() => setLanguage(lang)}
-                    className={`px-2 sm:px-3 py-1 font-bold rounded-lg uppercase transition-all ${
+                    onClick={() => {
+                      setLanguage(lang);
+                      setMobileMenuOpen(false);
+                    }}
+                    aria-label={`Selecionar idioma ${lang.toUpperCase()}`}
+                    className={`px-2.5 py-1 rounded-lg font-bold uppercase ${
                       language === lang
-                        ? "bg-[var(--brand-blue)] text-white shadow-sm"
-                        : "text-[var(--text-secondary)] hover:text-[var(--brand-blue)]"
+                        ? "bg-[var(--brand-blue)] text-white"
+                        : "text-[var(--text-secondary)]"
                     }`}
                   >
                     {lang}
@@ -186,10 +189,10 @@ export function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-center block shadow-lg flex items-center justify-center space-x-2"
+              className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm flex items-center justify-center space-x-2"
+              aria-label="Agendar passeio via WhatsApp"
             >
-              <MessageCircle className="w-5 h-5 fill-current" />
+              <MessageCircle className="w-5 h-5 fill-current" aria-hidden="true" />
               <span>{t("nav.bookNow")}</span>
             </a>
           </div>

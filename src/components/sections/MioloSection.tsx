@@ -16,32 +16,32 @@ export function MioloSection() {
       icon: Footprints,
       title: t("miolo.card1Title"),
       desc: t("miolo.card1Desc"),
-      accent: "from-amber-500/20 to-amber-500/5 text-amber-500",
+      accent: "from-amber-500/20 to-amber-500/5 text-amber-700 dark:text-amber-300",
     },
     {
       icon: Eye,
       title: t("miolo.card2Title"),
       desc: t("miolo.card2Desc"),
-      accent: "from-[var(--brand-blue)]/20 to-[var(--brand-blue)]/5 text-[var(--brand-blue)]",
+      accent: "from-blue-500/20 to-blue-500/5 text-blue-800 dark:text-blue-300",
     },
     {
       icon: Users,
       title: t("miolo.card3Title"),
       desc: t("miolo.card3Desc"),
-      accent: "from-rose-500/20 to-rose-500/5 text-rose-500",
+      accent: "from-rose-500/20 to-rose-500/5 text-rose-700 dark:text-rose-300",
     },
   ];
 
   return (
     <section id="roteiro" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] relative scroll-mt-20">
-      <span id="miolo" className="absolute -top-20"></span>
+      <span id="miolo" className="absolute -top-20" aria-hidden="true"></span>
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* Section Header */}
         <FadeInScroll direction="up" delay={0.1}>
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[var(--brand-blue-light)] text-[var(--brand-blue)] text-xs font-bold uppercase tracking-wider border border-[var(--brand-blue)]/20">
-              <Compass className="w-4 h-4 text-[var(--brand-blue)]" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-800 dark:text-blue-300 text-xs font-black uppercase tracking-wider border border-blue-500/30">
+              <Compass className="w-4 h-4 text-blue-700 dark:text-blue-400" aria-hidden="true" />
               <span>{t("miolo.tag")}</span>
             </div>
 
@@ -72,18 +72,18 @@ export function MioloSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-black/20 z-0"></div>
                 
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="text-xs font-black uppercase tracking-widest text-[var(--brand-yellow)] bg-slate-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-amber-500/30 shadow-lg">
+                  <span className="text-xs font-black uppercase tracking-widest text-amber-300 bg-slate-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-amber-500/30 shadow-lg">
                     Passo 01 • Vielas & Mirante
                   </span>
-                  <span className="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
+                  <span className="w-3 h-3 rounded-full bg-amber-400 animate-pulse" aria-hidden="true"></span>
                 </div>
 
                 <div className="relative z-10 space-y-2 bg-slate-950/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/10 w-full max-w-sm shadow-2xl">
                   <div className="flex items-center space-x-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                    <h4 className="text-lg sm:text-xl font-black text-white leading-snug drop-shadow-md">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400" aria-hidden="true"></span>
+                    <h3 className="text-lg sm:text-xl font-black text-white leading-snug drop-shadow-md">
                       Vistas Espectaculares 360°
-                    </h4>
+                    </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium drop-shadow-sm">
                     Caminhada guiada pelas vielas históricas e arquitetura popular única da favela.
@@ -102,16 +102,16 @@ export function MioloSection() {
                   return (
                     <div
                       key={idx}
-                      className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-sm hover:shadow-md hover:border-[var(--brand-blue)]/40 transition-all flex items-start space-x-4"
+                      className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-sm hover:shadow-md hover:border-blue-500/40 transition-all flex items-start space-x-4"
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.accent} flex items-center justify-center flex-shrink-0`}>
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-6 h-6" aria-hidden="true" />
                       </div>
                       <div className="space-y-1">
-                        <h3 className="font-bold text-base text-[var(--text-primary)]">
+                        <h3 className="font-extrabold text-base text-[var(--text-primary)]">
                           {card.title}
                         </h3>
-                        <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
                           {card.desc}
                         </p>
                       </div>
@@ -125,10 +125,11 @@ export function MioloSection() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-[var(--brand-blue)] text-white font-bold text-xs uppercase tracking-wider hover:bg-[var(--brand-blue-hover)] transition-all shadow-md"
+                  className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md"
+                  aria-label="Agendar passeio pelas vielas no WhatsApp"
                 >
                   <span>Agendar Passeio pelas Vielas</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </FadeInScroll>

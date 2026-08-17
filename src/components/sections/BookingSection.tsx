@@ -182,8 +182,8 @@ export function BookingSection() {
         {/* Section Header */}
         <FadeInScroll direction="up" delay={0.1}>
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[var(--brand-yellow)]/10 text-[var(--brand-yellow)] text-xs font-bold uppercase tracking-wider border border-[var(--brand-yellow)]/20">
-              <CalendarIcon className="w-4 h-4 text-[var(--brand-yellow)]" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-amber-500/10 text-amber-900 dark:text-amber-300 text-xs font-black uppercase tracking-wider border border-amber-500/30">
+              <CalendarIcon className="w-4 h-4 text-amber-700 dark:text-amber-400" aria-hidden="true" />
               <span>{t("booking.tag")}</span>
             </div>
 
@@ -205,21 +205,24 @@ export function BookingSection() {
             <FadeInScroll direction="left" delay={0.2}>
               <div className="p-6 sm:p-8 rounded-3xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-xl space-y-6">
                 
-                {/* Tourist Name Input */}
+                {/* Tourist Name Input with Explicit Accessible Label */}
                 <div className="space-y-2">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  <label htmlFor="tourist-name-input" className="block text-xs font-extrabold uppercase tracking-wider text-slate-800 dark:text-slate-200">
                     {t("booking.nameLabel")}
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[var(--text-secondary)]">
-                      <User className="w-5 h-5 text-[var(--brand-blue)]" />
+                      <User className="w-5 h-5 text-blue-700 dark:text-blue-400" aria-hidden="true" />
                     </div>
                     <input
+                      id="tourist-name-input"
+                      name="touristName"
                       type="text"
                       value={userName}
                       onChange={(e) => setUserName(e.target.value)}
                       placeholder={t("booking.namePlaceholder")}
-                      className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)] text-sm font-semibold placeholder:text-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--brand-blue)] focus:ring-2 focus:ring-[var(--brand-blue)]/20 transition-all"
+                      aria-required="true"
+                      className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)] text-sm font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:border-[var(--brand-blue)] focus:ring-2 focus:ring-[var(--brand-blue)]/20 transition-all"
                     />
                   </div>
                 </div>
@@ -227,11 +230,11 @@ export function BookingSection() {
                 {/* Number of Guests Counter */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)]">
                   <div className="flex items-center space-x-3">
-                    <div className="p-2.5 rounded-xl bg-[var(--brand-blue-light)] text-[var(--brand-blue)]">
-                      <Users className="w-5 h-5" />
+                    <div className="p-2.5 rounded-xl bg-blue-500/15 text-blue-900 dark:text-blue-300">
+                      <Users className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block text-xs font-bold uppercase text-[var(--text-secondary)]">
+                      <span className="block text-xs font-extrabold uppercase text-slate-800 dark:text-slate-200">
                         {t("booking.peopleLabel")}
                       </span>
                       <span className="text-sm font-extrabold text-[var(--text-primary)]">
@@ -240,23 +243,23 @@ export function BookingSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-2 self-end sm:self-center">
+                  <div className="flex items-center space-x-2 self-end sm:self-center" role="group" aria-label="Controle de quantidade de pessoas">
                     <button
                       type="button"
                       onClick={() => setPeopleCount((prev) => Math.max(1, prev - 1))}
                       className="w-9 h-9 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-color)] text-[var(--text-primary)] font-bold hover:bg-[var(--border-color)]/30 active:scale-95 transition-all flex items-center justify-center text-base"
-                      aria-label="Diminuir pessoas"
+                      aria-label="Diminuir quantidade de pessoas"
                     >
                       -
                     </button>
-                    <span className="w-8 text-center text-sm font-black text-[var(--text-primary)]">
+                    <span className="w-8 text-center text-sm font-black text-[var(--text-primary)]" aria-live="polite">
                       {peopleCount}
                     </span>
                     <button
                       type="button"
                       onClick={() => setPeopleCount((prev) => Math.min(20, prev + 1))}
                       className="w-9 h-9 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-color)] text-[var(--text-primary)] font-bold hover:bg-[var(--border-color)]/30 active:scale-95 transition-all flex items-center justify-center text-base"
-                      aria-label="Aumentar pessoas"
+                      aria-label="Aumentar quantidade de pessoas"
                     >
                       +
                     </button>
@@ -267,12 +270,13 @@ export function BookingSection() {
                 <div className="space-y-4 pt-2">
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                      <span className="text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                         {t("booking.dateLabel")}
                       </span>
-                      <h4 className="text-lg font-black text-[var(--text-primary)] capitalize">
+                      {/* Sequential H3 Heading */}
+                      <h3 className="text-lg font-black text-[var(--text-primary)] capitalize">
                         {monthName}
-                      </h4>
+                      </h3>
                     </div>
 
                     <div className="flex items-center space-x-2">
@@ -282,7 +286,7 @@ export function BookingSection() {
                         className="p-2 rounded-xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)] hover:border-[var(--brand-blue)] active:scale-95 transition-all"
                         aria-label="Mês anterior"
                       >
-                        <ChevronLeft className="w-4 h-4" />
+                        <ChevronLeft className="w-4 h-4" aria-hidden="true" />
                       </button>
                       <button
                         type="button"
@@ -290,7 +294,7 @@ export function BookingSection() {
                         className="p-2 rounded-xl bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-[var(--text-primary)] hover:border-[var(--brand-blue)] active:scale-95 transition-all"
                         aria-label="Próximo mês"
                       >
-                        <ChevronRight className="w-4 h-4" />
+                        <ChevronRight className="w-4 h-4" aria-hidden="true" />
                       </button>
                     </div>
                   </div>
@@ -300,35 +304,35 @@ export function BookingSection() {
                     <button
                       type="button"
                       onClick={() => setQuickDate("tomorrow")}
-                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--brand-blue)] hover:border-[var(--brand-blue)]/50 transition-all"
+                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-500/50 transition-all"
                     >
                       ⚡ {t("booking.quickTomorrow")}
                     </button>
                     <button
                       type="button"
                       onClick={() => setQuickDate("saturday")}
-                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--brand-blue)] hover:border-[var(--brand-blue)]/50 transition-all"
+                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-500/50 transition-all"
                     >
                       🏖️ {t("booking.quickSaturday")}
                     </button>
                     <button
                       type="button"
                       onClick={() => setQuickDate("sunday")}
-                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--brand-blue)] hover:border-[var(--brand-blue)]/50 transition-all"
+                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-surface-hover)] border border-[var(--border-color)] text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-500/50 transition-all"
                     >
                       ☀️ {t("booking.quickSunday")}
                     </button>
                   </div>
 
                   {/* Days of Week Header */}
-                  <div className="grid grid-cols-7 gap-1 text-center text-xs font-extrabold text-[var(--text-secondary)] py-2 border-b border-[var(--border-color)]/60">
+                  <div className="grid grid-cols-7 gap-1 text-center text-xs font-black text-slate-700 dark:text-slate-300 py-2 border-b border-[var(--border-color)]/60">
                     {daysOfWeek.map((dayLabel, idx) => (
                       <div key={idx}>{dayLabel}</div>
                     ))}
                   </div>
 
                   {/* Calendar Days Grid */}
-                  <div className="grid grid-cols-7 gap-1 sm:gap-2">
+                  <div className="grid grid-cols-7 gap-1 sm:gap-2" role="grid" aria-label="Dias do mês">
                     {calendarDays.map((item, idx) => {
                       const isPast = isPastDate(item.date);
                       const isSelected = isSelectedDate(item.date);
@@ -344,19 +348,20 @@ export function BookingSection() {
                               setSelectedDate(item.date);
                             }
                           }}
+                          aria-selected={isSelected}
                           className={`h-10 sm:h-12 rounded-xl text-xs sm:text-sm font-bold flex flex-col items-center justify-center relative transition-all duration-200 ${
                             isSelected
-                              ? "bg-[var(--brand-yellow)] text-slate-950 shadow-lg scale-105 z-10"
+                              ? "bg-[var(--brand-yellow)] text-slate-950 shadow-lg scale-105 z-10 font-black"
                               : isPast
-                              ? "text-[var(--text-secondary)]/30 cursor-not-allowed"
+                              ? "text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-40"
                               : item.isCurrentMonth
-                              ? "text-[var(--text-primary)] hover:bg-[var(--brand-blue-light)] hover:text-[var(--brand-blue)]"
-                              : "text-[var(--text-secondary)]/40 hover:bg-[var(--border-color)]/30"
-                          } ${isTodayDate && !isSelected ? "border border-[var(--brand-blue)]" : ""}`}
+                              ? "text-[var(--text-primary)] hover:bg-blue-500/10 hover:text-blue-700 dark:hover:text-blue-300"
+                              : "text-slate-500 dark:text-slate-400 hover:bg-[var(--border-color)]/30"
+                          } ${isTodayDate && !isSelected ? "border-2 border-blue-600 dark:border-blue-400" : ""}`}
                         >
                           <span>{item.day}</span>
                           {isTodayDate && !isSelected && (
-                            <span className="w-1 h-1 rounded-full bg-[var(--brand-blue)] mt-0.5"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 mt-0.5" aria-label="Hoje"></span>
                           )}
                         </button>
                       );
@@ -375,12 +380,12 @@ export function BookingSection() {
               <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--bg-surface)] via-[var(--bg-surface-hover)] to-[var(--brand-blue-light)] border border-[var(--brand-blue)]/30 shadow-2xl space-y-6">
                 
                 <div className="flex items-center justify-between pb-4 border-b border-[var(--border-color)]">
-                  <div className="flex items-center space-x-2 text-[var(--brand-blue)] font-black text-sm uppercase tracking-wider">
-                    <Sparkles className="w-4 h-4" />
+                  <div className="flex items-center space-x-2 text-blue-900 dark:text-blue-300 font-black text-sm uppercase tracking-wider">
+                    <Sparkles className="w-4 h-4 text-blue-700 dark:text-blue-400" aria-hidden="true" />
                     <span>{t("booking.selectedSummary")}</span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-extrabold flex items-center space-x-1">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                  <span className="px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs font-black flex items-center space-x-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-ping" aria-hidden="true"></span>
                     <span>Guia Disponível</span>
                   </span>
                 </div>
@@ -390,14 +395,14 @@ export function BookingSection() {
                   
                   {/* Name Info */}
                   <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] flex items-center space-x-4">
-                    <div className="p-3 rounded-xl bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] flex-shrink-0">
-                      <User className="w-5 h-5" />
+                    <div className="p-3 rounded-xl bg-blue-500/15 text-blue-900 dark:text-blue-300 flex-shrink-0">
+                      <User className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-bold uppercase text-[var(--text-secondary)]">
+                      <span className="block text-xs font-extrabold uppercase text-slate-700 dark:text-slate-300">
                         {t("booking.forText")}
                       </span>
-                      <span className="text-sm sm:text-base font-extrabold text-[var(--text-primary)]">
+                      <span className="text-sm sm:text-base font-black text-[var(--text-primary)]">
                         {userName.trim() ? userName.trim() : "— (Informe seu nome)"}
                       </span>
                     </div>
@@ -405,14 +410,14 @@ export function BookingSection() {
 
                   {/* Date Info */}
                   <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] flex items-center space-x-4">
-                    <div className="p-3 rounded-xl bg-[var(--brand-yellow)]/10 text-[var(--brand-yellow)] flex-shrink-0">
-                      <CalendarIcon className="w-5 h-5" />
+                    <div className="p-3 rounded-xl bg-amber-500/15 text-amber-900 dark:text-amber-300 flex-shrink-0">
+                      <CalendarIcon className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-bold uppercase text-[var(--text-secondary)]">
+                      <span className="block text-xs font-extrabold uppercase text-slate-700 dark:text-slate-300">
                         Data Escolhida
                       </span>
-                      <span className="text-sm sm:text-base font-extrabold text-[var(--text-primary)] capitalize">
+                      <span className="text-sm sm:text-base font-black text-[var(--text-primary)] capitalize">
                         {formattedSelectedDate}
                       </span>
                     </div>
@@ -420,14 +425,14 @@ export function BookingSection() {
 
                   {/* Guests & Schedule Info */}
                   <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] flex items-center space-x-4">
-                    <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500 flex-shrink-0">
-                      <Clock className="w-5 h-5" />
+                    <div className="p-3 rounded-xl bg-emerald-500/15 text-emerald-900 dark:text-emerald-300 flex-shrink-0">
+                      <Clock className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-bold uppercase text-[var(--text-secondary)]">
+                      <span className="block text-xs font-extrabold uppercase text-slate-700 dark:text-slate-300">
                         Grupo & Duração
                       </span>
-                      <span className="text-sm font-extrabold text-[var(--text-primary)]">
+                      <span className="text-sm font-black text-[var(--text-primary)]">
                         {peopleCount} {t("booking.peopleUnit")} • ~3 a 4 horas
                       </span>
                     </div>
@@ -441,33 +446,34 @@ export function BookingSection() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-4 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-black text-base shadow-xl shadow-emerald-500/30 transition-all flex items-center justify-center space-x-3 text-center"
+                    className="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-black text-base shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-3 text-center"
+                    aria-label="Continuar agendamento no WhatsApp"
                   >
-                    <MessageCircle className="w-6 h-6 fill-current" />
+                    <MessageCircle className="w-6 h-6 fill-current" aria-hidden="true" />
                     <span>{t("booking.ctaBtn")}</span>
                   </a>
 
-                  <p className="text-[11px] text-[var(--text-secondary)] text-center leading-relaxed">
+                  <p className="text-xs font-medium text-slate-700 dark:text-slate-300 text-center leading-relaxed">
                     {t("booking.helperNote")}
                   </p>
                 </div>
 
                 {/* Features Checkpoints */}
-                <div className="pt-4 border-t border-[var(--border-color)] grid grid-cols-2 gap-2 text-xs text-[var(--text-secondary)]">
+                <div className="pt-4 border-t border-[var(--border-color)] grid grid-cols-2 gap-2 text-xs font-bold text-slate-800 dark:text-slate-200">
                   <div className="flex items-center space-x-1.5">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" aria-hidden="true" />
                     <span>Anfitrião Nativo</span>
                   </div>
                   <div className="flex items-center space-x-1.5">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" aria-hidden="true" />
                     <span>Horário Flexível</span>
                   </div>
                   <div className="flex items-center space-x-1.5">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" aria-hidden="true" />
                     <span>Passeio 100% Seguro</span>
                   </div>
                   <div className="flex items-center space-x-1.5">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" aria-hidden="true" />
                     <span>Impacto Social Direto</span>
                   </div>
                 </div>
@@ -485,18 +491,18 @@ export function BookingSection() {
             <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[var(--brand-blue)]/10 rounded-full blur-2xl pointer-events-none"></div>
 
             <div className="flex items-start sm:items-center space-x-4 text-left z-10">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[var(--brand-blue)] text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-[var(--brand-blue)]/30">
-                <Compass className="w-8 h-8 animate-spin-slow" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-blue-700 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-700/30">
+                <Compass className="w-8 h-8 animate-spin-slow" aria-hidden="true" />
               </div>
               <div className="space-y-1">
-                <span className="inline-flex items-center space-x-1.5 text-xs font-black uppercase tracking-wider text-[var(--brand-blue)]">
-                  <MapPin className="w-3.5 h-3.5" />
+                <span className="inline-flex items-center space-x-1.5 text-xs font-black uppercase tracking-wider text-blue-800 dark:text-blue-300">
+                  <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Roteiro Oficial do Tour</span>
                 </span>
                 <h3 className="text-lg sm:text-2xl font-black text-[var(--text-primary)] leading-snug">
                   {t("booking.seeItineraryPrompt")}
                 </h3>
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed max-w-xl">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed max-w-xl">
                   Veja tudo que você vai vivenciar: mirantes panorâmicos 360°, arquitetura viva dos becos, murais de arte urbana e gastronomia típica.
                 </p>
               </div>
@@ -504,10 +510,11 @@ export function BookingSection() {
 
             <a
               href="#roteiro"
-              className="w-full md:w-auto px-8 py-4 rounded-2xl bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-hover)] active:scale-95 text-white font-black text-sm sm:text-base shadow-xl shadow-[var(--brand-blue)]/30 transition-all flex items-center justify-center space-x-3 flex-shrink-0 z-10 group/btn"
+              className="w-full md:w-auto px-8 py-4 rounded-2xl bg-blue-700 hover:bg-blue-800 active:scale-95 text-white font-black text-sm sm:text-base shadow-xl shadow-blue-700/30 transition-all flex items-center justify-center space-x-3 flex-shrink-0 z-10 group/btn"
+              aria-label="Conhecer o roteiro completo"
             >
               <span>{t("booking.seeItineraryBtn")}</span>
-              <ArrowDown className="w-5 h-5 group-hover/btn:translate-y-1 transition-transform" />
+              <ArrowDown className="w-5 h-5 group-hover/btn:translate-y-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
         </FadeInScroll>
