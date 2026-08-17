@@ -5,11 +5,13 @@ import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
+import { DiaTextReveal, BRAZIL_COLORS } from "@/components/ui/dia-text-reveal";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function HeroSection() {
   const { language, t } = useLanguage();
   const whatsappUrl = getWhatsAppLink(language);
+  const heroFullTitle = `${t("hero.titlePrefix")}${t("hero.titleHighlight")}`.trim();
 
   return (
     <section id="hero" className="relative min-h-[75vh] sm:min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-12 sm:py-20 scroll-mt-20 overflow-hidden">
@@ -43,13 +45,23 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-4xl w-full mx-auto space-y-6 sm:space-y-8">
 
-        {/* Title with High-Contrast Highlight */}
+        {/* Title with DiaTextReveal Animation in Brazilian Flag Colors (Executes once and settles with yellow highlight) */}
         <FadeInScroll direction="up" delay={0.2}>
           <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.15] sm:leading-[1.1] drop-shadow-md">
-            {t("hero.titlePrefix")}
-            <span className="text-[var(--brand-yellow)] font-black drop-shadow-sm block sm:inline sm:ml-2 mt-1 sm:mt-0">
-              {t("hero.titleHighlight")}
-            </span>
+            <DiaTextReveal
+              key={heroFullTitle}
+              text={heroFullTitle}
+              colors={BRAZIL_COLORS}
+              textColor="#ffffff"
+              duration={2.4}
+              delay={0.2}
+              repeat={false}
+            >
+              {t("hero.titlePrefix")}
+              <span className="text-[var(--brand-yellow)] font-black drop-shadow-sm block sm:inline sm:ml-2 mt-1 sm:mt-0">
+                {t("hero.titleHighlight")}
+              </span>
+            </DiaTextReveal>
           </h1>
         </FadeInScroll>
 

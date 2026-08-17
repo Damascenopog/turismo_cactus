@@ -3,6 +3,37 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comportamento em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-17] - Integração do Componente `DiaTextReveal` no Hero (`HeroSection.tsx`)
+
+### 1. Efeito de Revelação de Texto com Cores da Bandeira do Brasil
+- **O que foi feito:**
+  - Criado o componente [`dia-text-reveal.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/ui/dia-text-reveal.tsx) baseado na especificação do Magic UI (Dia Text Reveal).
+  - Integrado ao título principal do Hero em [`HeroSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/HeroSection.tsx) percorrendo a frase *"Descubra a Rocinha com Quem Vive Aqui"*.
+  - Configurada a paleta com as cores oficiais da bandeira do Brasil: Verde Brasil (`#009c3b`), Amarelo Canário (`#ffdf00`), Branco (`#ffffff`) e Azul Celeste (`#002776`).
+  - Configurada a animação para execução única (`repeat: false`) e configurada a transição para que, ao finalizar a passagem do gradiente, a frase mantenha *"Descubra a Rocinha com "* em branco e *"Quem Vive Aqui"* na sua cor amarela original de destaque (`var(--brand-yellow)`).
+- **Como funciona:**
+  - O gradiente das cores da bandeira do Brasil percorre todo o título uma única vez quando a página é carregada/visualizada. Assim que o efeito de sweep se conclui, o componente transiciona suavemente para o estado final com a tipografia estilizada e o trecho *"Quem Vive Aqui"* destacado em amarelo vibrante.
+- **Modificação de Comportamento:**
+  - *Antes:* A animação repetia em loop contínuo e fixava todo o texto em branco uniforme.
+  - *Depois:* A animação executa uma única vez e restaura o destaque colorido do texto ("Quem Vive Aqui" em amarelo).
+
+---
+
+## [2026-08-17] - Atualização da Marca no Header (`Navbar.tsx`)
+
+### 1. Alteração da Nomenclatura no Cabeçalho
+- **O que foi feito:**
+  - Alterado o título da marca no cabeçalho em [`Navbar.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/Navbar.tsx) para **"Tour Cactus"** em destaque verde (`text-emerald-500` / `dark:text-emerald-400`).
+  - Alterado o subtítulo logo abaixo para **"Turismo pela Rocinha • Rio"**.
+  - Removido o ícone/bloco de símbolo de cacto do cabeçalho conforme solicitação.
+- **Como funciona:**
+  - O cabeçalho exibe a marca com tipografia limpa "Tour Cactus" e o subtítulo explicativo "Turismo pela Rocinha • Rio".
+- **Modificação de Comportamento:**
+  - *Antes:* Havia um ícone/quadrado colorido com o emoji/símbolo de cacto ao lado da marca.
+  - *Depois:* O ícone de cacto foi removido, exibindo a marca em texto direto de alta legibilidade.
+
+---
+
 ## [2026-08-11] - Associação das Fotos Reais aos Murais (`hexa.jpg` e `crianca_futebol.jpg`)
 
 ### 1. Atualização do Mural de Arte & Cultura (`ArteSection.tsx`)

@@ -43,16 +43,13 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <a href="#hero" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[var(--brand-blue)] via-[var(--brand-yellow)] to-emerald-500 flex items-center justify-center text-slate-950 font-black shadow-md group-hover:scale-105 transition-transform">
-            🌵
-          </div>
+        <a href="#hero" className="flex items-center group">
           <div className="flex flex-col">
-            <span className="font-black text-lg tracking-tight text-[var(--text-primary)] group-hover:text-[var(--brand-blue)] transition-colors">
-              Tour Rocinha
+            <span className="font-black text-lg sm:text-xl tracking-tight text-emerald-500 dark:text-emerald-400 group-hover:opacity-90 transition-opacity">
+              Tour Cactus
             </span>
             <span className="text-[10px] uppercase font-extrabold tracking-widest text-[var(--brand-blue)]">
-              Cactus Turismo • Rio
+              Turismo pela Rocinha • Rio
             </span>
           </div>
         </a>
