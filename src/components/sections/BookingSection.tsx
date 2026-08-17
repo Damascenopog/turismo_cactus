@@ -475,6 +475,22 @@ export function BookingSection() {
 
         </div>
 
+        {/* Secondary Itinerary Anchor Banner */}
+        <FadeInScroll direction="up" delay={0.4}>
+          <div className="text-center pt-2">
+            <a
+              href="#roteiro"
+              className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-[var(--text-secondary)] hover:text-[var(--brand-blue)] transition-colors py-2.5 px-5 rounded-2xl hover:bg-[var(--bg-surface)] border border-transparent hover:border-[var(--border-color)] group"
+            >
+              <span>{t("booking.seeItineraryPrompt")}</span>
+              <span className="text-[var(--brand-blue)] underline underline-offset-4 flex items-center space-x-1 font-extrabold">
+                <span>{t("booking.seeItineraryBtn")}</span>
+                <span className="group-hover:translate-y-0.5 transition-transform">↓</span>
+              </span>
+            </a>
+          </div>
+        </FadeInScroll>
+
       </div>
     </section>
   );

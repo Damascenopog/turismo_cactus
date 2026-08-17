@@ -33,7 +33,8 @@ export function MioloSection() {
   ];
 
   return (
-    <section id="miolo" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] relative scroll-mt-20">
+    <section id="roteiro" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] relative scroll-mt-20">
+      <span id="miolo" className="absolute -top-20"></span>
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* Section Header */}

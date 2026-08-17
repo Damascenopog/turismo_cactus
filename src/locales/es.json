@@ -3,6 +3,7 @@
     "brand": "Tour Rocinha",
     "hero": "Inicio",
     "booking": "Reservar",
+    "roteiro": "Itinerario",
     "miolo": "Las Callejuelas",
     "arte": "Arte y Cultura",
     "base": "La Base",
@@ -17,7 +18,9 @@
     "titleHighlight": "Habitantes Locales",
     "subtitle": "Conoce la favela más grande de América Latina a través del arte, la cultura, la gastronomía y las historias reales de sus residentes.",
     "ctaWhatsApp": "Reservar por WhatsApp",
-    "ctaExplore": "Explorar Experiencia",
+    "ctaBooking": "Elegir Fecha en el Calendario",
+    "ctaExplore": "Conoce el Itinerario",
+    "ctaItinerary": "Conoce el Itinerario",
     "statTourists": "Más de 10.000 turistas acogidos",
     "statTouristsSub": "Experiencia de máxima nota",
     "statGuides": "Guías locales certificados",
@@ -41,6 +44,8 @@
     "forText": "Para",
     "onDate": "el día",
     "ctaBtn": "Continuar en WhatsApp",
+    "seeItineraryPrompt": "¿Quieres ver los puntos del tour antes de reservar?",
+    "seeItineraryBtn": "Conoce el Itinerario Completo",
     "helperNote": "Atención directa con guía nativo certificado • Sin pagos adelantados"
   },
   "miolo": {
@@ -61,7 +66,7 @@
     "pin1Title": "Grafite y Murales",
     "pin1Desc": "Galería de arte callejero al aire libre con obras de reconocidos artistas locales.",
     "pin2Title": "Capoeira y Hip-Hop",
-    "pin2Desc": "Ritmo y tradición ancestral preservados por las nuevas generaciones.",
+    "pin2Desc": "Ritmo e tradición ancestral preservados por las nuevas generaciones.",
     "pin3Title": "Sabor de la Favela",
     "pin3Desc": "Prueba la gastronomía típica en los mejores restaurantes tradicionales de la comunidad."
   },
@@ -74,7 +79,7 @@
     "whatsappBtn": "Hablar con Guía en WhatsApp"
   },
   "footer": {
-    "faqTitle": "Preguntas Frecuentes (FAQ)",
+    "faqTitle": "Preguntas Frequentes (FAQ)",
     "faqQ1": "¿Es seguro el recorrido?",
     "faqA1": "¡Sí! Nuestro tour es realizado exclusivamente con guías acreditados nacidos y criados en Rocinha. La seguridad y el respeto a la comunidad son nuestra máxima prioridad.",
     "faqQ2": "¿Cuál es la duración y el nivel de esfuerzo?",

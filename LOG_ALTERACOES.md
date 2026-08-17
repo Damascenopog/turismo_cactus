@@ -3,6 +3,26 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comportamento em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-17] - Adição do CTA "Conheça o Roteiro" e Ancoragem da Jornada do Tour
+
+### 1. Botão de CTA e Navegação para o Roteiro do Tour
+- **O que foi feito:**
+  - Adicionado o CTA secundário **"Conheça o Roteiro"** na [`HeroSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/HeroSection.tsx) com ícone de seta/exploração, apontando para a âncora `#roteiro`.
+  - Adicionada a âncora `id="roteiro"` em [`MioloSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/MioloSection.tsx), que marca o início do trajeto do passeio (O Miolo -> Arte & Cultura -> A Base).
+  - Adicionado um banner/link auxiliar no rodapé do cartão de agendamento em [`BookingSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/BookingSection.tsx) (*"Quer ver o que está incluso no passeio antes de agendar? Conheça o Roteiro Completo ↓"*).
+  - Atualizadas as traduções da chave `ctaItinerary` em todos os idiomas:
+    - **PT:** *"Conheça o Roteiro"*
+    - **EN:** *"Explore the Itinerary"*
+    - **ES:** *"Conoce el Itinerario"*
+    - **DE:** *"Reiseplan entdecken"*
+- **Como funciona:**
+  - Ao clicar no botão *"Conheça o Roteiro"*, a página faz uma rolagem suave direto para o início da narrativa do tour (Vielas, Mirante do Laboriaux, Arte e Gastronomia), permitindo que o visitante compreenda toda a experiência antes de fechar a data.
+- **Modificação de Comportamento:**
+  - *Antes:* O botão secundário do Hero apontava para `#miolo` com o texto genérico *"Conhecer a Experiência"*.
+  - *Depois:* O botão agora traz a chamada explícita e intuitiva *"Conheça o Roteiro"* ancorando suavemente no início da apresentação do tour.
+
+---
+
 ## [2026-08-17] - Seção Interativa de Agendamento com Calendário e Nome (`BookingSection.tsx`)
 
 ### 1. Criação da Seção de Agendamento com Calendário e Entrada de Nome
@@ -45,11 +65,6 @@
   - Alterado o título da marca no cabeçalho em [`Navbar.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/Navbar.tsx) para **"Tour Cactus"** em destaque verde (`text-emerald-500` / `dark:text-emerald-400`).
   - Alterado o subtítulo logo abaixo para **"Turismo pela Rocinha • Rio"**.
   - Removido o ícone/bloco de símbolo de cacto do cabeçalho conforme solicitação.
-- **Como funciona:**
-  - O cabeçalho exibe a marca com tipografia limpa "Tour Cactus" e o subtítulo explicativo "Turismo pela Rocinha • Rio".
-- **Modificação de Comportamento:**
-  - *Antes:* Havia um ícone/quadrado colorido com o emoji/símbolo de cacto ao lado da marca.
-  - *Depois:* O ícone de cacto foi removido, exibindo a marca em texto direto de alta legibilidade.
 
 ---
 

@@ -14,6 +14,7 @@
 
 ## Fase 3: Desenvolvimento da Narrativa (Seções em Padrão Zig-Zag)
 - [x] Desenvolver **Hero Section** (Topo) com fotografia HD dia/noite e animação DiaTextReveal.
+- [x] Adicionar CTA **"Conheça o Roteiro"** ancorando nas seções do tour (`#roteiro`).
 - [x] Desenvolver **Seção de Agendamento Interativo** com Calendário de Datas, Nome do Turista e WhatsApp Dinâmico.
 - [x] Desenvolver Seção de Estatísticas Horizontal (**StatsSection**).
 - [x] Desenvolver grid alternado (Zig-Zag) para as seções do Miolo, Cultura e Base (Desktop) e empilhado (Mobile).

@@ -76,21 +76,19 @@ export function HeroSection() {
         <FadeInScroll direction="up" delay={0.4}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#booking"
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all flex items-center justify-center space-x-2"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>{t("hero.ctaWhatsApp")}</span>
+              <span>{t("hero.ctaBooking")}</span>
             </a>
 
             <a
-              href="#miolo"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base hover:bg-white/25 active:scale-95 transition-all shadow-lg flex items-center justify-center space-x-2"
+              href="#roteiro"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base hover:bg-white/25 active:scale-95 transition-all shadow-lg flex items-center justify-center space-x-2 group"
             >
-              <span>{t("hero.ctaExplore")}</span>
-              <ArrowRight className="w-5 h-5" />
+              <span>{t("hero.ctaItinerary")}</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </FadeInScroll>

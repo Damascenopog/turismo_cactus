@@ -3,6 +3,7 @@
     "brand": "Tour Rocinha",
     "hero": "Início",
     "booking": "Agendar",
+    "roteiro": "Roteiro",
     "miolo": "O Miolo",
     "arte": "Arte & Cultura",
     "base": "A Base",
@@ -17,7 +18,9 @@
     "titleHighlight": "Quem Vive Aqui",
     "subtitle": "Conheça a maior favela da América Latina através da arte, cultura, gastronomia e histórias de vida dos próprios moradores.",
     "ctaWhatsApp": "Agendar via WhatsApp",
-    "ctaExplore": "Conhecer a Experiência",
+    "ctaBooking": "Escolher Data no Calendário",
+    "ctaExplore": "Conheça o Roteiro",
+    "ctaItinerary": "Conheça o Roteiro",
     "statTourists": "Mais de 10.000 turistas acolhidos",
     "statTouristsSub": "Experiência nota máxima",
     "statGuides": "Guias locais certificados",
@@ -41,6 +44,8 @@
     "forText": "Para",
     "onDate": "no dia",
     "ctaBtn": "Continuar no WhatsApp",
+    "seeItineraryPrompt": "Quer ver o que está incluso no passeio antes de agendar?",
+    "seeItineraryBtn": "Conheça o Roteiro Completo",
     "helperNote": "Atendimento direto com guia nativo credenciado • Sem taxas antecipadas"
   },
   "miolo": {
