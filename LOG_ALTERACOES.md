@@ -1,21 +1,39 @@
 # LOG DE ALTERAÇÕES E FUNCIONAMENTO - TOUR ROCINHA
 
 ## Regra de Documentação
-> **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comportamento em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
+> **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
+
+## [2026-08-17] - Ampliação de Imagens e Limpeza dos Pins Flutuantes (`ArteSection.tsx` & `MioloSection.tsx`)
+
+### 1. Remoção de Pins e Elementos Flutuantes Sobre a Imagem (`ArteSection.tsx`)
+- **O que foi feito:**
+  - Removidos todos os botões de pins e ícones flutuantes (paleta azul, nota musical verde, talheres laranja e botão *"Toque nos Pins 📍"*) que ficavam sobrepostos ao centro da fotografia em [`ArteSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/ArteSection.tsx).
+  - A seleção das fotos reais continua 100% interativa ao clicar nos 3 cartões da esquerda (*Grafite & Murais*, *Roda de Capoeira & Hip-Hop*, *Sabor da Favela*).
+  - Mantida uma apresentação fotográfica limpa com apenas o badge superior (*Passo 02 • Circuito Cultural*) e o cartão de legenda na parte inferior.
+- **Como funciona:**
+  - A fotografia agora é apresentada de forma pura, contínua e imersiva. Ao clicar nos cartões explicativos, a imagem transiciona suavemente entre os murais de rua, a vivência comunitária e a gastronomia local.
+- **Modificação de Comportamento:**
+  - *Antes:* Havia múltiplos botões circulares coloridos espalhados por cima da foto.
+  - *Depois:* A imagem está 100% limpa, desobstruída e com foco na arte e fotografia real da favela.
+
+### 2. Aumento e Padronização da Escala Visual das Fotografias (`ArteSection.tsx` & `MioloSection.tsx`)
+- **O que foi feito:**
+  - Aumentada a altura das molduras de imagem nas seções de narrativa ([`ArteSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/ArteSection.tsx) e [`MioloSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/MioloSection.tsx)) de `h-80/h-96` para **`h-[460px] sm:h-[520px] lg:h-[580px]`**.
+  - Padronizado o estilo com bordas arredondadas `rounded-3xl`, sombras profundas `shadow-2xl` e gradientes de alto contraste para máxima legibilidade das legendas.
+- **Como funciona:**
+  - As imagens ganharam escala cinematográfica e imersiva em desktops, tablets e smartphones, equilibrando-se perfeitamente com os cartões laterais no padrão Zig-Zag.
+- **Modificação de Comportamento:**
+  - *Antes:* As imagens eram mais compactas e verticais.
+  - *Depois:* As fotografias ocupam um espaço generoso e de alto impacto visual.
+
+---
 
 ## [2026-08-17] - Remoção de Repetições e Ajuste de Terminologia Autêntica de Guias / Condutores
 
 ### 1. Eliminação de Redundâncias e Remoção de "Ministério do Turismo"
 - **O que foi feito:**
-  - Removida a menção a *"certificados pelo Ministério do Turismo"* no badge de confiança do rodapé em [`FooterSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/FooterSection.tsx), substituindo pelo termo **"Condutores Nativos"** (*"Moradores experientes que nasceram e vivem na Rocinha"*).
-  - Substituídas as repetições excessivas do termo *"Guias credenciados"* ao longo de toda a interface por uma linguagem mais humana, autêntica e variada: **"Condutores Locais"**, **"Anfitriões Nativos"** e **"Moradores que nasceram e vivem na Rocinha"**.
-  - Ajustadas as traduções em [`pt.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/pt.json), [`en.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/en.json), [`es.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/es.json) e [`de.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/de.json).
-  - Executada auditoria de anti-patterns com o script `detect.mjs` da skill **Impeccable** (0 avisos/erros encontrados).
-- **Como funciona:**
-  - O texto da landing page agora soa natural, comunitário e acolhedor, evitando jargões burocráticos repetitivos e valorizando o protagonismo dos moradores locais.
-- **Modificação de Comportamento:**
-  - *Antes:* A expressão "Guias credenciados / certificados pelo Ministério do Turismo" aparecia repetidas vezes em múltiplos cartões, gerando redundância.
-  - *Depois:* Cada seção utiliza termos naturais e complementares ("Condutores Locais", "Anfitrião Nativo", "Moradores da Rocinha").
+  - Removida a menção a *"certificados pelo Ministério do Turismo"* no badge de confiança do rodapé em [`FooterSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/FooterSection.tsx).
+  - Substituídas as repetições do termo *"Guias credenciados"* por termos mais autênticos: **"Condutores Locais"**, **"Anfitriões Nativos"** e **"Moradores que nasceram e vivem na Rocinha"**.
 
 ---
 
@@ -52,5 +70,4 @@
 
 ### 1. Criação da Seção de Agendamento com Calendário e Entrada de Nome
 - **O que foi feito:**
-  - Criado o componente [`BookingSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/BookingSection.tsx) com calendário de datas, seleção de quantidade de pessoas e campo de nome do turista.
-  - Criado o gerador de link dinâmico [`getBookingWhatsAppLink`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/lib/whatsapp.ts).
+  - Criado o componente [`BookingSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/BookingSection.tsx).

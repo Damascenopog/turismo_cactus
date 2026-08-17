@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
-import { Palette, Music, Utensils, Sparkles, MapPin } from "lucide-react";
+import { Palette, Music, Utensils, Sparkles } from "lucide-react";
 
 export function ArteSection() {
   const { t } = useLanguage();
@@ -19,8 +19,6 @@ export function ArteSection() {
       image: "/image/hexa.jpg",
       color: "bg-[var(--brand-blue)]",
       textColor: "text-[var(--brand-blue)]",
-      top: "30%",
-      left: "25%",
     },
     {
       id: 1,
@@ -30,8 +28,6 @@ export function ArteSection() {
       image: "/image/crianca_futebol.jpg",
       color: "bg-emerald-500",
       textColor: "text-emerald-500",
-      top: "55%",
-      left: "68%",
     },
     {
       id: 2,
@@ -41,8 +37,6 @@ export function ArteSection() {
       image: "/image/esquina_casas.jpg",
       color: "bg-amber-500",
       textColor: "text-amber-500",
-      top: "72%",
-      left: "38%",
     },
   ];
 
@@ -68,7 +62,7 @@ export function ArteSection() {
           </div>
         </FadeInScroll>
 
-        {/* Zig-Zag Grid Block 2: Text Left, Interactive Mural Right (Desktop) / Stacked (Mobile) */}
+        {/* Zig-Zag Grid Block 2: Text Left, Large Mural Right (Desktop) / Stacked (Mobile) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Content Block Left */}
@@ -105,10 +99,10 @@ export function ArteSection() {
             })}
           </div>
 
-          {/* Mural Showcase Canvas Right with Real Photos */}
+          {/* Mural Showcase Canvas Right with Real Photos (Expanded & Clean) */}
           <div className="lg:col-span-7 order-1 lg:order-2">
             <FadeInScroll direction="right" delay={0.2}>
-              <div className="relative w-full h-96 sm:h-[420px] rounded-3xl border border-[var(--border-color)] overflow-hidden shadow-2xl p-6 flex flex-col justify-between group">
+              <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[580px] rounded-3xl border border-[var(--border-color)] overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col justify-between group">
                 
                 {/* Dynamic Background Photos according to selected Pin */}
                 {pins.map((pin) => (
@@ -125,49 +119,26 @@ export function ArteSection() {
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-black/30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-black/20"></div>
                   </div>
                 ))}
 
-                {/* Top Info Bar */}
+                {/* Top Info Badge */}
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="text-xs font-black uppercase tracking-widest text-amber-300 bg-slate-950/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-500/30">
+                  <span className="text-xs font-black uppercase tracking-widest text-amber-300 bg-slate-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-amber-500/30 shadow-lg">
                     Passo 02 • Circuito Cultural
-                  </span>
-                  <span className="text-xs px-3 py-1.5 rounded-full bg-[var(--brand-blue)] text-white font-bold shadow-md flex items-center space-x-1">
-                    <MapPin className="w-3.5 h-3.5" />
-                    <span>Toque nos Pins 📍</span>
                   </span>
                 </div>
 
-                {/* Interactive Map Pins Overlaid on the Photo */}
-                {pins.map((pin) => {
-                  const Icon = pin.icon;
-                  const isSelected = activePin === pin.id;
-                  return (
-                    <button
-                      key={pin.id}
-                      onClick={() => setActivePin(pin.id)}
-                      style={{ top: pin.top, left: pin.left }}
-                      aria-label={pin.title}
-                      className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 group flex items-center justify-center transition-all ${
-                        isSelected ? "scale-110 sm:scale-125 z-30" : "hover:scale-110 opacity-85 hover:opacity-100"
-                      }`}
-                    >
-                      <span className={`absolute -inset-1.5 sm:-inset-2 rounded-full ${pin.color} opacity-40 ${isSelected ? "animate-ping" : ""}`}></span>
-                      <div className={`w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl ${pin.color} text-white shadow-xl flex items-center justify-center font-bold border sm:border-2 border-white/40`}>
-                        <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
-                      </div>
-                    </button>
-                  );
-                })}
-
                 {/* Bottom Caption Overlay */}
-                <div className="relative z-10 space-y-0.5 sm:space-y-1 bg-slate-950/80 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/10 w-full max-w-sm">
-                  <span className="text-[11px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider block">
-                    {pins[activePin].title}
-                  </span>
-                  <p className="text-[11px] sm:text-xs text-slate-200 leading-relaxed font-medium">
+                <div className="relative z-10 space-y-1.5 bg-slate-950/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/10 w-full max-w-md shadow-2xl">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                    <span className="text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wider block">
+                      {pins[activePin].title}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
                     {pins[activePin].desc}
                   </p>
                 </div>

@@ -61,7 +61,7 @@ export function MioloSection() {
           {/* Image Block with Real Photo & Negative Space */}
           <div className="md:col-span-6">
             <FadeInScroll direction="left" delay={0.2}>
-              <div className="relative w-full h-80 sm:h-96 rounded-3xl border border-[var(--border-color)] overflow-hidden shadow-xl p-8 flex flex-col justify-between group">
+              <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[580px] rounded-3xl border border-[var(--border-color)] overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col justify-between group">
                 <Image
                   src="/image/esquina_casas.jpg"
                   alt="Esquina e vielas da Rocinha"
@@ -69,20 +69,23 @@ export function MioloSection() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-black/20 z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-black/20 z-0"></div>
                 
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="text-xs font-black uppercase tracking-widest text-[var(--brand-yellow)] bg-slate-950/60 backdrop-blur-md px-3 py-1 rounded-full border border-amber-500/30">
+                  <span className="text-xs font-black uppercase tracking-widest text-[var(--brand-yellow)] bg-slate-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-amber-500/30 shadow-lg">
                     Passo 01 • Vielas & Mirante
                   </span>
                   <span className="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
                 </div>
 
-                <div className="relative z-10 space-y-2 max-w-xs">
-                  <h4 className="text-2xl font-black text-white leading-snug drop-shadow-md">
-                    Vistas Espectaculares 360°
-                  </h4>
-                  <p className="text-xs text-slate-200 leading-relaxed font-medium drop-shadow-sm">
+                <div className="relative z-10 space-y-2 bg-slate-950/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/10 w-full max-w-sm shadow-2xl">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                    <h4 className="text-lg sm:text-xl font-black text-white leading-snug drop-shadow-md">
+                      Vistas Espectaculares 360°
+                    </h4>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium drop-shadow-sm">
                     Caminhada guiada pelas vielas históricas e arquitetura popular única da favela.
                   </p>
                 </div>
