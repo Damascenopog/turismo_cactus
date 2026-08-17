@@ -76,8 +76,8 @@ export function FooterSection() {
         <div className="p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-color)] grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-xs text-[var(--text-secondary)]">
           <div className="flex flex-col items-center space-y-2">
             <ShieldCheck className="w-6 h-6 text-emerald-500" />
-            <span className="font-bold text-[var(--text-primary)]">Guias Credenciados</span>
-            <span>Moradores locais certificados pelo Ministério do Turismo.</span>
+            <span className="font-bold text-[var(--text-primary)]">Condutores Nativos</span>
+            <span>Moradores experientes que nasceram e vivem na Rocinha.</span>
           </div>
           <div className="flex flex-col items-center space-y-2">
             <Lock className="w-6 h-6 text-[var(--brand-blue)]" />

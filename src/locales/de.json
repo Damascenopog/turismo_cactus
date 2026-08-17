@@ -23,15 +23,15 @@
     "ctaItinerary": "Reiseplan entdecken",
     "statTourists": "Über 10.000 begeisterte Gäste",
     "statTouristsSub": "Höchstbewertetes Erlebnis",
-    "statGuides": "Zertifizierte lokale Guides",
-    "statGuidesSub": "Einheimische Bewohner",
+    "statGuides": "Einheimische Guides",
+    "statGuidesSub": "Geboren und aufgewachsen in Rocinha",
     "statRating": "4.9/5★ Bewertung",
     "statRatingSub": "Verifizierte Kundenbewertungen"
   },
   "booking": {
     "tag": "Echtzeit-Verfügbarkeit",
     "title": "Wähle das Datum Deines Erlebnisses",
-    "subtitle": "Wähle Dein Wunschdatum im Kalender und gib Deinen Namen ein, um direkt von Deinem zertifizierten Guide betreut zu werden.",
+    "subtitle": "Wähle Dein Wunschdatum im Kalender und gib Deinen Namen ein, um direkt von Deinem einheimischen Guide betreut zu werden.",
     "nameLabel": "Dein Vollständiger Name",
     "namePlaceholder": "Z.B. Max Mustermann oder Maria Silva",
     "dateLabel": "Datum im Kalender auswählen",
@@ -46,7 +46,7 @@
     "ctaBtn": "Weiter auf WhatsApp",
     "seeItineraryPrompt": "Möchtest du vorher die Highlights der Tour sehen?",
     "seeItineraryBtn": "Vollständigen Reiseplan entdecken",
-    "helperNote": "Direkter Kontakt mit zertifiziertem einheimischem Guide • Keine Vorauszahlungsgebühren"
+    "helperNote": "Direkter Kontakt mit lokalem Bewohner • Keine Vorauszahlungsgebühren"
   },
   "miolo": {
     "tag": "Kulturelle Immersion",
@@ -76,16 +76,16 @@
     "description": "Dein Besuch unterstützt direkt Familien, soziale Projekte und Mikro-Unternehmer in Rocinha.",
     "ctaTitle": "Bereit für ein unvergessliches Erlebnis?",
     "ctaDesc": "Sichere dir deinen Platz mit persönlicher WhatsApp-Betreuung in deiner Sprache.",
-    "whatsappBtn": "Mit Guide auf WhatsApp chatten"
+    "whatsappBtn": "Mit Guide auf WhatsApp buchen"
   },
   "footer": {
     "faqTitle": "Häufig gestellte Fragen (FAQ)",
     "faqQ1": "Ist die Tour sicher?",
-    "faqA1": "Ja! Unsere Touren werden ausschließlich von zertifizierten Guides durchgeführt, die in Rocinha geboren und aufgewachsen sind. Sicherheit und Respekt stehen an erster Stelle.",
+    "faqA1": "Ja! Unsere Tour wird ausschließlich von erfahrenen Bewohnern geführt, die in Rocinha geboren und aufgewachsen sind. Sicherheit, Gastfreundschaft und Respekt stehen an oberster Stelle.",
     "faqQ2": "Wie lange dauert die Tour und wie anstrengend ist sie?",
     "faqA2": "Ca. 3 bis 4 Stunden. Moderater Spaziergang mit regelmäßigen Pausen, geeignet für jedes Alter.",
     "faqQ3": "Wie funktionieren Buchung und Bezahlung?",
-    "faqA3": "Wähle einfach dein Wunschdatum in unserem interaktiven Kalender, gib deinen Namen und die Personenanzahl ein. Du wirst direkt per WhatsApp mit deinem zertifizierten Guide verbunden – alle Angaben sind bereits vorausgefüllt für eine schnelle Bestätigung ohne Vorauszahlungsgebühren.",
+    "faqA3": "Wähle einfach dein Wunschdatum im Kalender, gib deinen Namen und die Personenanzahl ein. Du wirst direkt per WhatsApp mit deinem einheimischen Guide verbunden – alles ist bereits vorbereitet für eine schnelle Bestätigung ohne Vorauszahlung.",
     "rights": "© 2026 Tour Rocinha - Cactus Turismo. Alle Rechte vorbehalten."
   },
   "whatsapp": {

@@ -456,7 +456,7 @@ export function BookingSection() {
                 <div className="pt-4 border-t border-[var(--border-color)] grid grid-cols-2 gap-2 text-xs text-[var(--text-secondary)]">
                   <div className="flex items-center space-x-1.5">
                     <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
-                    <span>Guia Local Nativo</span>
+                    <span>Anfitrião Nativo</span>
                   </div>
                   <div className="flex items-center space-x-1.5">
                     <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />

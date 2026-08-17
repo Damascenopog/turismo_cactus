@@ -23,15 +23,15 @@
     "ctaItinerary": "Conoce el Itinerario",
     "statTourists": "Más de 10.000 turistas acogidos",
     "statTouristsSub": "Experiencia de máxima nota",
-    "statGuides": "Guías locales certificados",
-    "statGuidesSub": "Habitantes nacidos y criados",
+    "statGuides": "Anfitriones Locales",
+    "statGuidesSub": "Nacidos y criados en el morro",
     "statRating": "Calificación 4.9/5★",
     "statRatingSub": "Opiniones verificadas de clientes"
   },
   "booking": {
     "tag": "Disponibilidad en Tiempo Real",
     "title": "Elige el Día de Tu Experiencia",
-    "subtitle": "Selecciona la fecha ideal en el calendario e ingresa tu nombre para recibir atención personalizada directa de tu guía local.",
+    "subtitle": "Selecciona la fecha ideal en el calendario e ingresa tu nombre para recibir atención personalizada de tu anfitrión local.",
     "nameLabel": "Tu Nombre Completo",
     "namePlaceholder": "Ej: Juan Pérez o María Silva",
     "dateLabel": "Selecciona la Fecha en el Calendario",
@@ -46,7 +46,7 @@
     "ctaBtn": "Continuar en WhatsApp",
     "seeItineraryPrompt": "¿Quieres ver los puntos del tour antes de reservar?",
     "seeItineraryBtn": "Conoce el Itinerario Completo",
-    "helperNote": "Atención directa con guía nativo certificado • Sin pagos adelantados"
+    "helperNote": "Contacto directo con anfitrión residente • Sin pagos adelantados"
   },
   "miolo": {
     "tag": "Inmersión Cultural",
@@ -76,17 +76,17 @@
     "description": "Tu visita genera ingresos directos para familias, proyectos sociales y pequeños emprendedores de Rocinha.",
     "ctaTitle": "¿Listo para vivir esta experiencia transformadora?",
     "ctaDesc": "Asegura tu lugar con atención personalizada por WhatsApp en tu idioma.",
-    "whatsappBtn": "Hablar con Guía en WhatsApp"
+    "whatsappBtn": "Reservar con Anfitrión en WhatsApp"
   },
   "footer": {
     "faqTitle": "Preguntas Frequentes (FAQ)",
     "faqQ1": "¿Es seguro el recorrido?",
-    "faqA1": "¡Sí! Nuestro tour es realizado exclusivamente con guías acreditados nacidos y criados en Rocinha. La seguridad y el respeto a la comunidad son nuestra máxima prioridad.",
+    "faqA1": "¡Sí! Nuestro recorrido es guiado exclusivamente por residentes que nacieron y viven en Rocinha. La seguridad, la calidez humana y el respeto comunitario son prioridades absolutas.",
     "faqQ2": "¿Cuál es la duración y el nivel de esfuerzo?",
     "faqA2": "Aproximadamente 3 a 4 horas. Caminata moderada con paradas frecuentes, apta para todas las edades.",
     "faqQ3": "¿Cómo funciona la reserva y el pago?",
-    "faqA3": "Simplemente selecciona la fecha deseada en nuestro calendario interactivo, ingresa tu nombre y la cantidad de personas. Te conectarás directamente con el guía certificado por WhatsApp con todos los datos precargados para una confirmación rápida y sin cargos por adelantado.",
-    "rights": "© 2026 Tour Rocinha - Cactus Turismo. Todos los derechos reservados."
+    "faqA3": "Simplemente selecciona la fecha en nuestro calendario, ingresa tu nombre y el número de personas. Te comunicarás directamente con tu anfitrión por WhatsApp con todo listo para confirmar rápidamente y sin pagos previos.",
+    "rights": "© 2026 Tour Rocinha - Cactus Turismo. Todos os direitos reservados."
   },
   "whatsapp": {
     "defaultMsg": "¡Hola! Me gustaría reservar el Tour por la Favela Rocinha. ¿Podrías enviarme más información?"

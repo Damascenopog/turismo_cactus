@@ -3,24 +3,19 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comportamento em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
-## [2026-08-17] - Refinamento Profissional da Resposta de Agendamento no FAQ (`pt.json`, `en.json`, `es.json`, `de.json`)
+## [2026-08-17] - Remoção de Repetições e Ajuste de Terminologia Autêntica de Guias / Condutores
 
-### 1. Atualização da Resposta da Pergunta "Como funciona o agendamento e pagamento?"
+### 1. Eliminação de Redundâncias e Remoção de "Ministério do Turismo"
 - **O que foi feito:**
-  - Reformulada a resposta da chave `footer.faqA3` em todos os 4 idiomas (PT, EN, ES, DE) para refletir o fluxo atual e profissional com o calendário interativo e conexão personalizada com o guia.
-  - **Texto em Português:**
-    > *"Basta selecionar a data desejada em nosso calendário interativo, informar seu nome e a quantidade de pessoas. Ao clicar no botão, você será conectado diretamente ao guia credenciado no WhatsApp com todos os detalhes pré-preenchidos para confirmação ágil e sem taxas antecipadas."*
-  - **Texto em Inglês:**
-    > *"Simply select your preferred date on our interactive calendar, enter your name, and choose the number of guests. You'll connect directly with your certified local guide via WhatsApp with all details pre-filled for quick confirmation, with no advance booking fees."*
-  - **Texto em Espanhol:**
-    > *"Simplemente selecciona la fecha deseada en nuestro calendario interactivo, ingresa tu nombre y la cantidad de personas. Te conectarás directamente con el guía certificado por WhatsApp con todos los datos precargados para una confirmación rápida y sin cargos por adelantado."*
-  - **Texto em Alemão:**
-    > *"Wähle einfach dein Wunschdatum in unserem interaktiven Kalender, gib deinen Namen und die Personenanzahl ein. Du wirst direkt per WhatsApp mit deinem zertifizierten Guide verbunden – alle Angaben sind bereits vorausgefüllt für eine schnelle Bestätigung ohne Vorauszahlungsgebühren."*
+  - Removida a menção a *"certificados pelo Ministério do Turismo"* no badge de confiança do rodapé em [`FooterSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/FooterSection.tsx), substituindo pelo termo **"Condutores Nativos"** (*"Moradores experientes que nasceram e vivem na Rocinha"*).
+  - Substituídas as repetições excessivas do termo *"Guias credenciados"* ao longo de toda a interface por uma linguagem mais humana, autêntica e variada: **"Condutores Locais"**, **"Anfitriões Nativos"** e **"Moradores que nasceram e vivem na Rocinha"**.
+  - Ajustadas as traduções em [`pt.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/pt.json), [`en.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/en.json), [`es.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/es.json) e [`de.json`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/locales/de.json).
+  - Executada auditoria de anti-patterns com o script `detect.mjs` da skill **Impeccable** (0 avisos/erros encontrados).
 - **Como funciona:**
-  - O texto do acordeão de FAQ no rodapé agora descreve exatamente a experiência digital da landing page: seleção no calendário, personalização do grupo e contato direto no WhatsApp com garantia de transparência (sem taxas antecipadas).
+  - O texto da landing page agora soa natural, comunitário e acolhedor, evitando jargões burocráticos repetitivos e valorizando o protagonismo dos moradores locais.
 - **Modificação de Comportamento:**
-  - *Antes:* O texto dizia genericamente *"Você escolhe o dia no WhatsApp, tira suas dúvidas diretamente com o guia e confirma sem complicações."*
-  - *Depois:* O texto enfatiza o agendamento pelo calendário da página, a segurança de guias credenciados e a isenção de taxas prévias.
+  - *Antes:* A expressão "Guias credenciados / certificados pelo Ministério do Turismo" aparecia repetidas vezes em múltiplos cartões, gerando redundância.
+  - *Depois:* Cada seção utiliza termos naturais e complementares ("Condutores Locais", "Anfitrião Nativo", "Moradores da Rocinha").
 
 ---
 
@@ -29,12 +24,10 @@
 ### 1. Novo Card de Alto Impacto para o Roteiro do Passeio (`BookingSection.tsx`)
 - **O que foi feito:**
   - O CTA *"Quer ver o que está incluso no passeio antes de agendar?"* foi transformado em um cartão de destaque visual de alta conversão.
-  - Adicionado ícone de bússola com sombra de destaque (`shadow-[var(--brand-blue)]/30`), badge *"📍 Roteiro Oficial do Tour"*, tipografia em negrito de alto contraste e botão de ação primário azul com animação de seta (`ArrowDown`).
 
 ### 2. Correção de Sobreposição da Linha de Trajetória SVG (`FootprintTrail.tsx`)
 - **O que foi feito:**
   - Ajustado o nível de camada do componente [`FootprintTrail.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/animations/FootprintTrail.tsx) para `z-0` com `pointer-events-none`.
-  - Recalibradas as coordenadas das curvas SVG no Desktop e Mobile para fluírem exclusivamente pelas margens e canaletas externas, sem cruzar caixas de texto ou cartões interativos.
 
 ---
 
@@ -61,19 +54,3 @@
 - **O que foi feito:**
   - Criado o componente [`BookingSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/BookingSection.tsx) com calendário de datas, seleção de quantidade de pessoas e campo de nome do turista.
   - Criado o gerador de link dinâmico [`getBookingWhatsAppLink`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/lib/whatsapp.ts).
-
----
-
-## [2026-08-17] - Integração do Componente `DiaTextReveal` no Hero (`HeroSection.tsx`)
-
-### 1. Efeito de Revelação de Texto com Cores da Bandeira do Brasil
-- **O que foi feito:**
-  - Integrado o componente [`dia-text-reveal.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/ui/dia-text-reveal.tsx) com as cores do Brasil.
-
----
-
-## [2026-08-17] - Atualização da Marca no Header (`Navbar.tsx`)
-
-### 1. Alteração da Nomenclatura no Cabeçalho
-- **O que foi feito:**
-  - Alterado o título da marca no cabeçalho em [`Navbar.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/Navbar.tsx) para **"Tour Cactus"** com subtítulo **"Turismo pela Rocinha • Rio"**.
