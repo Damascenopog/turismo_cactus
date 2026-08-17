@@ -56,6 +56,11 @@
   --color-brand-coral: var(--brand-coral);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);

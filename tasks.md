@@ -27,6 +27,7 @@
 - [x] Instalar GSAP/Framer Motion.
 - [x] Vetorizar ícones minimalistas de sola de sapato em SVG respeitando o Design System.
 - [x] Criar a animação SVG do caminho das pegadas utilizando GSAP ScrollTrigger / Framer Motion e a manipulação da propriedade stroke-dashoffset (curvo no Desktop, timeline vertical no Mobile).
+- [x] Implementar animação fluida para âncoras com enquadramento centralizado no viewport (`SmoothScrollProvider.tsx`).
 - [x] Garantir que a animação de scroll seja desativada ou suavizada em preferências de reduced-motion para evitar travamentos.
 
 ## Fase 5: Refinamento e Deploy

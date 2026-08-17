@@ -33,7 +33,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="w-full bg-[var(--bg-surface)] border-y border-[var(--border-color)] py-8 relative z-20 shadow-sm">
+    <section id="stats" className="w-full bg-[var(--bg-surface)] border-y border-[var(--border-color)] py-8 relative z-20 shadow-sm scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInScroll direction="up" delay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[var(--border-color)]">
