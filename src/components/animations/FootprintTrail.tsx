@@ -13,8 +13,7 @@ export function FootprintTrail() {
   });
 
   const [pathLength, setPathLength] = useState(1000);
-  const strokeDashoffset = useTransform(smoothProgress, [0.05, 0.9], [pathLength, 0]);
-  const footprintProgress = useTransform(smoothProgress, [0.05, 0.9], [0, 1]);
+  const strokeDashoffset = useTransform(smoothProgress, [0.05, 0.95], [pathLength, 0]);
 
   useEffect(() => {
     // Measure actual SVG path length on client mount
@@ -25,28 +24,27 @@ export function FootprintTrail() {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
       
-      {/* Desktop Curved S-Path (Hidden on Mobile) */}
+      {/* Desktop Curved S-Path in background margins (Hidden on Mobile) */}
       <svg
-        className="hidden md:block w-full h-full absolute inset-0"
-        viewBox="0 0 1200 2400"
+        className="hidden md:block w-full h-full absolute inset-0 opacity-40 dark:opacity-30"
+        viewBox="0 0 1200 3200"
         fill="none"
         preserveAspectRatio="none"
       >
         {/* Background Guide Line (Dashed) */}
         <path
-          d="M 600 120 C 1100 600, 100 1100, 600 1600 C 1100 2100, 100 2300, 600 2500"
+          d="M 600 200 C 1050 700, 150 1400, 600 2000 C 1050 2500, 150 2800, 600 3200"
           stroke="var(--border-color)"
           strokeWidth="3"
-          strokeDasharray="8 8"
-          opacity="0.4"
+          strokeDasharray="10 10"
         />
 
         {/* Dynamic Animated Path (Fills on Scroll) */}
         <motion.path
           id="trail-path-desktop"
-          d="M 600 120 C 1100 600, 100 1100, 600 1600 C 1100 2100, 100 2300, 600 2500"
+          d="M 600 200 C 1050 700, 150 1400, 600 2000 C 1050 2500, 150 2800, 600 3200"
           stroke="var(--brand-yellow)"
           strokeWidth="4"
           strokeDasharray={pathLength}
@@ -55,66 +53,62 @@ export function FootprintTrail() {
         />
       </svg>
 
-      {/* Mobile Straight Vertical Line (Visible on Mobile Only) */}
+      {/* Mobile Subtle Vertical Trail on far left margin (Visible on Mobile Only) */}
       <svg
-        className="block md:hidden w-full h-full absolute inset-0"
-        viewBox="0 0 400 2400"
+        className="block md:hidden w-full h-full absolute inset-0 opacity-25"
+        viewBox="0 0 400 3200"
         fill="none"
         preserveAspectRatio="none"
       >
         <line
-          x1="28"
+          x1="12"
           y1="100"
-          x2="28"
-          y2="2400"
+          x2="12"
+          y2="3200"
           stroke="var(--border-color)"
           strokeWidth="2"
           strokeDasharray="6 6"
-          opacity="0.5"
         />
 
         <motion.line
-          x1="28"
+          x1="12"
           y1="100"
-          x2="28"
-          y2="2400"
+          x2="12"
+          y2="3200"
           stroke="var(--brand-yellow)"
           strokeWidth="3"
-          strokeDasharray={2300}
+          strokeDasharray={3100}
           style={{
-            strokeDashoffset: useTransform(smoothProgress, [0.05, 0.9], [2300, 0]),
+            strokeDashoffset: useTransform(smoothProgress, [0.05, 0.95], [3100, 0]),
           }}
           strokeLinecap="round"
         />
       </svg>
 
-      {/* Floating Animated Shoe Footprints at Key Waypoints */}
-      <div className="relative w-full h-full max-w-6xl mx-auto">
-        {/* Footprint Waypoint 1 (Top Hero / Miolo) */}
+      {/* Floating Animated Shoe Footprints strictly in Side Gutters */}
+      <div className="relative w-full h-full max-w-7xl mx-auto hidden xl:block">
+        {/* Footprint Gutter Top */}
         <motion.div
-          style={{ opacity: useTransform(smoothProgress, [0.1, 0.25], [0.3, 1]) }}
-          className="absolute top-[20%] left-5 md:left-[80%] -translate-x-1/2 text-[var(--brand-yellow)]"
+          style={{ opacity: useTransform(smoothProgress, [0.1, 0.25], [0.15, 0.7]) }}
+          className="absolute top-[22%] right-4 text-[var(--brand-yellow)]"
         >
-          <ShoeFootprint size={24} className="sm:hidden" flip={false} />
-          <ShoeFootprint size={32} className="hidden sm:block" flip={false} />
+          <ShoeFootprint size={28} flip={false} />
         </motion.div>
 
-        {/* Footprint Waypoint 2 (Miolo / Arte) */}
+        {/* Footprint Gutter Middle */}
         <motion.div
-          style={{ opacity: useTransform(smoothProgress, [0.35, 0.55], [0.3, 1]) }}
-          className="absolute top-[48%] left-5 md:left-[18%] -translate-x-1/2 text-[var(--brand-blue)]"
+          style={{ opacity: useTransform(smoothProgress, [0.4, 0.6], [0.15, 0.7]) }}
+          className="absolute top-[52%] left-4 text-[var(--brand-blue)]"
         >
-          <ShoeFootprint size={24} className="sm:hidden" flip={true} />
-          <ShoeFootprint size={32} className="hidden sm:block" flip={true} />
+          <ShoeFootprint size={28} flip={true} />
         </motion.div>
 
-        {/* Footprint Waypoint 3 (Arte / Base) */}
+        {/* Footprint Gutter Bottom */}
         <motion.div
-          style={{ opacity: useTransform(smoothProgress, [0.65, 0.85], [0.3, 1]) }}
-          className="absolute top-[78%] left-5 md:left-[78%] -translate-x-1/2 text-emerald-500"
+          style={{ opacity: useTransform(smoothProgress, [0.7, 0.9], [0.15, 0.7]) }}
+          className="absolute top-[82%] right-4 text-emerald-500"
         >
-          <ShoeFootprint size={24} className="sm:hidden" flip={false} />
-          <ShoeFootprint size={32} className="hidden sm:block" flip={false} />
+          <ShoeFootprint size={28} flip={false} />
         </motion.div>
       </div>
 

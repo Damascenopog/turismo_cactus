@@ -14,6 +14,9 @@ import {
   Sparkles,
   CheckCircle,
   Clock,
+  Compass,
+  ArrowDown,
+  MapPin,
 } from "lucide-react";
 
 export function BookingSection() {
@@ -475,18 +478,36 @@ export function BookingSection() {
 
         </div>
 
-        {/* Secondary Itinerary Anchor Banner */}
+        {/* High-Impact Itinerary Callout Card */}
         <FadeInScroll direction="up" delay={0.4}>
-          <div className="text-center pt-2">
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[var(--bg-surface)] via-[var(--bg-surface-hover)] to-[var(--brand-blue-light)] border-2 border-[var(--brand-blue)]/30 dark:border-[var(--brand-blue)]/50 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden group">
+            {/* Subtle background badge overlay */}
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[var(--brand-blue)]/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div className="flex items-start sm:items-center space-x-4 text-left z-10">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[var(--brand-blue)] text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-[var(--brand-blue)]/30">
+                <Compass className="w-8 h-8 animate-spin-slow" />
+              </div>
+              <div className="space-y-1">
+                <span className="inline-flex items-center space-x-1.5 text-xs font-black uppercase tracking-wider text-[var(--brand-blue)]">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Roteiro Oficial do Tour</span>
+                </span>
+                <h3 className="text-lg sm:text-2xl font-black text-[var(--text-primary)] leading-snug">
+                  {t("booking.seeItineraryPrompt")}
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed max-w-xl">
+                  Veja tudo que você vai vivenciar: mirantes panorâmicos 360°, arquitetura viva dos becos, murais de arte urbana e gastronomia típica.
+                </p>
+              </div>
+            </div>
+
             <a
               href="#roteiro"
-              className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-[var(--text-secondary)] hover:text-[var(--brand-blue)] transition-colors py-2.5 px-5 rounded-2xl hover:bg-[var(--bg-surface)] border border-transparent hover:border-[var(--border-color)] group"
+              className="w-full md:w-auto px-8 py-4 rounded-2xl bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-hover)] active:scale-95 text-white font-black text-sm sm:text-base shadow-xl shadow-[var(--brand-blue)]/30 transition-all flex items-center justify-center space-x-3 flex-shrink-0 z-10 group/btn"
             >
-              <span>{t("booking.seeItineraryPrompt")}</span>
-              <span className="text-[var(--brand-blue)] underline underline-offset-4 flex items-center space-x-1 font-extrabold">
-                <span>{t("booking.seeItineraryBtn")}</span>
-                <span className="group-hover:translate-y-0.5 transition-transform">↓</span>
-              </span>
+              <span>{t("booking.seeItineraryBtn")}</span>
+              <ArrowDown className="w-5 h-5 group-hover/btn:translate-y-1 transition-transform" />
             </a>
           </div>
         </FadeInScroll>

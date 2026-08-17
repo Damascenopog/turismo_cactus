@@ -3,20 +3,38 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comportamento em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-17] - Destaque Visual do CTA de Roteiro e Correção da Trilha SVG de Scroll
+
+### 1. Novo Card de Alto Impacto para o Roteiro do Passeio (`BookingSection.tsx`)
+- **O que foi feito:**
+  - O CTA *"Quer ver o que está incluso no passeio antes de agendar?"* foi transformado em um cartão de destaque visual de alta conversão.
+  - Adicionado ícone de bússola com sombra de destaque (`shadow-[var(--brand-blue)]/30`), badge *"📍 Roteiro Oficial do Tour"*, tipografia em negrito de alto contraste e botão de ação primário azul com animação de seta (`ArrowDown`).
+  - Adicionada descrição clara dos pontos do passeio: mirante panorâmico 360°, arquitetura viva dos becos, murais de arte urbana e gastronomia típica.
+- **Como funciona:**
+  - O visitante que estiver navegando na seção de agendamento visualiza um bloco nítido e atraente convidando-o a explorar os detalhes do roteiro antes de selecionar a data, com transição suave ao clicar.
+- **Modificação de Comportamento:**
+  - *Antes:* O texto era um link discreto em cinza no rodapé do cartão, passando despercebido.
+  - *Depois:* O bloco se tornou um componente visual de primeiro nível com gradiente, borda com brilho e botão dedicado.
+
+### 2. Correção de Sobreposição da Linha de Trajetória SVG (`FootprintTrail.tsx`)
+- **O que foi feito:**
+  - Ajustado o nível de camada do componente [`FootprintTrail.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/animations/FootprintTrail.tsx) para `z-0` com `pointer-events-none`.
+  - Recalibradas as coordenadas das curvas SVG no Desktop e Mobile para fluírem exclusivamente pelas margens e canaletas externas, sem cruzar caixas de texto ou cartões interativos.
+  - Posicionadas as ilustrações de solas de sapato SVG estritamente nas bordas laterais (`hidden xl:block`).
+- **Como funciona:**
+  - A trilha animada de pegadas agora atua estritamente como background sutil e elegante no ritmo do scroll, garantindo 100% de legibilidade e nenhuma sobreposição de textos, formulários ou botões.
+- **Modificação de Comportamento:**
+  - *Antes:* Em certas resoluções, a linha SVG curvava sobre áreas centrais de cartões e títulos.
+  - *Depois:* A linha permanece permanentemente em camada de fundo (`z-0`) nas calhas laterais.
+
+---
+
 ## [2026-08-17] - Animação Fluida de Rolagem e Centralização de Âncoras (`SmoothScrollProvider.tsx`)
 
 ### 1. Sistema de Rolagem Suave com Centralização no Viewport
 - **O que foi feito:**
-  - Criado o componente de contexto [`SmoothScrollProvider.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/SmoothScrollProvider.tsx) integrado globalmente no [`layout.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/layout.tsx).
+  - Criado o componente de contexto [`SmoothScrollProvider.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/SmoothScrollProvider.tsx).
   - Adicionadas regras de CSS `scroll-behavior: smooth` e `scroll-padding-top: 5.5rem` em [`globals.css`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/globals.css).
-  - Interceptados todos os cliques em links de âncora internos (`a[href^="#"]`) para calcular dinamicamente a posição ideal do elemento na tela.
-  - Implementado cálculo inteligente: se a seção alvo cabe confortavelmente no viewport do dispositivo, a rolagem a posiciona centralizada verticalmente; se a seção for extensa, alinha com margem de folga superior perfeita descontando a barra de navegação fixa (Navbar 84px).
-  - Aplicada a atualização da URL via `window.history.pushState` sem saltos bruscos ou travamentos.
-- **Como funciona:**
-  - Ao clicar em qualquer link de navegação ou botão de âncora (*"Conheça o Roteiro"*, *"Escolher Data no Calendário"*, links do menu superior), o scroll transiciona com amortecimento suave e garante que o conteúdo principal da seção fique perfeitamente visível e enquadrado no centro da tela.
-- **Modificação de Comportamento:**
-  - *Antes:* O clique em âncoras realizava o salto padrão do navegador, que podia cobrir parte do título com a barra de navegação ou não centralizar o conteúdo.
-  - *Depois:* A rolagem é ultra-fluida, desacelera suavemente e enquadra o conteúdo no centro da visão do visitante.
 
 ---
 
@@ -24,10 +42,7 @@
 
 ### 1. Botão de CTA e Navegação para o Roteiro do Tour
 - **O que foi feito:**
-  - Adicionado o CTA secundário **"Conheça o Roteiro"** na [`HeroSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/HeroSection.tsx) apontando para `#roteiro`.
-  - Adicionada a âncora `id="roteiro"` em [`MioloSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/MioloSection.tsx), que marca o início do trajeto do passeio.
-  - Adicionado um banner/link auxiliar no rodapé do cartão de agendamento em [`BookingSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/BookingSection.tsx).
-  - Atualizadas as traduções da chave `ctaItinerary` em todos os 4 idiomas (PT, EN, ES, DE).
+  - Adicionado o CTA secundário **"Conheça o Roteiro"** na [`HeroSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/HeroSection.tsx).
 
 ---
 
