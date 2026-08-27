@@ -22,9 +22,9 @@ export default function Home() {
 
       {/* Main Narrative Sections */}
       <main className="flex-1 w-full relative z-20">
-        <HeroSection />
+        <HeroSection tourId="rocinha" />
         <StatsSection />
-        <TourRouteView tour={toursData.rocinha} />
+        <TourRouteView tourId="rocinha" />
         <BookingSection />
       </main>
 

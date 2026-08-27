@@ -4,11 +4,13 @@ import React from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { getWhatsAppLink } from "@/lib/whatsapp";
+import { TourDetail, getTourData } from "@/data/toursData";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
 import { DiaTextReveal, BRAZIL_COLORS } from "@/components/ui/dia-text-reveal";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 interface HeroSectionProps {
+  tourId?: "rocinha" | "vidigal" | "rio-tour" | "bailes";
   titlePrefix?: string;
   titleHighlight?: string;
   subtitle?: string;
@@ -21,6 +23,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({
+  tourId,
   titlePrefix,
   titleHighlight,
   subtitle,
@@ -34,9 +37,10 @@ export function HeroSection({
   const { language, t } = useLanguage();
   const whatsappUrl = getWhatsAppLink(language);
 
-  const displayTitlePrefix = titlePrefix || t("hero.titlePrefix");
-  const displayTitleHighlight = titleHighlight || t("hero.titleHighlight");
-  const displaySubtitle = subtitle || t("hero.subtitle");
+  const localizedTour = tourId ? getTourData(tourId, language) : null;
+  const displayTitlePrefix = titlePrefix || localizedTour?.heroTitlePrefix || t("hero.titlePrefix");
+  const displayTitleHighlight = titleHighlight || localizedTour?.heroTitleHighlight || t("hero.titleHighlight");
+  const displaySubtitle = subtitle || localizedTour?.heroSubtitle || t("hero.subtitle");
   const heroFullTitle = `${displayTitlePrefix}${displayTitleHighlight}`.trim();
 
   return (

@@ -94,5 +94,28 @@
   },
   "whatsapp": {
     "defaultMsg": "Olá! Gostaria de agendar o Tour Rocinha. Poderia me passar mais informações?"
+  },
+  "route": {
+    "officialRouteBadge": "Roteiro Oficial & Paradas",
+    "duration": "Duração",
+    "meetingPoint": "Ponto de Encontro",
+    "viewStops": "Ver Ordem das Paradas",
+    "bookThisTour": "Agendar Este Roteiro",
+    "stepByStepTag": "Passo a Passo da Experiência",
+    "orderOfStopsTitle": "Ordem dos Pontos de Parada",
+    "orderOfStopsSubtitle": "Cada parada foi pensada para você conhecer os melhores ângulos, histórias reais e a rotina local no tempo certo.",
+    "experienceHighlight": "O que você vai vivenciar:",
+    "whatIncludedTitle": "O que está incluso neste tour",
+    "whatIncludedSubtitle": "Experiência completa e transparente, sem custos ocultos",
+    "bookingTag": "Agendamento Direto",
+    "bookingTitlePrefix": "Reserve o seu",
+    "bookingSubtitle": "Preencha os dados para falar diretamente com o morador anfitrião no WhatsApp. Pagamento no dia do passeio.",
+    "nameLabel": "Seu Nome Completo",
+    "namePlaceholder": "Ex: João da Silva ou Maria Santos",
+    "dateLabel": "Data Desejada",
+    "peopleLabel": "Pessoas",
+    "peopleUnitSingular": "pessoa",
+    "peopleUnitPlural": "pessoas",
+    "confirmWhatsAppBtn": "Confirmar no WhatsApp com o Anfitrião"
   }
 }

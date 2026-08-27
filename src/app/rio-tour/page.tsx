@@ -15,13 +15,11 @@ export default function RioTourPage() {
 
       <main className="flex-1 w-full relative z-20">
         <HeroSection
-          titlePrefix="Conheça o Rio de Janeiro com "
-          titleHighlight="Guias Locais"
-          subtitle="Os cartões-postais e a história da cidade maravilhosa vistos de perto: Mirante Dona Marta, Selarón, Porto Maravilha e Maracanã."
+          tourId="rio-tour"
           bookingHref="#agendamento"
           itineraryHref="#roteiro-paradas"
         />
-        <TourRouteView tour={toursData["rio-tour"]} />
+        <TourRouteView tourId="rio-tour" />
       </main>
 
       <FooterSection />

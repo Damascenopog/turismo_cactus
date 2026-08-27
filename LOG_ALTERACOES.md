@@ -3,6 +3,19 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Correção do Sistema de Idiomas Multilíngue (PT, EN, ES, DE)
+
+### 1. Dinamização Completa dos Roteiros e Textos por Idioma
+- **O que foi feito:**
+  - Identificado que o objeto `toursData.ts` e o componente `TourRouteView.tsx` possuíam textos estáticos em português, fazendo com que as páginas dos tours não respondessem à troca de idioma.
+  - Refatorado [`toursData.ts`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/data/toursData.ts) com traduções completas e humanizadas para os 4 idiomas suportados (**Português**, **English**, **Español**, **Deutsch**), expondo a função `getTourData(tourId, lang)`.
+  - Atualizados [`HeroSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/HeroSection.tsx) e [`TourRouteView.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/tours/TourRouteView.tsx) para reagir dinamicamente a `language` do [`LanguageContext.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/context/LanguageContext.tsx), traduzindo instantaneamente títulos, paradas numeradas, descrições, itens inclusos e formulários.
+  - Adicionado o bloco de chaves `"route"` nos 4 arquivos de tradução ([`pt.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/pt.json), [`en.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/en.json), [`es.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/es.json), [`de.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/de.json)).
+- **Como funciona:**
+  - Ao clicar na cápsula de idiomas do Header e selecionar uma bandeira (🇧🇷, 🇺🇸, 🇪🇸, 🇩🇪), todo o conteúdo da página ativa (incluindo capas, paradas numeradas, legendas do carrossel, requisitos, formulários e mensagens de WhatsApp) é atualizado em tempo real.
+
+---
+
 ## [2026-08-27] - Replicação do HeroSection Principal para Todas as Páginas de Tours
 
 ### 1. HeroSection Reutilizável e Dinâmico (`HeroSection.tsx`)

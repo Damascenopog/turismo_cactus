@@ -15,13 +15,11 @@ export default function VidigalPage() {
 
       <main className="flex-1 w-full relative z-20">
         <HeroSection
-          titlePrefix="Descubra o Vidigal com "
-          titleHighlight="Quem Vive Aqui"
-          subtitle="Do mar ao topo do morro: prainha, mirantes icônicos e a melhor vista do litoral carioca."
+          tourId="vidigal"
           bookingHref="#agendamento"
           itineraryHref="#roteiro-paradas"
         />
-        <TourRouteView tour={toursData.vidigal} />
+        <TourRouteView tourId="vidigal" />
       </main>
 
       <FooterSection />

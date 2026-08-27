@@ -94,5 +94,28 @@
   },
   "whatsapp": {
     "defaultMsg": "¡Hola! Me gustaría reservar el Tour por la Favela Rocinha. ¿Podrías enviarme más información?"
+  },
+  "route": {
+    "officialRouteBadge": "Itinerario Oficial y Paradas",
+    "duration": "Duración",
+    "meetingPoint": "Punto de Encuentro",
+    "viewStops": "Ver Orden de Paradas",
+    "bookThisTour": "Reservar Este Itinerario",
+    "stepByStepTag": "Paso a Paso de la Experiencia",
+    "orderOfStopsTitle": "Orden de los Puntos de Parada",
+    "orderOfStopsSubtitle": "Cada parada fue diseñada para que disfrutes los mejores ángulos, historias reales y la vida local a su debido tiempo.",
+    "experienceHighlight": "Lo que vas a experimentar:",
+    "whatIncludedTitle": "Qué incluye este tour",
+    "whatIncludedSubtitle": "Experiencia completa y transparente, sin costos ocultos",
+    "bookingTag": "Reserva Directa",
+    "bookingTitlePrefix": "Reserva tu",
+    "bookingSubtitle": "Completa tus datos para hablar directamente con el anfitrión local en WhatsApp. Pago el día del paseo.",
+    "nameLabel": "Tu Nombre Completo",
+    "namePlaceholder": "Ej: Juan Pérez o María Santos",
+    "dateLabel": "Fecha Deseada",
+    "peopleLabel": "Personas",
+    "peopleUnitSingular": "persona",
+    "peopleUnitPlural": "personas",
+    "confirmWhatsAppBtn": "Confirmar en WhatsApp con el Anfitrión"
   }
 }

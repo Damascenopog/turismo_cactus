@@ -2,20 +2,24 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { TourDetail } from "@/data/toursData";
+import { TourDetail, getTourData } from "@/data/toursData";
 import { ImageCarousel } from "@/components/ui/ImageCarousel";
 import { useLanguage } from "@/context/LanguageContext";
 import { Clock, MapPin, CheckCircle2, MessageCircle, Calendar, Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
 
 interface TourRouteViewProps {
-  tour: TourDetail;
+  tourId?: string;
+  tour?: TourDetail;
 }
 
-export function TourRouteView({ tour }: TourRouteViewProps) {
-  const { language } = useLanguage();
+export function TourRouteView({ tourId, tour: initialTour }: TourRouteViewProps) {
+  const { language, t } = useLanguage();
   const [selectedDate, setSelectedDate] = useState("");
   const [peopleCount, setPeopleCount] = useState(2);
   const [clientName, setClientName] = useState("");
+
+  const targetId = tourId || initialTour?.id || "rocinha";
+  const tour = getTourData(targetId, language);
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,12 +47,12 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
         <div className="flex flex-wrap items-center justify-center gap-3 p-3 rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-sm">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold">
             <Clock className="w-4 h-4 text-amber-500" />
-            <span>Duração: {tour.duration}</span>
+            <span>{t("route.duration")}: {tour.duration}</span>
           </div>
 
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold">
             <MapPin className="w-4 h-4 text-emerald-500" />
-            <span>Ponto de Encontro: {tour.meetingPoint}</span>
+            <span>{t("route.meetingPoint")}: {tour.meetingPoint}</span>
           </div>
         </div>
       </section>
@@ -58,13 +62,13 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
         
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold uppercase tracking-wider">
-            <span>Passo a Passo da Experiência</span>
+            <span>{t("route.stepByStepTag")}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-            Ordem dos Pontos de Parada
+            {t("route.orderOfStopsTitle")}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-            Cada parada foi pensada para você conhecer os melhores ângulos, histórias reais e a rotina local no tempo certo.
+            {t("route.orderOfStopsSubtitle")}
           </p>
         </div>
 
@@ -104,7 +108,7 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
                     {/* Highlights Pills */}
                     <div className="pt-2">
                       <span className="block text-xs font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
-                        O que você vai vivenciar:
+                        {t("route.experienceHighlight")}
                       </span>
                       <div className="flex flex-wrap gap-2">
                         {stop.highlights.map((h, i) => (
@@ -140,8 +144,8 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl font-black tracking-tight">O que está incluso neste tour</h3>
-              <p className="text-xs text-slate-400">Experiência completa e transparente, sem custos ocultos</p>
+              <h3 className="text-xl sm:text-2xl font-black tracking-tight">{t("route.whatIncludedTitle")}</h3>
+              <p className="text-xs text-slate-400">{t("route.whatIncludedSubtitle")}</p>
             </div>
           </div>
 
@@ -161,27 +165,27 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
         <div className="rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl border border-black/10 dark:border-white/10 p-6 sm:p-10 shadow-xl space-y-6">
           <div className="text-center space-y-2 max-w-xl mx-auto">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold uppercase tracking-wider">
-              <span>Agendamento Direto</span>
+              <span>{t("route.bookingTag")}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-              Reserve o seu {tour.title}
+              {t("route.bookingTitlePrefix")} {tour.title}
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-              Preencha os dados para falar diretamente com o morador anfitrião no WhatsApp. Pagamento no dia do passeio.
+              {t("route.bookingSubtitle")}
             </p>
           </div>
 
           <form onSubmit={handleBookingSubmit} className="space-y-4 max-w-lg mx-auto pt-2">
             <div>
               <label className="block text-xs font-extrabold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
-                Seu Nome Completo
+                {t("route.nameLabel")}
               </label>
               <input
                 type="text"
                 required
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
-                placeholder="Ex: João da Silva ou Maria Santos"
+                placeholder={t("route.namePlaceholder")}
                 className="w-full px-4 py-3.5 rounded-2xl bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 text-slate-900 dark:text-white text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
               />
             </div>
@@ -189,7 +193,7 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-extrabold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
-                  Data Desejada
+                  {t("route.dateLabel")}
                 </label>
                 <input
                   type="date"
@@ -202,7 +206,7 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
 
               <div>
                 <label className="block text-xs font-extrabold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
-                  Pessoas
+                  {t("route.peopleLabel")}
                 </label>
                 <select
                   value={peopleCount}
@@ -211,7 +215,7 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                     <option key={n} value={n}>
-                      {n} {n === 1 ? "pessoa" : "pessoas"}
+                      {n} {n === 1 ? t("route.peopleUnitSingular") : t("route.peopleUnitPlural")}
                     </option>
                   ))}
                 </select>
@@ -223,7 +227,7 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
               className="w-full py-4 px-6 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm sm:text-base flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/25 active:scale-95 transition-all cursor-pointer mt-4"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>Confirmar no WhatsApp com o Anfitrião</span>
+              <span>{t("route.confirmWhatsAppBtn")}</span>
             </button>
           </form>
         </div>

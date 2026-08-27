@@ -15,15 +15,13 @@ export default function BailesPage() {
 
       <main className="flex-1 w-full relative z-20">
         <HeroSection
-          titlePrefix="Viva a Noite Carioca no "
-          titleHighlight="Baile Funk"
-          subtitle="Acompanhamento exclusivo com moradores para curtir a noite carioca e os tradicionais bailes com segurança, respeito e acolhimento."
+          tourId="bailes"
           imageDay="/image/hero_rocinha_night_hd.jpg"
           imageNight="/image/hero_rocinha_night_hd.jpg"
           bookingHref="#agendamento"
           itineraryHref="#roteiro-paradas"
         />
-        <TourRouteView tour={toursData.bailes} />
+        <TourRouteView tourId="bailes" />
       </main>
 
       <FooterSection />
