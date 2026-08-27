@@ -3,6 +3,26 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Centralização Perfeita do Header, Seletor de Idioma Expansível e Notificação Inteligente de Idioma do Navegador
+
+### 1. Centralização Balanceada do Header (Layout em Grid 3-Colunas)
+- **O que foi feito:**
+  - O header em ilha flutuante (`Navbar.tsx`) foi refatorado para utilizar uma estrutura balanceada em 3 colunas (`grid grid-cols-2 md:grid-cols-3 items-center`).
+  - A coluna central contendo a cápsula de navegação com os títulos (**Rocinha**, **Vidigal**, **Rio Tour**) agora fica **matematicamente e visualmente centralizada** em relação ao container, sem deslocamentos causados pelo tamanho do logo ou dos controles laterais.
+
+### 2. Botão de Idioma Expansível em Popover (Dropdown Cápsula)
+- **O que foi feito:**
+  - O seletor de idiomas agora é um botão compacto em cápsula com bandeira, código do idioma atual e seta indicativa (`[ 🇧🇷 PT ▾ ]`).
+  - Ao clicar, expande um **menu flutuante translúcido estilo iOS** exibindo todas as opções com bandeira, nome nativo e indicador de seleção ativa (`Check`), com fechamento automático ao clicar fora ou selecionar.
+
+### 3. Detecção Automática do Idioma do Navegador e Notificação Única
+- **O que foi feito:**
+  - Implementada detecção automática do idioma do sistema operacional / navegador do usuário via `navigator.language`.
+  - Exibição de uma **notificação em balão flutuante estilizada logo abaixo do ícone de idioma**, informando o idioma detectado (ex.: *"Detectamos seu idioma como Português (BR). Deseja alterar?"*) com botões táteis de ação rápida (*"Mudar"* ou *"Manter"*).
+  - O estado de notificação é gravado no `localStorage` (`tour_cactus_lang_notified`) para ser exibido **apenas uma vez** por usuário, respeitando a experiência do visitante.
+
+---
+
 ## [2026-08-27] - Header Estilo iPhone (Dynamic Island) e Títulos em Cápsula Segmentada (`Navbar.tsx`)
 
 ### 1. Design de Cápsula Flutuante Estilo iPhone (iOS Glassmorphism & Impeccable)

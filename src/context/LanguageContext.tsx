@@ -17,8 +17,18 @@ const translationsMap: Record<Language, Translations> = {
   de,
 };
 
+export const languageDetails: Record<Language, { label: string; flag: string; nativeName: string }> = {
+  pt: { label: "Português", flag: "🇧🇷", nativeName: "Português (BR)" },
+  en: { label: "English", flag: "🇺🇸", nativeName: "English (US)" },
+  es: { label: "Español", flag: "🇪🇸", nativeName: "Español" },
+  de: { label: "Deutsch", flag: "🇩🇪", nativeName: "Deutsch" },
+};
+
 interface LanguageContextType {
   language: Language;
+  detectedLang: Language;
+  showLangNotification: boolean;
+  dismissLangNotification: () => void;
   setLanguage: (lang: Language) => void;
   t: (keyPath: string) => string;
 }
@@ -27,23 +37,47 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>("pt");
+  const [detectedLang, setDetectedLang] = useState<Language>("pt");
+  const [showLangNotification, setShowLangNotification] = useState(false);
 
   useEffect(() => {
+    let initialLang: Language = "pt";
+    const userLang = typeof navigator !== "undefined" ? navigator.language.slice(0, 2).toLowerCase() : "pt";
+    
+    if (userLang === "en") initialLang = "en";
+    else if (userLang === "es") initialLang = "es";
+    else if (userLang === "de") initialLang = "de";
+    else initialLang = "pt";
+
+    setDetectedLang(initialLang);
+
     const savedLang = localStorage.getItem("tour_rocinha_lang") as Language;
     if (savedLang && ["pt", "en", "es", "de"].includes(savedLang)) {
       setLanguageState(savedLang);
     } else {
-      const userLang = navigator.language.slice(0, 2).toLowerCase();
-      if (userLang === "en") setLanguageState("en");
-      else if (userLang === "es") setLanguageState("es");
-      else if (userLang === "de") setLanguageState("de");
-      else setLanguageState("pt");
+      setLanguageState(initialLang);
+    }
+
+    // Check if notification was already dismissed previously
+    const hasNotified = localStorage.getItem("tour_cactus_lang_notified");
+    if (!hasNotified) {
+      // Delay slightly for smooth entrance after load
+      const timer = setTimeout(() => {
+        setShowLangNotification(true);
+      }, 1000);
+      return () => clearTimeout(timer);
     }
   }, []);
+
+  const dismissLangNotification = () => {
+    setShowLangNotification(false);
+    localStorage.setItem("tour_cactus_lang_notified", "true");
+  };
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem("tour_rocinha_lang", lang);
+    dismissLangNotification();
   };
 
   const t = (keyPath: string): string => {
@@ -71,7 +105,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        detectedLang,
+        showLangNotification,
+        dismissLangNotification,
+        setLanguage,
+        t,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
