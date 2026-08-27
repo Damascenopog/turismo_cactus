@@ -3,6 +3,16 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Replicação do HeroSection Principal para Todas as Páginas de Tours
+
+### 1. HeroSection Reutilizável e Dinâmico (`HeroSection.tsx`)
+- **O que foi feito:**
+  - O componente [`HeroSection.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/sections/HeroSection.tsx) foi refatorado para aceitar propriedades opcionais (`titlePrefix`, `titleHighlight`, `subtitle`, `imageDay`, `imageNight`, `bookingHref`, `itineraryHref`), mantendo como padrão os assets em alta definição (`hero_rocinha_hd.jpg` / `hero_rocinha_night_hd.jpg`), a animação com cores do Brasil ([`DiaTextReveal`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/ui/dia-text-reveal.tsx)) e a alternância dinâmica Dia/Noite (Light/Dark Mode).
+- **Como funciona:**
+  - As páginas [`/`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/page.tsx) (Rocinha), [`/vidigal`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/vidigal/page.tsx) (Vidigal), [`/rio-tour`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/rio-tour/page.tsx) (Rio Tour) e [`/bailes`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/bailes/page.tsx) (Baile Funk) agora compartilham exatamente a mesma estética visual marcante de capa, com seus respectivos títulos, subtítulos humanizados e botões de chamada rápida para o agendamento e roteiro de paradas.
+
+---
+
 ## [2026-08-27] - Atualização de Nomenclatura: "Baile Funk"
 
 ### 1. Ajuste de Nome no Header e Base de Tours

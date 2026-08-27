@@ -38,75 +38,23 @@ export function TourRouteView({ tour }: TourRouteViewProps) {
 
   return (
     <div className="w-full pb-20">
-      
-      {/* Tour Hero Banner */}
-      <section className="relative w-full min-h-[460px] sm:min-h-[520px] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Image with Dark & Light Overlays */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={tour.heroImage}
-            alt={tour.title}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40" />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
-            <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span>Roteiro Oficial & Paradas</span>
+      {/* Quick Summary Capsule Strip */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 p-3 rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-sm">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold">
+            <Clock className="w-4 h-4 text-amber-500" />
+            <span>Duração: {tour.duration}</span>
           </div>
 
-          {/* Title */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-            {tour.title}
-          </h1>
-
-          {/* Humanized Tagline */}
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-slate-200 font-medium leading-relaxed">
-            {tour.tagline}
-          </p>
-
-          {/* Meta Capsule Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-100 text-xs sm:text-sm font-bold">
-              <Clock className="w-4 h-4 text-amber-400" />
-              <span>Duração: {tour.duration}</span>
-            </div>
-
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-slate-100 text-xs sm:text-sm font-bold">
-              <MapPin className="w-4 h-4 text-emerald-400" />
-              <span>Encontro: {tour.meetingPoint}</span>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-            <a
-              href="#roteiro-paradas"
-              className="px-6 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-extrabold text-sm backdrop-blur-md border border-white/20 transition-all active:scale-95 flex items-center space-x-2"
-            >
-              <span>Ver Ordem das Paradas</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
-            <a
-              href="#agendamento"
-              className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm transition-all shadow-lg shadow-emerald-600/30 active:scale-95 flex items-center space-x-2"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Agendar Este Roteiro</span>
-            </a>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold">
+            <MapPin className="w-4 h-4 text-emerald-500" />
+            <span>Ponto de Encontro: {tour.meetingPoint}</span>
           </div>
         </div>
       </section>
 
       {/* Ordered Route Timeline & Stop Details */}
-      <section id="roteiro-paradas" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
+      <section id="roteiro-paradas" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
         
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold uppercase tracking-wider">

@@ -8,10 +8,36 @@ import { FadeInScroll } from "@/components/animations/FadeInScroll";
 import { DiaTextReveal, BRAZIL_COLORS } from "@/components/ui/dia-text-reveal";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  titlePrefix?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  imageDay?: string;
+  imageNight?: string;
+  altDay?: string;
+  altNight?: string;
+  bookingHref?: string;
+  itineraryHref?: string;
+}
+
+export function HeroSection({
+  titlePrefix,
+  titleHighlight,
+  subtitle,
+  imageDay = "/image/hero_rocinha_hd.jpg",
+  imageNight = "/image/hero_rocinha_night_hd.jpg",
+  altDay = "Vista panorâmica da comunidade de dia",
+  altNight = "Vista panorâmica da comunidade à noite",
+  bookingHref = "#booking",
+  itineraryHref = "#roteiro-paradas",
+}: HeroSectionProps = {}) {
   const { language, t } = useLanguage();
   const whatsappUrl = getWhatsAppLink(language);
-  const heroFullTitle = `${t("hero.titlePrefix")}${t("hero.titleHighlight")}`.trim();
+
+  const displayTitlePrefix = titlePrefix || t("hero.titlePrefix");
+  const displayTitleHighlight = titleHighlight || t("hero.titleHighlight");
+  const displaySubtitle = subtitle || t("hero.subtitle");
+  const heroFullTitle = `${displayTitlePrefix}${displayTitleHighlight}`.trim();
 
   return (
     <section id="hero" className="relative min-h-[75vh] sm:min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-12 sm:py-20 scroll-mt-20 overflow-hidden">
@@ -19,8 +45,8 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         {/* Day Photograph (Light Mode) */}
         <Image
-          src="/image/hero_rocinha_hd.jpg"
-          alt="Vista panorâmica da Rocinha de dia"
+          src={imageDay}
+          alt={altDay}
           fill
           priority
           quality={100}
@@ -30,8 +56,8 @@ export function HeroSection() {
         />
         {/* Night Photograph (Dark Mode) */}
         <Image
-          src="/image/hero_rocinha_night_hd.jpg"
-          alt="Vista panorâmica da Rocinha à noite"
+          src={imageNight}
+          alt={altNight}
           fill
           priority
           quality={100}
@@ -57,9 +83,9 @@ export function HeroSection() {
               delay={0.2}
               repeat={false}
             >
-              {t("hero.titlePrefix")}
+              {displayTitlePrefix}
               <span className="text-[var(--brand-yellow)] font-black drop-shadow-sm block sm:inline sm:ml-2 mt-1 sm:mt-0">
-                {t("hero.titleHighlight")}
+                {displayTitleHighlight}
               </span>
             </DiaTextReveal>
           </h1>
@@ -68,7 +94,7 @@ export function HeroSection() {
         {/* Subtitle */}
         <FadeInScroll direction="up" delay={0.3}>
           <p className="text-base sm:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-sm px-2">
-            {t("hero.subtitle")}
+            {displaySubtitle}
           </p>
         </FadeInScroll>
 
@@ -76,7 +102,7 @@ export function HeroSection() {
         <FadeInScroll direction="up" delay={0.4}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
             <a
-              href="#booking"
+              href={bookingHref}
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2"
               aria-label="Escolher data no calendário"
             >
@@ -85,7 +111,7 @@ export function HeroSection() {
             </a>
 
             <a
-              href="#roteiro"
+              href={itineraryHref}
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 text-white font-extrabold text-sm sm:text-base hover:bg-white/30 active:scale-95 transition-all shadow-lg flex items-center justify-center space-x-2 group"
               aria-label="Conhecer o roteiro completo"
             >
