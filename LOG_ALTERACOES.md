@@ -3,6 +3,22 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Header Estilo iPhone (Dynamic Island) e Títulos em Cápsula Segmentada (`Navbar.tsx`)
+
+### 1. Design de Cápsula Flutuante Estilo iPhone (iOS Glassmorphism & Impeccable)
+- **O que foi feito:**
+  - O cabeçalho foi transformado em uma **Cápsula Flutuante Estilo iPhone / Dynamic Island** (`sticky top-3 sm:top-5`, `rounded-full`, `backdrop-blur-2xl`, bordas translúcidas sutis e sombra difusa em camadas).
+  - **Títulos em Cápsula Segmentada:** Os links de navegação (**Rocinha**, **Vidigal**, **Rio Tour**) foram encapsulados em um controle segmentado estilo iOS (`rounded-full bg-slate-100/90 dark:bg-slate-800/90 shadow-inner`), onde cada item é uma cápsula interativa com micro-interação de hover e clique tátil (`active:scale-95`).
+  - **Controles em Cápsulas iOS:** Seletor de idiomas, botão circular de tema e botão de CTA do WhatsApp configurados no padrão de cápsulas arredondadas (pills).
+  - **Menu Mobile iOS:** Gaveta no estilo sheet card flutuante com bordas `rounded-3xl` e links em cartões tácteis com chevron.
+- **Como funciona:**
+  - O header flutua elegantemente acima do conteúdo com efeito de vidro fosco (frosted glass), adaptando a opacidade e profundidade dinamicamente durante a rolagem (scroll).
+- **Modificação de Comportamento:**
+  - *Antes:* Header em barra horizontal convencional ocupando 100% da largura superior com links em texto simples.
+  - *Depois:* Header em ilha/cápsula flutuante arredondada (`rounded-full`) com seletor de títulos em cápsula segmentada no padrão de design do iPhone/iOS.
+
+---
+
 ## [2026-08-27] - Reestruturação do Header: Logo, Rocinha, Vidigal e Rio Tour (`Navbar.tsx`)
 
 ### 1. Atualização dos Itens de Navegação do Header
