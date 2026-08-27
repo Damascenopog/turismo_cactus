@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { useLanguage, Language, languageDetails } from "@/context/LanguageContext";
 import { useTheme } from "next-themes";
 import { getWhatsAppLink } from "@/lib/whatsapp";
@@ -65,14 +66,24 @@ export function Navbar() {
         <div className="flex items-center justify-start">
           <a
             href="#hero"
-            className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-full px-1"
+            className="flex items-center space-x-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-full py-0.5 pr-2 pl-0.5"
             aria-label="Tour Cactus - Início"
           >
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-emerald-600/20 dark:border-emerald-400/30 shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform bg-white">
+              <Image
+                src="/logo.png"
+                alt="Tour Cactus Logo"
+                fill
+                sizes="36px"
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="flex flex-col">
-              <span className="font-black text-sm sm:text-base tracking-tight text-emerald-600 dark:text-emerald-400 group-hover:opacity-90 transition-opacity">
+              <span className="font-black text-xs sm:text-sm tracking-tight text-emerald-700 dark:text-emerald-400 group-hover:opacity-90 transition-opacity leading-tight">
                 Tour Cactus
               </span>
-              <span className="text-[10px] uppercase font-extrabold tracking-wider text-slate-500 dark:text-slate-400 hidden xs:inline">
+              <span className="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-wider text-slate-500 dark:text-slate-400 hidden xs:inline leading-tight">
                 Turismo pela Rocinha • Rio
               </span>
             </div>

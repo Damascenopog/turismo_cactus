@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   description: "Descubra a Rocinha com moradores locais. Uma experiência autêntica, cultural e segura na maior favela da América Latina.",
   keywords: ["Tour Rocinha", "Favela Tour Rio", "Cactus Turismo", "Turismo Rio de Janeiro", "Rocinha Guide"],
   authors: [{ name: "Cactus Turismo" }],
+  icons: {
+    icon: [
+      { url: "/logo.png" },
+      { url: "/icon.png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -3,6 +3,22 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Atualização do Logotipo Oficial no Header e Favicon da Aba do Navegador
+
+### 1. Novo Logotipo no Header (`Navbar.tsx`)
+- **O que foi feito:**
+  - Integrada a nova imagem de logomarca fornecida (`logo.jfif` / `logo.png`) no cabeçalho em [`Navbar.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/Navbar.tsx).
+  - A imagem foi inserida em uma moldura circular compacta com borda translúcida suave, efeito de hover e carregamento prioritário via `next/image`.
+- **Como funciona:**
+  - O header apresenta a nova identidade visual acompanhada do texto estilizado *"Tour Cactus"* e *"Turismo pela Rocinha • Rio"*.
+
+### 2. Atualização do Favicon e Ícones da Aba do Navegador (`layout.tsx`)
+- **O que foi feito:**
+  - Gerados favicons e ícones de alta resolução (`icon.png`, `favicon.ico`, `logo.png`) derivados diretamente da nova logo oficial.
+  - Atualizadas as metatags de `icons` em [`layout.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/layout.tsx) com suporte a navegadores desktop, mobile (iOS/Safari Apple Touch Icon) e PWA.
+
+---
+
 ## [2026-08-27] - Centralização Perfeita do Header, Seletor de Idioma Expansível e Notificação Inteligente de Idioma do Navegador
 
 ### 1. Centralização Balanceada do Header (Layout em Grid 3-Colunas)
