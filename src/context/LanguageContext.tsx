@@ -58,26 +58,35 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       setLanguageState(initialLang);
     }
 
-    // Check if notification was already dismissed previously
-    const hasNotified = localStorage.getItem("tour_cactus_lang_notified");
-    if (!hasNotified) {
-      // Delay slightly for smooth entrance after load
-      const timer = setTimeout(() => {
-        setShowLangNotification(true);
-      }, 1000);
-      return () => clearTimeout(timer);
+    // Check if notification was already dismissed in this session
+    try {
+      const hasNotifiedSession = sessionStorage.getItem("tour_cactus_lang_notified");
+      if (!hasNotifiedSession) {
+        const timer = setTimeout(() => {
+          setShowLangNotification(true);
+        }, 800);
+        return () => clearTimeout(timer);
+      }
+    } catch {
+      setShowLangNotification(true);
     }
   }, []);
 
   const dismissLangNotification = () => {
     setShowLangNotification(false);
-    localStorage.setItem("tour_cactus_lang_notified", "true");
+    try {
+      sessionStorage.setItem("tour_cactus_lang_notified", "true");
+      localStorage.setItem("tour_cactus_lang_notified", "true");
+    } catch {}
   };
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem("tour_rocinha_lang", lang);
-    dismissLangNotification();
+    try {
+      localStorage.setItem("tour_rocinha_lang", lang);
+      sessionStorage.setItem("tour_cactus_lang_notified", "true");
+    } catch {}
+    setShowLangNotification(false);
   };
 
   const t = (keyPath: string): string => {

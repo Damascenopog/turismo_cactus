@@ -11,10 +11,10 @@
     "bookNow": "Book Tour",
     "selectLanguage": "Language",
     "toggleTheme": "Toggle theme",
-    "langDetected": "Browser language detected as",
-    "langChangePrompt": "Would you like to change it?",
+    "langDetected": "Language detected:",
+    "langChangePrompt": "Would you like to browse in this language or choose another?",
     "langChangeBtn": "Change",
-    "langKeepBtn": "Keep"
+    "langKeepBtn": "Continue"
   },
   "hero": {
     "badge": "Authentic & Safe Experience",

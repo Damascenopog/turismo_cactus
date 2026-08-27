@@ -11,10 +11,10 @@
     "bookNow": "Agendar Passeio",
     "selectLanguage": "Idioma",
     "toggleTheme": "Alternar tema",
-    "langDetected": "Detectamos seu idioma como",
-    "langChangePrompt": "Deseja alterar?",
-    "langChangeBtn": "Mudar",
-    "langKeepBtn": "Manter"
+    "langDetected": "Idioma detectado:",
+    "langChangePrompt": "Deseja navegar neste idioma ou escolher outro?",
+    "langChangeBtn": "Mudar Idioma",
+    "langKeepBtn": "Continuar"
   },
   "hero": {
     "badge": "Experiência Autêntica & Segura",

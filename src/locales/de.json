@@ -11,10 +11,10 @@
     "bookNow": "Tour Buchen",
     "selectLanguage": "Sprache",
     "toggleTheme": "Design wechseln",
-    "langDetected": "Browsersprache erkannt als",
-    "langChangePrompt": "Möchten Sie wechseln?",
+    "langDetected": "Erkannte Sprache:",
+    "langChangePrompt": "Möchten Sie in dieser Sprache fortfahren oder eine andere wählen?",
     "langChangeBtn": "Ändern",
-    "langKeepBtn": "Behalten"
+    "langKeepBtn": "Weiter"
   },
   "hero": {
     "badge": "Authentisches & Sicheres Erlebnis",

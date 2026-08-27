@@ -145,7 +145,7 @@ export function Navbar() {
 
             {/* Expandable Popover Menu */}
             {langMenuOpen && (
-              <div className="absolute right-0 mt-2 w-48 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-black/10 dark:border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.18)] p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150 space-y-1">
+              <div className="absolute right-0 mt-2 w-44 sm:w-48 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-black/10 dark:border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.18)] p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150 space-y-1">
                 {(["pt", "en", "es", "de"] as Language[]).map((lang) => {
                   const isSelected = language === lang;
                   const item = languageDetails[lang];
@@ -173,15 +173,15 @@ export function Navbar() {
               </div>
             )}
 
-            {/* Single System Language Detection Notification Bubble */}
+            {/* Single System Language Detection Notification Bubble (Responsive Mobile & Desktop) */}
             {showLangNotification && (
               <div
-                className="absolute right-0 top-full mt-3 w-72 sm:w-80 max-w-[calc(100vw-2rem)] rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-emerald-500/30 dark:border-emerald-400/30 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
+                className="fixed left-3 right-3 top-[4.75rem] sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-3 sm:w-80 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-emerald-500/30 dark:border-emerald-400/30 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-300 pointer-events-auto"
                 role="status"
                 aria-live="polite"
               >
                 {/* Speech Bubble Pointer pointing to the Language Icon */}
-                <div className="absolute -top-1.5 right-6 w-3 h-3 bg-white dark:bg-slate-900 rotate-45 border-t border-l border-emerald-500/30 dark:border-emerald-400/30" />
+                <div className="absolute -top-1.5 right-24 sm:right-6 w-3 h-3 bg-white dark:bg-slate-900 rotate-45 border-t border-l border-emerald-500/30 dark:border-emerald-400/30" />
                 
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center space-x-2.5">
@@ -202,7 +202,7 @@ export function Navbar() {
                   </div>
                   <button
                     onClick={dismissLangNotification}
-                    className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-0.5 rounded-full"
+                    className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-full active:scale-95 transition-transform"
                     aria-label="Fechar notificação"
                   >
                     <X className="w-3.5 h-3.5" />
@@ -212,7 +212,7 @@ export function Navbar() {
                 <div className="mt-3 flex items-center justify-end space-x-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                   <button
                     onClick={dismissLangNotification}
-                    className="px-3 py-1 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-full transition-colors"
+                    className="px-3 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-full transition-colors active:scale-95"
                   >
                     {t("nav.langKeepBtn")}
                   </button>
@@ -221,9 +221,9 @@ export function Navbar() {
                       setLangMenuOpen(true);
                       dismissLangNotification();
                     }}
-                    className="px-3 py-1 text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 rounded-full shadow-sm active:scale-95 transition-all"
+                    className="px-3 py-1.5 text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 rounded-full shadow-sm active:scale-95 transition-all flex items-center space-x-1"
                   >
-                    {t("nav.langChangeBtn")}
+                    <span>{t("nav.langChangeBtn")}</span>
                   </button>
                 </div>
               </div>

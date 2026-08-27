@@ -220,19 +220,19 @@ export function MultiTourBookingContent() {
   const availableTourList = ["rocinha", "vidigal", "rio-tour", "bailes"];
 
   return (
-    <div className="w-full min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+    <div className="w-full min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-20 px-3.5 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-8 sm:space-y-12">
       {/* Page Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-black uppercase tracking-wider border border-emerald-500/20">
-          <Sparkles className="w-4 h-4 text-emerald-500" />
+      <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-[11px] sm:text-xs font-black uppercase tracking-wider border border-emerald-500/20">
+          <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
           <span>{t("bookingPage.badge")}</span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+        <h1 className="text-2xl xs:text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
           {t("bookingPage.title")}
         </h1>
 
-        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+        <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
           {t("bookingPage.subtitle")}
         </p>
       </div>
@@ -324,11 +324,11 @@ export function MultiTourBookingContent() {
       </div>
 
       {/* Step 2: Date, Guest count, and Summary Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start pt-2 sm:pt-4">
         
         {/* Left Column: Calendar & Details */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="p-6 sm:p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-xl space-y-6">
+          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-xl space-y-5 sm:space-y-6">
             
             <div className="flex items-center space-x-2">
               <span className="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs font-black flex items-center justify-center">
@@ -509,7 +509,7 @@ export function MultiTourBookingContent() {
 
         {/* Right Column: Live Multi-Tour Summary & WhatsApp CTA */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-black/10 dark:border-white/15 shadow-2xl space-y-6">
+          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-black/10 dark:border-white/15 shadow-2xl space-y-5 sm:space-y-6">
             
             <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
               <div className="flex items-center space-x-2 text-emerald-700 dark:text-emerald-400 font-black text-sm uppercase tracking-wider">

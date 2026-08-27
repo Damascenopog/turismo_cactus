@@ -11,10 +11,10 @@
     "bookNow": "Reservar Tour",
     "selectLanguage": "Idioma",
     "toggleTheme": "Cambiar tema",
-    "langDetected": "Detectamos el idioma de tu navegador como",
-    "langChangePrompt": "¿Deseas cambiarlo?",
+    "langDetected": "Idioma detectado:",
+    "langChangePrompt": "¿Deseas navegar en este idioma o elegir otro?",
     "langChangeBtn": "Cambiar",
-    "langKeepBtn": "Mantener"
+    "langKeepBtn": "Continuar"
   },
   "hero": {
     "badge": "Experiencia Auténtica y Segura",

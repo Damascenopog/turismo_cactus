@@ -3,6 +3,24 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Otimização de Responsividade Mobile e Correção da Notificação de Idioma
+
+### 1. Correção do Posicionamento da Notificação de Idioma no Header
+- **O que foi feito:**
+  - Corrigido o posicionamento da notificação flutuante de detecção de idioma em [`Navbar.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/Navbar.tsx).
+  - Em telas mobile (`< 640px`), o balão agora se ajusta automaticamente entre as margens da tela (`fixed left-3 right-3 top-[4.75rem]`), com indicador em seta apontando perfeitamente para o botão de idioma, eliminando qualquer transbordo lateral ou corte de texto à esquerda em aparelhos com telas estreitas (320px a 390px).
+  - Em telas desktop, permanece ancorado diretamente abaixo do botão de idioma (`sm:absolute sm:right-0 sm:w-80`).
+  - Atualizada a persistência de sessão em [`LanguageContext.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/context/LanguageContext.tsx), permitindo que novos visitantes e testes recebam o convite de idioma de forma não-intrusiva, sendo dispensado com 1 toque no botão "Continuar" / "Mudar Idioma" ou no "X".
+  - Aprimorados os textos da notificação nos 4 idiomas (PT, EN, ES, DE).
+
+### 2. Validação e Ajustes de Responsividade em Telas Pequenas
+- **O que foi feito:**
+  - Otimizados os espaçamentos internos dos cards de seleção de tours e formulário de agendamento em [`MultiTourBookingPage.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/booking/MultiTourBookingPage.tsx) para `p-4 sm:p-8 rounded-2xl sm:rounded-3xl`.
+  - Ajustados os botões rápidos de data e a grade do calendário para telas a partir de 320px de largura sem rolagem horizontal indesejada.
+  - Verificados o comportamento de toque do carrossel com lightbox ([`ImageCarousel.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/ui/ImageCarousel.tsx)) e botões de ação nos banners de todos os tours.
+
+---
+
 ## [2026-08-27] - Tradução Multilíngue Completa na Página de Agendamento (`/agendar`)
 
 ### 1. Internacionalização Reativa de Todos os Elementos de Reserva
