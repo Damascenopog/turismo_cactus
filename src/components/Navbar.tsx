@@ -1,13 +1,14 @@
-"use client";
-
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLanguage, Language, languageDetails } from "@/context/LanguageContext";
 import { useTheme } from "next-themes";
 import { getWhatsAppLink } from "@/lib/whatsapp";
-import { Sun, Moon, Globe, Menu, X, MessageCircle, ChevronRight, ChevronDown, Check } from "lucide-react";
+import { Sun, Moon, Globe, Menu, X, MessageCircle, ChevronRight, ChevronDown, Check, Sparkles } from "lucide-react";
 
 export function Navbar() {
+  const pathname = usePathname();
   const { language, detectedLang, showLangNotification, dismissLangNotification, setLanguage, t } = useLanguage();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -46,9 +47,10 @@ export function Navbar() {
   const whatsappUrl = getWhatsAppLink(language);
 
   const navLinks = [
-    { href: "#hero", label: "Rocinha" },
-    { href: "#booking", label: "Vidigal" },
-    { href: "#base", label: "Rio Tour" },
+    { href: "/", label: "Rocinha" },
+    { href: "/vidigal", label: "Vidigal" },
+    { href: "/rio-tour", label: "Rio Tour" },
+    { href: "/bailes", label: "Bailes RJ" },
   ];
 
   return (
@@ -96,15 +98,22 @@ export function Navbar() {
             className="flex items-center p-1 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/60 dark:border-slate-700/60 shadow-inner"
             aria-label="Navegação Principal"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-4 py-1.5 rounded-full text-xs font-extrabold text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/90 transition-all duration-200 shadow-none hover:shadow-sm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-extrabold transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                    isActive
+                      ? "bg-white dark:bg-slate-700 text-emerald-700 dark:text-emerald-300 shadow-sm"
+                      : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-700/60"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
 
@@ -266,17 +275,24 @@ export function Navbar() {
         <div className="pointer-events-auto max-w-md mx-auto mt-2 rounded-3xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-black/10 dark:border-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-4 space-y-3 animate-in slide-in-from-top-3 duration-200 md:hidden">
           {/* Navigation Links as iOS Capsule List Items */}
           <nav className="flex flex-col space-y-1.5" aria-label="Menu Mobile">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 rounded-2xl bg-slate-100/80 dark:bg-slate-800/80 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/20 text-slate-800 dark:text-slate-100 font-extrabold text-sm flex items-center justify-between transition-colors"
-              >
-                <span>{link.label}</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" aria-hidden="true" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-4 py-2.5 rounded-2xl font-extrabold text-sm flex items-center justify-between transition-colors ${
+                    isActive
+                      ? "bg-emerald-600 text-white shadow-sm"
+                      : "bg-slate-100/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/20"
+                  }`}
+                >
+                  <span>{link.label}</span>
+                  <ChevronRight className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-400"}`} aria-hidden="true" />
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Language Selector in Mobile Drawer */}

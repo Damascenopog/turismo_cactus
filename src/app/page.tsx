@@ -4,11 +4,10 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { TourRouteView } from "@/components/tours/TourRouteView";
+import { toursData } from "@/data/toursData";
 import { BookingSection } from "@/components/sections/BookingSection";
 import { StatsSection } from "@/components/sections/StatsSection";
-import { MioloSection } from "@/components/sections/MioloSection";
-import { ArteSection } from "@/components/sections/ArteSection";
-import { BaseSection } from "@/components/sections/BaseSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FootprintTrail } from "@/components/animations/FootprintTrail";
 
@@ -24,11 +23,9 @@ export default function Home() {
       {/* Main Narrative Sections */}
       <main className="flex-1 w-full relative z-20">
         <HeroSection />
-        <BookingSection />
         <StatsSection />
-        <MioloSection />
-        <ArteSection />
-        <BaseSection />
+        <TourRouteView tour={toursData.rocinha} />
+        <BookingSection />
       </main>
 
       {/* Footer & FAQ */}

@@ -3,6 +3,30 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Criação de Páginas Independentes por Tour, Paradas Numeradas, Carrosséis de Fotos e Humanizer
+
+### 1. Instalação e Aplicação da Skill `humanizer` (`github.com/blader/humanizer`)
+- **O que foi feito:**
+  - Instalada a skill [`humanizer`](file:///home/damasceno/Documentos/Code/turismo_cactus/.agents/skills/humanizer/SKILL.md) e aplicada em todos os textos, descrições e títulos dos passeios.
+  - Eliminados todos os clichês e vícios comuns de IA (*"stands as a testament"*, *"vibrant tapestry"*, *"nestled in the heart of"*, slogans promocionais artificiais e orações gerundistas vazias).
+  - A linguagem foi adaptada para um tom autêntico, humano, acolhedor e direto de um morador anfitrião carioca.
+
+### 2. Rotas Independentes no Next.js App Router com Páginas Dedicadas
+- **O que foi feito:**
+  - Criadas páginas exclusivas para cada tour com conteúdo e agendamento próprios:
+    - **`Tour Rocinha` (`/`):** 5 paradas numeradas (1. Via Ápia, 2. Laje da Moto, 3. Laje do Drone, 4. Mirante Novo Visual, 5. Descida pela Favela sem pontos engessados).
+    - **`Tour Vidigal` (`/vidigal`):** 4 paradas numeradas (1. Prainha do Vidigal, 2. Laje dos Cria / Bar da Laje com vista para o Cristo, 3. Laje do Tony com vista 360°, 4. Mirantes & Vielas do Vidigal).
+    - **`Rio Tour Completo` (`/rio-tour`):** 4 paradas numeradas (1. Mirante Dona Marta, 2. Escadaria Selarón, 3. Museu de Arte do Rio / Praça Mauá, 4. Estádio do Maracanã).
+    - **`Rolé nos Bailes do RJ` (`/bailes`):** Experiência noturna segura e guiada para curtir o funk carioca e a noite da cidade (1. Esquenta com petiscos, 2. Chegada acompanhada ao baile, 3. DJs & Dança, 4. Retorno seguro).
+
+### 3. Componentes `TourRouteView` e `ImageCarousel` com Lightbox e Impeccable Design
+- **O que foi feito:**
+  - **`ImageCarousel.tsx`:** Carrossel responsivo com transição de fotos, botões táteis flutuantes em cápsula, indicadores de paginação, legendas elegantes e modal de ampliação em tela cheia (Lightbox).
+  - **`TourRouteView.tsx`:** Linha do tempo vertical numerada com badges táteis (`01`, `02`...), tags de vivência e formulário de agendamento que gera mensagens contextuais direto para o WhatsApp do anfitrião.
+  - **`Navbar.tsx`:** Atualizado com `next/link` e `usePathname` para transição instantânea e destaque da cápsula da página ativa.
+
+---
+
 ## [2026-08-27] - Atualização do Logotipo Oficial no Header e Favicon da Aba do Navegador
 
 ### 1. Novo Logotipo no Header (`Navbar.tsx`)
