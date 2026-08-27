@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useLanguage, Language, languageDetails } from "@/context/LanguageContext";
 import { useTheme } from "next-themes";
 import { getWhatsAppLink } from "@/lib/whatsapp";
-import { Sun, Moon, Globe, Menu, X, MessageCircle, ChevronRight, ChevronDown, Check, Sparkles } from "lucide-react";
+import { Sun, Moon, Globe, Menu, X, MessageCircle, ChevronRight, ChevronDown, Check, Sparkles, Calendar as CalendarIcon } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -245,17 +245,15 @@ export function Navbar() {
             </button>
           )}
 
-          {/* Header WhatsApp CTA Capsule */}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Header Booking CTA Capsule */}
+          <Link
+            href="/agendar"
             className="hidden sm:inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md shadow-emerald-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-            aria-label="Agendar passeio via WhatsApp"
+            aria-label="Agendar passeio"
           >
-            <MessageCircle className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
+            <CalendarIcon className="w-3.5 h-3.5" aria-hidden="true" />
             <span>{t("nav.bookNow")}</span>
-          </a>
+          </Link>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -320,17 +318,16 @@ export function Navbar() {
               </div>
             </div>
 
-            {/* Mobile WhatsApp CTA Capsule */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Mobile Booking CTA Capsule */}
+            <Link
+              href="/agendar"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm flex items-center justify-center space-x-2 shadow-md shadow-emerald-600/20 active:scale-95 transition-all"
-              aria-label="Agendar passeio via WhatsApp"
+              aria-label="Agendar passeio"
             >
-              <MessageCircle className="w-4 h-4 fill-current" aria-hidden="true" />
+              <CalendarIcon className="w-4 h-4" aria-hidden="true" />
               <span>{t("nav.bookNow")}</span>
-            </a>
+            </Link>
           </div>
         </div>
       )}

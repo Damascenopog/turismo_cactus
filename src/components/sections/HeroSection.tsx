@@ -1,13 +1,11 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 import { TourDetail, getTourData } from "@/data/toursData";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
 import { DiaTextReveal, BRAZIL_COLORS } from "@/components/ui/dia-text-reveal";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Calendar as CalendarIcon } from "lucide-react";
 
 interface HeroSectionProps {
   tourId?: "rocinha" | "vidigal" | "rio-tour" | "bailes";
@@ -31,11 +29,14 @@ export function HeroSection({
   imageNight = "/image/hero_rocinha_night_hd.jpg",
   altDay = "Vista panorâmica da comunidade de dia",
   altNight = "Vista panorâmica da comunidade à noite",
-  bookingHref = "#booking",
+  bookingHref,
   itineraryHref = "#roteiro-paradas",
 }: HeroSectionProps = {}) {
   const { language, t } = useLanguage();
   const whatsappUrl = getWhatsAppLink(language);
+
+  const defaultBookingUrl = tourId ? `/agendar?tour=${tourId}` : "/agendar";
+  const finalBookingHref = bookingHref || defaultBookingUrl;
 
   const localizedTour = tourId ? getTourData(tourId, language) : null;
   const displayTitlePrefix = titlePrefix || localizedTour?.heroTitlePrefix || t("hero.titlePrefix");
@@ -105,14 +106,14 @@ export function HeroSection({
         {/* CTAs */}
         <FadeInScroll direction="up" delay={0.4}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
-            <a
-              href={bookingHref}
+            <Link
+              href={finalBookingHref}
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2"
-              aria-label="Escolher data no calendário"
+              aria-label="Agendar passeio"
             >
-              <MessageCircle className="w-5 h-5 fill-current" aria-hidden="true" />
+              <CalendarIcon className="w-5 h-5" aria-hidden="true" />
               <span>{t("hero.ctaBooking")}</span>
-            </a>
+            </Link>
 
             <a
               href={itineraryHref}

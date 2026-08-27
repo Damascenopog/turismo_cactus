@@ -3,6 +3,27 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Página Própria de Agendamento com Suporte a Múltiplos Tours (`/agendar`)
+
+### 1. Nova Rota de Agendamento Multi-Tours (`/agendar`)
+- **O que foi feito:**
+  - Criada a rota dedicada [`/agendar`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/app/agendar/page.tsx) e o componente interativo [`MultiTourBookingPage.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/booking/MultiTourBookingPage.tsx).
+  - Implementada a seleção simultânea de múltiplos passeios: o usuário pode escolher **1, 2, 3 ou todos os 4 tours** (**Rocinha**, **Vidigal**, **Rio Tour**, **Baile Funk**), montando seu próprio pacote personalizado no Rio.
+  - Suporte a pré-seleção inteligente via parâmetro de URL (ex: `/agendar?tour=vidigal`).
+  - Calendário interativo de datas com atalhos rápidos (*Amanhã*, *Próximo Sábado*, *Próximo Domingo*), seletor de quantidade de pessoas, nome completo e campo opcional de observações/preferências.
+
+### 2. Mensagem Inteligente Formatada para o WhatsApp
+- **O que foi feito:**
+  - Criada a função `getMultiTourBookingWhatsAppLink` em [`whatsapp.ts`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/lib/whatsapp.ts) com o número oficial `+55 21 99042-2998`.
+  - A mensagem enviada ao anfitrião lista todos os passeios selecionados em tópicos, com nome, quantidade de pessoas, data desejada e notas adicionais, traduzida automaticamente conforme o idioma do usuário (PT, EN, ES, DE).
+
+### 3. Integração com a Navegação Global
+- **O que foi feito:**
+  - O botão de ação principal do Header (**"Agendar Passeio"** / **"Book Tour"**) em [`Navbar.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/Navbar.tsx) e os botões dos heroes agora direcionam diretamente para a nova página `/agendar`.
+  - As páginas individuais de cada tour possuem cards que permitem agendar o roteiro pontual ou abrir a central `/agendar` com a opção pré-marcada.
+
+---
+
 ## [2026-08-27] - Correção do Sistema de Idiomas Multilíngue (PT, EN, ES, DE)
 
 ### 1. Dinamização Completa dos Roteiros e Textos por Idioma
