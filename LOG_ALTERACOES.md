@@ -3,6 +3,24 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Reestruturação do Header: Logo, Rocinha, Vidigal e Rio Tour (`Navbar.tsx`)
+
+### 1. Atualização dos Itens de Navegação do Header
+- **O que foi feito:**
+  - Atualizados os links principais de navegação no cabeçalho em [`Navbar.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/Navbar.tsx) para apresentar exatamente:
+    - **Logo:** Logomarca *Tour Cactus* com tipografia destacada e subtítulo *Turismo pela Rocinha • Rio*.
+    - **Rocinha:** Navegação para a experiência e roteiro da Rocinha (`#hero`).
+    - **Vidigal:** Navegação direta para a área de reserva e agendamento de passeios (`#booking`).
+    - **Rio Tour:** Navegação para a base comunitária e opções de passeios no Rio (`#base`).
+  - Atualizado o menu gaveta mobile para refletir os mesmos 3 destinos principais de forma clara e acessível.
+- **Como funciona:**
+  - O header no desktop apresenta espaçamento otimizado (`space-x-8`) com os destinos em destaque, permitindo navegação instantânea com scroll suave para as respectivas seções.
+- **Modificação de Comportamento:**
+  - *Antes:* O header continha 6 links ("Início", "Agendar", "O Miolo", "Arte & Cultura", "A Base", "FAQ").
+  - *Depois:* O header foca diretamente nos 3 roteiros/experiências principais ("Rocinha", "Vidigal", "Rio Tour") ao lado do Logo.
+
+---
+
 ## [2026-08-17] - Correção de Acessibilidade (WAVE), Relação de Contraste (WCAG AA/AAA) e Estrutura Semântica
 
 ### 1. Correção de Rótulos de Formulário e Hierarquia de Cabeçalhos (WAVE Errors & Alerts)

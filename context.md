@@ -9,7 +9,8 @@ Landing page imersiva para o **Tour Rocinha** da Cactus Turismo. O objetivo é a
 
 ## Diretrizes de Arquitetura Visual e Layout (Zig-Zag & Fotografia)
 1. **Hero Section Panorâmica:** Exibe fotografia panorâmica HD dinâmica (foto diurna no Light Mode e noturna no Dark Mode) com overlay escuro sutil e uniforme (sem névoa esbranquiçada inferior no modo claro) e tipografia de alto contraste.
-1.1 **Seção Horizontal de Estatísticas (`StatsSection.tsx`):** Localizada logo abaixo da Hero Section, exibe os 3 indicadores de prova social de forma 100% horizontal com divisores elegantes e ícones com micro-animação de hover.
+1.1 **Header & Navegação (`Navbar.tsx`):** Exibe a marca (*Tour Cactus | Turismo pela Rocinha • Rio*) e foca nos 3 destinos principais: **Rocinha**, **Vidigal** e **Rio Tour**, além dos controles de idioma, tema e CTA direto para WhatsApp.
+1.2 **Seção Horizontal de Estatísticas (`StatsSection.tsx`):** Localizada logo abaixo da Hero Section, exibe os 3 indicadores de prova social de forma 100% horizontal com divisores elegantes e ícones com micro-animação de hover.
 2. **Seção Arte & Cultura (`ArteSection.tsx`):** Mural interativo que exibe fotografias reais associadas a cada modalidade: [`hexa.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/hexa.jpg) em **"Arte pintada no chão"** e [`crianca_futebol.jpg`](file:///home/damasceno/Documentos/Code/turismo_cactus/public/image/crianca_futebol.jpg) em **"Cultura & Vivência"**.
 3. **Responsividade Mobile:** No mobile, os blocos são empilhados em uma única coluna vertical limpa (imagem acima, texto abaixo).
 4. **Fotografia com Espaço Negativo:** As imagens e ilustrações utilizam forte "espaço negativo" (áreas vazias, como céu, mar ou asfalto) para alocação de textos e títulos com contraste elevado e máxima legibilidade.

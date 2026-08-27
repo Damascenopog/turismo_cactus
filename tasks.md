@@ -9,6 +9,7 @@
 
 ## Fase 2: Componentes Core e Layout Base
 - [x] Criar o Navbar responsivo com seletor de idioma e botão de troca de tema.
+- [x] Atualizar Navbar para exibir: Logo, Rocinha, Vidigal e Rio Tour.
 - [x] Criar o botão flutuante de CTA para o WhatsApp.
 - [x] Configurar utilitário de link dinâmico para WhatsApp (gerando mensagem baseada no idioma selecionado).
 

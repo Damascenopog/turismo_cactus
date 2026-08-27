@@ -25,12 +25,9 @@ export function Navbar() {
   const whatsappUrl = getWhatsAppLink(language);
 
   const navLinks = [
-    { href: "#hero", label: t("nav.hero") },
-    { href: "#booking", label: t("nav.booking") },
-    { href: "#miolo", label: t("nav.miolo") },
-    { href: "#arte", label: t("nav.arte") },
-    { href: "#base", label: t("nav.base") },
-    { href: "#faq", label: t("nav.faq") },
+    { href: "#hero", label: "Rocinha" },
+    { href: "#booking", label: "Vidigal" },
+    { href: "#base", label: "Rio Tour" },
   ];
 
   return (
@@ -56,7 +53,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-bold text-[var(--text-secondary)]" aria-label="Navegação Principal">
+        <nav className="hidden md:flex items-center space-x-8 text-base font-bold text-[var(--text-secondary)]" aria-label="Navegação Principal">
           {navLinks.map((link) => (
             <a
               key={link.href}
