@@ -6,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import { useLanguage, Language } from "@/context/LanguageContext";
 import { getAllTours, TourDetail } from "@/data/toursData";
 import { getMultiTourBookingWhatsAppLink } from "@/lib/whatsapp";
-import { FadeInScroll } from "@/components/animations/FadeInScroll";
 import {
   Calendar as CalendarIcon,
   User,
@@ -19,10 +18,6 @@ import {
   Clock,
   MapPin,
   Check,
-  Plus,
-  ShieldCheck,
-  FileText,
-  HelpCircle,
 } from "lucide-react";
 
 export function MultiTourBookingContent() {
@@ -230,15 +225,15 @@ export function MultiTourBookingContent() {
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-black uppercase tracking-wider border border-emerald-500/20">
           <Sparkles className="w-4 h-4 text-emerald-500" />
-          <span>Agendamento Central • Escolha 1 ou Mais Tours</span>
+          <span>{t("bookingPage.badge")}</span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-          Reserve Seus Passeios no Rio
+          {t("bookingPage.title")}
         </h1>
 
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-          Monte o seu roteiro personalizado selecionando uma ou mais experiências. Atendimento direto com os moradores locais no WhatsApp sem taxas antecipadas.
+          {t("bookingPage.subtitle")}
         </p>
       </div>
 
@@ -250,7 +245,7 @@ export function MultiTourBookingContent() {
               1
             </span>
             <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-              Selecione as Experiências Desejadas
+              {t("bookingPage.step1Title")}
             </h2>
           </div>
 
@@ -260,8 +255,8 @@ export function MultiTourBookingContent() {
             className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 hover:underline px-2 py-1 rounded-lg"
           >
             {selectedTourIds.length === availableTourList.length
-              ? "Desmarcar Todos"
-              : "Selecionar Todos (Pacote Completo)"}
+              ? t("bookingPage.deselectAll")
+              : t("bookingPage.selectAll")}
           </button>
         </div>
 
@@ -319,7 +314,7 @@ export function MultiTourBookingContent() {
                     <span>{tour.duration}</span>
                   </span>
                   <span className="text-emerald-700 dark:text-emerald-400 font-extrabold">
-                    {isSelected ? "✓ Selecionado" : "+ Adicionar"}
+                    {isSelected ? t("bookingPage.selectedStatus") : t("bookingPage.addStatus")}
                   </span>
                 </div>
               </div>
@@ -340,14 +335,14 @@ export function MultiTourBookingContent() {
                 2
               </span>
               <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                Seus Dados e Data
+                {t("bookingPage.step2Title")}
               </h2>
             </div>
 
             {/* Tourist Name */}
             <div className="space-y-1.5">
               <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Seu Nome Completo
+                {t("bookingPage.nameLabel")}
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
@@ -358,7 +353,7 @@ export function MultiTourBookingContent() {
                   required
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Ex: João da Silva ou Maria Santos"
+                  placeholder={t("bookingPage.namePlaceholder")}
                   className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 text-slate-900 dark:text-white text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                 />
               </div>
@@ -372,10 +367,10 @@ export function MultiTourBookingContent() {
                 </div>
                 <div>
                   <span className="block text-xs font-extrabold uppercase text-slate-700 dark:text-slate-300">
-                    Quantidade de Pessoas
+                    {t("bookingPage.peopleLabel")}
                   </span>
                   <span className="text-sm font-extrabold text-slate-900 dark:text-white">
-                    {peopleCount} {peopleCount === 1 ? "pessoa" : "pessoas"}
+                    {peopleCount} {peopleCount === 1 ? t("bookingPage.peopleSingular") : t("bookingPage.peoplePlural")}
                   </span>
                 </div>
               </div>
@@ -406,7 +401,7 @@ export function MultiTourBookingContent() {
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                    Escolha a Data Inicial
+                    {t("bookingPage.dateHeader")}
                   </span>
                   <h3 className="text-lg font-black text-slate-900 dark:text-white capitalize">
                     {monthName}
@@ -438,21 +433,21 @@ export function MultiTourBookingContent() {
                   onClick={() => setQuickDate("tomorrow")}
                   className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:border-emerald-500 transition-all"
                 >
-                  ⚡ Amanhã
+                  ⚡ {t("bookingPage.quickTomorrow")}
                 </button>
                 <button
                   type="button"
                   onClick={() => setQuickDate("saturday")}
                   className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:border-emerald-500 transition-all"
                 >
-                  🏖️ Próximo Sábado
+                  🏖️ {t("bookingPage.quickSaturday")}
                 </button>
                 <button
                   type="button"
                   onClick={() => setQuickDate("sunday")}
                   className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:border-emerald-500 transition-all"
                 >
-                  ☀️ Próximo Domingo
+                  ☀️ {t("bookingPage.quickSunday")}
                 </button>
               </div>
 
@@ -498,12 +493,12 @@ export function MultiTourBookingContent() {
             {/* Optional Notes */}
             <div className="space-y-1.5 pt-2">
               <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Observações ou Preferências (Opcional)
+                {t("bookingPage.notesLabel")}
               </label>
               <textarea
                 value={specialNotes}
                 onChange={(e) => setSpecialNotes(e.target.value)}
-                placeholder="Ex: Gostaria de fazer o Tour Rocinha pela manhã e o Vidigal à tarde / Hotel em Copacabana"
+                placeholder={t("bookingPage.notesPlaceholder")}
                 rows={2}
                 className="w-full px-4 py-3 rounded-2xl bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 text-slate-900 dark:text-white text-base font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
               />
@@ -519,18 +514,23 @@ export function MultiTourBookingContent() {
             <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
               <div className="flex items-center space-x-2 text-emerald-700 dark:text-emerald-400 font-black text-sm uppercase tracking-wider">
                 <Sparkles className="w-4 h-4" />
-                <span>Resumo da Reserva</span>
+                <span>{t("bookingPage.summaryTitle")}</span>
               </div>
               <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-black flex items-center space-x-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                <span>{selectedTourIds.length} {selectedTourIds.length === 1 ? "tour selecionado" : "tours selecionados"}</span>
+                <span>
+                  {selectedTourIds.length}{" "}
+                  {selectedTourIds.length === 1
+                    ? t("bookingPage.tourSelectedSingular")
+                    : t("bookingPage.tourSelectedPlural")}
+                </span>
               </span>
             </div>
 
             {/* Selected Tours List */}
             <div className="space-y-2">
               <span className="block text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                Passeios Incluídos:
+                {t("bookingPage.includedToursLabel")}
               </span>
               <div className="space-y-2">
                 {selectedTourObjects.map((tour) => (
@@ -570,9 +570,9 @@ export function MultiTourBookingContent() {
               <div className="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60 flex items-center space-x-3">
                 <User className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 <div className="text-xs">
-                  <span className="text-slate-500 dark:text-slate-400 block font-bold">Titular:</span>
+                  <span className="text-slate-500 dark:text-slate-400 block font-bold">{t("bookingPage.leadGuestLabel")}</span>
                   <span className="font-extrabold text-slate-900 dark:text-white">
-                    {userName.trim() ? userName.trim() : "— (Informe seu nome)"}
+                    {userName.trim() ? userName.trim() : t("bookingPage.noNamePlaceholder")}
                   </span>
                 </div>
               </div>
@@ -580,7 +580,7 @@ export function MultiTourBookingContent() {
               <div className="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60 flex items-center space-x-3">
                 <CalendarIcon className="w-4 h-4 text-amber-500 flex-shrink-0" />
                 <div className="text-xs">
-                  <span className="text-slate-500 dark:text-slate-400 block font-bold">Data Inicial:</span>
+                  <span className="text-slate-500 dark:text-slate-400 block font-bold">{t("bookingPage.startDateLabel")}</span>
                   <span className="font-extrabold text-slate-900 dark:text-white capitalize">
                     {formattedSelectedDate}
                   </span>
@@ -590,9 +590,9 @@ export function MultiTourBookingContent() {
               <div className="p-3.5 rounded-2xl bg-slate-100/70 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60 flex items-center space-x-3">
                 <Users className="w-4 h-4 text-blue-500 flex-shrink-0" />
                 <div className="text-xs">
-                  <span className="text-slate-500 dark:text-slate-400 block font-bold">Grupo:</span>
+                  <span className="text-slate-500 dark:text-slate-400 block font-bold">{t("bookingPage.groupLabel")}</span>
                   <span className="font-extrabold text-slate-900 dark:text-white">
-                    {peopleCount} {peopleCount === 1 ? "pessoa" : "pessoas"}
+                    {peopleCount} {peopleCount === 1 ? t("bookingPage.peopleSingular") : t("bookingPage.peoplePlural")}
                   </span>
                 </div>
               </div>
@@ -607,11 +607,11 @@ export function MultiTourBookingContent() {
                 className="w-full py-4 px-6 rounded-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-base shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-3 text-center cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
-                <span>Confirmar Agendamento no WhatsApp</span>
+                <span>{t("bookingPage.whatsappBtn")}</span>
               </a>
 
               <p className="text-xs font-medium text-slate-500 dark:text-slate-400 text-center leading-relaxed">
-                Contato direto com os condutores moradores • Sem pagamento antecipado • Pagamento no dia
+                {t("bookingPage.footerNote")}
               </p>
             </div>
 
@@ -619,19 +619,19 @@ export function MultiTourBookingContent() {
             <div className="pt-4 border-t border-slate-200 dark:border-slate-800 grid grid-cols-2 gap-2 text-xs font-bold text-slate-700 dark:text-slate-300">
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                <span>Condutores Nativos</span>
+                <span>{t("bookingPage.featGuides")}</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                <span>Horários Flexíveis</span>
+                <span>{t("bookingPage.featFlex")}</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                <span>Experiência Segura</span>
+                <span>{t("bookingPage.featSafe")}</span>
               </div>
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                <span>Impacto Comunitário</span>
+                <span>{t("bookingPage.featImpact")}</span>
               </div>
             </div>
 

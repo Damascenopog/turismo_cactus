@@ -3,6 +3,23 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Tradução Multilíngue Completa na Página de Agendamento (`/agendar`)
+
+### 1. Internacionalização Reativa de Todos os Elementos de Reserva
+- **O que foi feito:**
+  - Adicionado o bloco de chaves `"bookingPage"` nos 4 arquivos de tradução ([`pt.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/pt.json), [`en.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/en.json), [`es.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/es.json), [`de.json`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/locales/de.json)).
+  - Refatorado [`MultiTourBookingPage.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/booking/MultiTourBookingPage.tsx) para utilizar `t("bookingPage.XYZ")` em todos os títulos, passos numerados, botões de seleção de pacote, cabeçalhos de calendário, rótulos de formulário, resumo ao vivo e mensagem de WhatsApp.
+- **Como funciona:**
+  - Ao alternar entre Português (🇧🇷), English (🇺🇸), Español (🇪🇸) e Deutsch (🇩🇪), a página `/agendar` traduz instantaneamente:
+    - O cabeçalho e descrição da página.
+    - Os títulos, taglines e durações dos 4 cards de tours.
+    - Os botões "Selecionar Todos (Pacote Completo)" e "Desmarcar Todos".
+    - Os atalhos rápidos de data (*Amanhã* / *Tomorrow* / *Mañana* / *Morgen*).
+    - O resumo da reserva com contagem pluralizada de tours e pessoas.
+    - O botão de confirmação e a mensagem gerada para o WhatsApp do anfitrião.
+
+---
+
 ## [2026-08-27] - Página Própria de Agendamento com Suporte a Múltiplos Tours (`/agendar`)
 
 ### 1. Nova Rota de Agendamento Multi-Tours (`/agendar`)
