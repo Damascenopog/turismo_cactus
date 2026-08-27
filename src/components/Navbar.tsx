@@ -65,10 +65,10 @@ export function Navbar() {
       >
         
         {/* Left Column: Brand Logo */}
-        <div className="flex items-center justify-start">
-          <a
-            href="#hero"
-            className="flex items-center space-x-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-full py-0.5 pr-2 pl-0.5"
+        <div className="flex items-center justify-start min-w-0">
+          <Link
+            href="/"
+            className="flex items-center space-x-2 sm:space-x-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-full py-0.5 pr-2 pl-0.5"
             aria-label="Tour Cactus - Início"
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-emerald-600/20 dark:border-emerald-400/30 shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform bg-white">
@@ -81,15 +81,15 @@ export function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-black text-xs sm:text-sm tracking-tight text-emerald-700 dark:text-emerald-400 group-hover:opacity-90 transition-opacity leading-tight">
+            <div className="flex flex-col min-w-0">
+              <span className="font-black text-xs sm:text-sm tracking-tight text-emerald-700 dark:text-emerald-400 group-hover:opacity-90 transition-opacity leading-tight truncate">
                 Tour Cactus
               </span>
-              <span className="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-wider text-slate-500 dark:text-slate-400 hidden xs:inline leading-tight">
+              <span className="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-wider text-slate-500 dark:text-slate-400 hidden xs:inline leading-tight truncate">
                 Turismo pela Rocinha • Rio
               </span>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Center Column: Perfectly Centered Segmented Capsule Navigation */}
@@ -176,7 +176,7 @@ export function Navbar() {
             {/* Single System Language Detection Notification Bubble */}
             {showLangNotification && (
               <div
-                className="absolute right-0 top-full mt-3 w-72 sm:w-80 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-emerald-500/30 dark:border-emerald-400/30 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
+                className="absolute right-0 top-full mt-3 w-72 sm:w-80 max-w-[calc(100vw-2rem)] rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-emerald-500/30 dark:border-emerald-400/30 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-300"
                 role="status"
                 aria-live="polite"
               >
