@@ -50,7 +50,7 @@ export function Navbar() {
     { href: "/", label: "Rocinha" },
     { href: "/vidigal", label: "Vidigal" },
     { href: "/rio-tour", label: "Rio Tour" },
-    { href: "/bailes", label: "Bailes RJ" },
+    { href: "/bailes", label: "Baile Funk" },
   ];
 
   return (

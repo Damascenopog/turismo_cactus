@@ -3,6 +3,17 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-08-27] - Atualização de Nomenclatura: "Baile Funk"
+
+### 1. Ajuste de Nome no Header e Base de Tours
+- **O que foi feito:**
+  - Alterada a nomenclatura da rota e do título da experiência de *"Rolé nos Bailes do RJ"* para **"Baile Funk"** em [`Navbar.tsx`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/components/Navbar.tsx) e [`toursData.ts`](file:///home/damasceno/Documentos/Code/turismo_cactus/src/data/toursData.ts).
+- **Como funciona:**
+  - O header agora exibe as 4 opções: **Rocinha**, **Vidigal**, **Rio Tour** e **Baile Funk**.
+  - A página e o agendamento no WhatsApp refletem diretamente o título "Baile Funk".
+
+---
+
 ## [2026-08-27] - Criação de Páginas Independentes por Tour, Paradas Numeradas, Carrosséis de Fotos e Humanizer
 
 ### 1. Instalação e Aplicação da Skill `humanizer` (`github.com/blader/humanizer`)

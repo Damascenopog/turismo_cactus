@@ -242,8 +242,8 @@ export const toursData: Record<string, TourDetail> = {
   bailes: {
     id: "bailes",
     slug: "/bailes",
-    title: "Rolé nos Bailes do RJ",
-    tagline: "Viva a noite carioca e a cultura do funk nos bailes mais autênticos, sempre acompanhado por moradores.",
+    title: "Baile Funk",
+    tagline: "Viva a noite carioca e a cultura do funk no baile mais autêntico, sempre acompanhado por moradores.",
     heroImage: "/image/hero_rocinha_night_hd.jpg",
     heroImageDark: "/image/hero_rocinha_night_hd.jpg",
     duration: "4 a 6 horas (Noturno)",
