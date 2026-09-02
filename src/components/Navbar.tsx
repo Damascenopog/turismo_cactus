@@ -34,7 +34,6 @@ export function Navbar() {
     { href: "/#servicos", label: t("nav.services") },
     { href: "/rocinha", label: t("nav.rocinha") },
     { href: "/agendar", label: t("nav.booking") },
-    { href: "/#diferenciais", label: t("nav.whyUs") },
     { href: "/#faq", label: t("nav.faq") },
   ];
 

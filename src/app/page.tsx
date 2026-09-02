@@ -5,7 +5,6 @@ import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PortalHero } from "@/components/portal/PortalHero";
 import { PortalServices } from "@/components/portal/PortalServices";
-import { PortalWhyUs } from "@/components/portal/PortalWhyUs";
 import { PortalFooter } from "@/components/portal/PortalFooter";
 
 export default function HomePage() {
@@ -18,7 +17,6 @@ export default function HomePage() {
       <main className="flex-1 w-full relative z-20">
         <PortalHero />
         <PortalServices />
-        <PortalWhyUs />
       </main>
 
       {/* Portal Footer & Global FAQ */}

@@ -3,6 +3,20 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Remoção da Seção "Diferenciais" da Página Inicial
+
+### 1. Simplificação do Fluxo da Página Inicial (`src/app/page.tsx` e `Navbar.tsx`)
+- **O que foi feito:**
+  - Removida a seção de diferenciais/pilares (*"Turismo Autêntico, Seguro e Consciente"* / `PortalWhyUs.tsx`) da página inicial (`src/app/page.tsx`).
+  - Removido o link correspondente *"Diferenciais"* da barra de navegação superior (`src/components/Navbar.tsx`).
+- **Como funciona:**
+  - A página inicial agora é ainda mais enxuta, focada diretamente no catálogo de passeios e no FAQ/Contato para atendimento ágil pelo WhatsApp.
+- **Modificação de Comportamento:**
+  - *Antes:* A página inicial continha a seção de 4 cards de diferenciais e banner de roteiro sob medida após a vitrine de passeios.
+  - *Depois:* A vitrine de passeios conecta-se diretamente ao rodapé/FAQ global, tornando a navegação mais rápida e concisa no mobile.
+
+---
+
 ## [2026-09-02] - Remoção de Títulos e Tags Flutuantes nos Cards de Serviços
 
 ### 1. Limpeza Visual dos Cards de Passeios (`PortalServices.tsx`)
