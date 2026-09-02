@@ -14,7 +14,6 @@ import {
   CheckCircle2,
   ArrowRight,
   MessageCircle,
-  Sparkles,
 } from "lucide-react";
 
 export function PortalServices() {
@@ -24,7 +23,6 @@ export function PortalServices() {
     {
       id: "rocinha",
       icon: Compass,
-      tag: t("portal.services.rocinha.tag"),
       title: t("portal.services.rocinha.title"),
       desc: t("portal.services.rocinha.desc"),
       image: "/image/esquina_casas.jpg",
@@ -34,8 +32,6 @@ export function PortalServices() {
         t("portal.services.rocinha.badge3"),
         t("portal.services.rocinha.badge4"),
       ],
-      tagColor: "bg-amber-500/15 text-amber-900 dark:text-amber-300 border-amber-500/30",
-      accentBg: "from-amber-500/10 to-transparent",
       accentBorder: "hover:border-amber-500/50",
       isFeatured: true,
       hasPage: true,
@@ -47,7 +43,6 @@ export function PortalServices() {
     {
       id: "vidigal",
       icon: Mountain,
-      tag: t("portal.services.vidigal.tag"),
       title: t("portal.services.vidigal.title"),
       desc: t("portal.services.vidigal.desc"),
       image: "/image/vistacristo-light.jpg",
@@ -57,8 +52,6 @@ export function PortalServices() {
         t("portal.services.vidigal.badge3"),
         t("portal.services.vidigal.badge4"),
       ],
-      tagColor: "bg-emerald-500/15 text-emerald-900 dark:text-emerald-300 border-emerald-500/30",
-      accentBg: "from-emerald-500/10 to-transparent",
       accentBorder: "hover:border-emerald-500/50",
       isFeatured: false,
       hasPage: false,
@@ -68,7 +61,6 @@ export function PortalServices() {
     {
       id: "rioTour",
       icon: Landmark,
-      tag: t("portal.services.rioTour.tag"),
       title: t("portal.services.rioTour.title"),
       desc: t("portal.services.rioTour.desc"),
       image: "/image/topo_light.jpg",
@@ -78,8 +70,6 @@ export function PortalServices() {
         t("portal.services.rioTour.badge3"),
         t("portal.services.rioTour.badge4"),
       ],
-      tagColor: "bg-blue-500/15 text-blue-900 dark:text-blue-300 border-blue-500/30",
-      accentBg: "from-blue-500/10 to-transparent",
       accentBorder: "hover:border-blue-500/50",
       isFeatured: false,
       hasPage: false,
@@ -89,7 +79,6 @@ export function PortalServices() {
     {
       id: "baileFunk",
       icon: Music,
-      tag: t("portal.services.baileFunk.tag"),
       title: t("portal.services.baileFunk.title"),
       desc: t("portal.services.baileFunk.desc"),
       image: "/image/casasmorro-dark.jpg",
@@ -99,8 +88,6 @@ export function PortalServices() {
         t("portal.services.baileFunk.badge3"),
         t("portal.services.baileFunk.badge4"),
       ],
-      tagColor: "bg-rose-500/15 text-rose-900 dark:text-rose-300 border-rose-500/30",
-      accentBg: "from-rose-500/10 to-transparent",
       accentBorder: "hover:border-rose-500/50",
       isFeatured: false,
       hasPage: false,
@@ -110,17 +97,12 @@ export function PortalServices() {
   ];
 
   return (
-    <section id="servicos" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] bg-[var(--bg-surface)]/40 scroll-mt-20">
+    <section id="servicos" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] bg-[var(--bg-surface)]/40 scroll-mt-20">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Section Header */}
         <FadeInScroll direction="up" delay={0.1}>
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-900 dark:text-blue-300 text-xs font-black uppercase tracking-wider border border-blue-500/30">
-              <Sparkles className="w-4 h-4 text-blue-700 dark:text-blue-400" aria-hidden="true" />
-              <span>{t("portal.services.tag")}</span>
-            </div>
-
+          <div className="text-center max-w-3xl mx-auto space-y-3">
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-[var(--text-primary)]">
               {t("portal.services.title")}
             </h2>
@@ -131,7 +113,7 @@ export function PortalServices() {
           </div>
         </FadeInScroll>
 
-        {/* Services Grid (2x2 on Desktop, 1 Column on Mobile for Immediate Readability) */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {services.map((service, idx) => {
             const Icon = service.icon;
@@ -149,21 +131,18 @@ export function PortalServices() {
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-black/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-black/10"></div>
 
-                    {/* Top Tag Badge */}
-                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                      <span className={`text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full border backdrop-blur-md shadow-md ${service.tagColor}`}>
-                        {service.tag}
-                      </span>
-                      <div className="w-10 h-10 rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-lg">
+                    {/* Top Right Icon */}
+                    <div className="absolute top-4 right-4 z-10">
+                      <div className="w-10 h-10 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-lg">
                         <Icon className="w-5 h-5" aria-hidden="true" />
                       </div>
                     </div>
 
                     {/* Bottom Title on Image */}
                     <div className="absolute bottom-4 left-4 right-4 z-10">
-                      <h3 className="text-xl sm:text-2xl font-black text-white leading-snug drop-shadow-md">
+                      <h3 className="text-2xl sm:text-3xl font-black text-white leading-snug drop-shadow-md">
                         {service.title}
                       </h3>
                     </div>

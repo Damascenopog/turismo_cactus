@@ -21,7 +21,7 @@
   },
   "portal": {
     "hero": {
-      "tag": "Authentic Rio Experiences",
+      "tag": "Rio Experiences",
       "titlePrefix": "Experience Rio Beyond the Ordinary with ",
       "titleHighlight": "Local Insiders",
       "subtitle": "Discover vibrant communities, panoramic hikes, iconic sights, and true Carioca culture safely with passionate local hosts.",
@@ -33,12 +33,11 @@
       "ctaCustom": "Custom Tour Itinerary"
     },
     "services": {
-      "tag": "Our Tours & Experiences",
-      "title": "Choose Your Next Rio Adventure",
+      "tag": "Our Tours",
+      "title": "Our Tours in Rio",
       "subtitle": "Tours with native hosts, deep cultural immersion, and complete safety.",
       "rocinha": {
-        "tag": "Top Rated • Cultural Immersion",
-        "title": "Rocinha Tour (Favela Experience)",
+        "title": "Rocinha Tour",
         "desc": "Walk through Latin America's largest favela, discover 360° secret viewpoints, street art murals, and local resident cuisine.",
         "badge1": "360° Panorama",
         "badge2": "Art & Flavors",
@@ -48,8 +47,7 @@
         "ctaBook": "Book on WhatsApp"
       },
       "vidigal": {
-        "tag": "Adventure & Epic Views",
-        "title": "Vidigal Tour & Two Brothers Hike",
+        "title": "Vidigal & Two Brothers Hike",
         "desc": "Thrilling motorcycle taxi ride up Vidigal hill followed by a guided hike to the summit with the most stunning view of Rio's South Zone.",
         "badge1": "Moto-Taxi Ride",
         "badge2": "South Zone Panorama",
@@ -58,7 +56,6 @@
         "ctaBook": "Book Hike on WhatsApp"
       },
       "rioTour": {
-        "tag": "Marvelous City • Highlights",
         "title": "Complete Rio City Tour",
         "desc": "Visit iconic landmarks: Christ the Redeemer, Selarón Steps, Santa Teresa, Lapa Arches, and beaches in private comfort.",
         "badge1": "Christ the Redeemer",
@@ -68,8 +65,7 @@
         "ctaBook": "Book City Tour on WhatsApp"
       },
       "baileFunk": {
-        "tag": "Nightlife & Rhythm",
-        "title": "Carioca Baile Funk Experience",
+        "title": "Baile Funk",
         "desc": "Discover authentic Carioca funk culture with a trusted local host, safe VIP area access, and an unforgettable community musical night.",
         "badge1": "Native Host Guide",
         "badge2": "Safe VIP Access",
@@ -79,7 +75,7 @@
       }
     },
     "whyUs": {
-      "tag": "Why Cactus Turismo?",
+      "tag": "Why Us",
       "title": "Authentic, Safe & Conscious Tourism",
       "subtitle": "Born to connect travelers with the true heart and soul of Rio de Janeiro.",
       "pillar1Title": "Native Resident Hosts",

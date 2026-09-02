@@ -21,7 +21,7 @@
   },
   "portal": {
     "hero": {
-      "tag": "Experiencias Auténticas en Río",
+      "tag": "Experiencias en Río",
       "titlePrefix": "Vive Río Más Allá de lo Convencional con ",
       "titleHighlight": "Gente Local",
       "subtitle": "Descubre comunidades vibrantes, caminatas con vistas panorámicas, sitios icónicos y la verdadera cultura carioca con anfitriones locales.",
@@ -33,12 +33,11 @@
       "ctaCustom": "Armar Tour Personalizado"
     },
     "services": {
-      "tag": "Nuestros Tours y Experiencias",
-      "title": "Elige Tu Próxima Aventura en Río",
+      "tag": "Nuestros Tours",
+      "title": "Nuestros Tours en Río",
       "subtitle": "Recorridos con guías nativos, inmersión cultural real y total seguridad.",
       "rocinha": {
-        "tag": "Más Popular • Inmersión Cultural",
-        "title": "Tour Rocinha (Favela Experience)",
+        "title": "Tour Rocinha",
         "desc": "Camina por las callejuelas de la favela más grande de América Latina, descubre miradores secretos de 360°, murales de arte urbano y gastronomía local.",
         "badge1": "Mirador 360°",
         "badge2": "Arte y Gastronomía",
@@ -48,8 +47,7 @@
         "ctaBook": "Reservar en WhatsApp"
       },
       "vidigal": {
-        "tag": "Aventura y Vista Panorámica",
-        "title": "Tour Vidigal y Caminata Morro Dos Hermanos",
+        "title": "Tour Vidigal & Morro Dos Hermanos",
         "desc": "Emocionante subida en mototaxi por Vidigal seguida de una caminata guiada hasta la cima con la vista más deslumbrante de la Zona Sur de Río.",
         "badge1": "Subida en Mototaxi",
         "badge2": "Vista Zona Sur",
@@ -58,8 +56,7 @@
         "ctaBook": "Reservar Caminata en WhatsApp"
       },
       "rioTour": {
-        "tag": "Ciudad Maravillosa • Clásicos",
-        "title": "City Tour Completo por Río",
+        "title": "City Tour Completo",
         "desc": "Visita los puntos icónicos imperdibles: Cristo Redentor, Escalera Selarón, Santa Teresa, Arcos de Lapa y playas en transporte confortable.",
         "badge1": "Cristo Redentor",
         "badge2": "Escalera Selarón",
@@ -68,8 +65,7 @@
         "ctaBook": "Reservar City Tour en WhatsApp"
       },
       "baileFunk": {
-        "tag": "Vida Nocturna y Ritmo",
-        "title": "Experiencia Baile Funk Carioca",
+        "title": "Baile Funk",
         "desc": "Conoce la verdadera cultura del funk carioca con anfitrión local, acceso VIP seguro y una noche musical inolvidable en el corazón de la comunidad.",
         "badge1": "Acompañamiento Nativo",
         "badge2": "Acceso VIP Seguro",
@@ -79,7 +75,7 @@
       }
     },
     "whyUs": {
-      "tag": "¿Por Qué Cactus Turismo?",
+      "tag": "Diferenciales",
       "title": "Turismo Auténtico, Seguro e Consciente",
       "subtitle": "Nacimos para conectar a los viajeros con la verdadera esencia de Río de Janeiro.",
       "pillar1Title": "Anfitriones y Residentes Locales",

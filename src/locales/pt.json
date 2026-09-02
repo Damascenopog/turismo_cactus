@@ -21,7 +21,7 @@
   },
   "portal": {
     "hero": {
-      "tag": "Experiências Autênticas no Rio",
+      "tag": "Experiências no Rio de Janeiro",
       "titlePrefix": "Viva o Rio Além do Óbvio com ",
       "titleHighlight": "Quem Vive a Cidade",
       "subtitle": "Descubra as comunidades mais vibrantes, trilhas com vistas panorâmicas, pontos icônicos e a verdadeira cultura carioca com segurança e anfitriões locais.",
@@ -33,12 +33,11 @@
       "ctaCustom": "Montar Roteiro Personalizado"
     },
     "services": {
-      "tag": "Nossos Passeios & Experiências",
-      "title": "Escolha Sua Próxima Aventura no Rio",
+      "tag": "Nossos Passeios",
+      "title": "Nossos Passeios no Rio",
       "subtitle": "Passeios com condutores nativos, imersão cultural real e total tranquilidade.",
       "rocinha": {
-        "tag": "Mais Procurado • Imersão Cultural",
-        "title": "Tour Rocinha (Favela Experience)",
+        "title": "Tour Rocinha",
         "desc": "Caminhe pelas vielas da maior favela da América Latina, conheça mirantes secretos 360°, murais de grafite e a culinária dos moradores.",
         "badge1": "Mirante 360°",
         "badge2": "Arte & Gastronomia",
@@ -48,8 +47,7 @@
         "ctaBook": "Agendar no WhatsApp"
       },
       "vidigal": {
-        "tag": "Aventura & Vista Panorâmica",
-        "title": "Tour Vidigal & Trilha Morro Dois Irmãos",
+        "title": "Tour Vidigal & Morro Dois Irmãos",
         "desc": "Subida emocionante de moto-táxi pelo Vidigal seguida de uma caminhada guiada até o topo com a vista mais deslumbrante de toda a Zona Sul carioca.",
         "badge1": "Subida de Moto-táxi",
         "badge2": "Visual da Zona Sul",
@@ -58,8 +56,7 @@
         "ctaBook": "Agendar Trilha no WhatsApp"
       },
       "rioTour": {
-        "tag": "Cidade Maravilhosa • Clássicos",
-        "title": "Rio Tour Completo (City Tour)",
+        "title": "Rio Tour Completo",
         "desc": "Visite os cartões-postais imperdíveis: Cristo Redentor, Escadaria Selarón, Santa Teresa, Arcos da Lapa e praias em transporte confortável.",
         "badge1": "Cristo Redentor",
         "badge2": "Escadaria Selarón",
@@ -68,8 +65,7 @@
         "ctaBook": "Agendar City Tour no WhatsApp"
       },
       "baileFunk": {
-        "tag": "Vida Noturna & Ritmo",
-        "title": "Baile Funk Carioca Experience",
+        "title": "Baile Funk",
         "desc": "Conheça a verdadeira cultura do funk carioca com anfitrião local, acesso VIP seguro e vivência musical inesquecível no coração da comunidade.",
         "badge1": "Acompanhamento Nativo",
         "badge2": "Acesso VIP Seguro",
@@ -79,7 +75,7 @@
       }
     },
     "whyUs": {
-      "tag": "Por Que a Cactus Turismo?",
+      "tag": "Diferenciais",
       "title": "Turismo Autêntico, Seguro e Consciente",
       "subtitle": "Nascemos para conectar viajantes à verdadeira essência do Rio de Janeiro.",
       "pillar1Title": "Anfitriões & Moradores Locais",

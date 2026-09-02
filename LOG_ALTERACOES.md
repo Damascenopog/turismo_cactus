@@ -3,6 +3,20 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Remoção de Títulos e Tags Flutuantes nos Cards de Serviços
+
+### 1. Limpeza Visual dos Cards de Passeios (`PortalServices.tsx`)
+- **O que foi feito:**
+  - Removidas as tags flutuantes sobre as imagens dos cards (*"Vida Noturna & Ritmo"*, *"Mais Procurado • Imersão Cultural"*, *"Aventura & Vista Panorâmica"*, *"Cidade Maravilhosa • Clássicos"*).
+  - Simplificados os títulos dos passeios nos 4 idiomas para torná-los diretos, limpos e sem poluição visual (*"Tour Rocinha"*, *"Tour Vidigal & Morro Dois Irmãos"*, *"Rio Tour Completo"*, *"Baile Funk"*).
+- **Como funciona:**
+  - Os cards agora exibem a imagem panorâmica limpa com o ícone temático no canto superior direito e o título principal em destaque na base da foto, deixando o layout mais moderno, espaçoso e rápido de ler.
+- **Modificação de Comportamento:**
+  - *Antes:* Cada foto possuía uma tag/etiqueta colorida no topo (ex: "Vida Noturna & Ritmo").
+  - *Depois:* As tags foram eliminadas, mantendo o foco total no nome do tour, na fotografia e nos benefícios listados.
+
+---
+
 ## [2026-09-02] - Implementação do Portal Inicial Multi-Serviços (Mobile-First) e Preservação da Página Rocinha
 
 ### 1. Criação do Portal Hub na Raiz (`/` - `src/app/page.tsx`)

@@ -21,7 +21,7 @@
   },
   "portal": {
     "hero": {
-      "tag": "Authentische Rio-Erlebnisse",
+      "tag": "Rio Erlebnisse",
       "titlePrefix": "Erlebe Rio abseits der Massen mit ",
       "titleHighlight": "Einheimischen",
       "subtitle": "Entdecke lebendige Favelas, malerische Wanderwege, weltberühmte Wahrzeichen und echte Carioca-Kultur sicher mit lokalen Guides.",
@@ -33,12 +33,11 @@
       "ctaCustom": "Individuelle Tour Planen"
     },
     "services": {
-      "tag": "Unsere Touren & Erlebnisse",
-      "title": "Wähle Dein Nächstes Rio-Abenteuer",
+      "tag": "Unsere Touren",
+      "title": "Unsere Touren in Rio",
       "subtitle": "Geführte Touren mit ortskundigen Bewohnern, authentischer Kultur und maximaler Sicherheit.",
       "rocinha": {
-        "tag": "Beliebteste Tour • Kulturelle Immersion",
-        "title": "Rocinha Tour (Favela Experience)",
+        "title": "Rocinha Tour",
         "desc": "Spaziere durch die größte Favela Südamerikas, entdecke spektakuläre 360°-Aussichtspunkte, Street-Art-Wandbilder und lokale Küche.",
         "badge1": "360° Panorama",
         "badge2": "Kunst & Gastronomie",
@@ -48,8 +47,7 @@
         "ctaBook": "Per WhatsApp Buchen"
       },
       "vidigal": {
-        "tag": "Abenteuer & Panoramablick",
-        "title": "Vidigal Tour & Morro Dois Irmãos Wanderung",
+        "title": "Vidigal & Morro Dois Irmãos",
         "desc": "Aufregende Motorradtaxi-Fahrt durch Vidigal, gefolgt von einer geführten Wanderung zum Gipfel mit dem atemberaubendsten Blick auf Rios Südzone.",
         "badge1": "Motorradtaxi-Fahrt",
         "badge2": "Blick auf Südzone",
@@ -58,8 +56,7 @@
         "ctaBook": "Wanderung Buchen"
       },
       "rioTour": {
-        "tag": "Wunderbare Stadt • Highlights",
-        "title": "Komplette Rio City Tour",
+        "title": "Rio Tour Komplett",
         "desc": "Besuche berühmte Sehenswürdigkeiten: Christusstatue, Selarón-Treppe, Santa Teresa, Lapa-Bögen und Strände mit privatem Transport.",
         "badge1": "Christusstatue",
         "badge2": "Selarón-Treppe",
@@ -68,8 +65,7 @@
         "ctaBook": "City Tour Buchen"
       },
       "baileFunk": {
-        "tag": "Nachtleben & Rhythmus",
-        "title": "Carioca Baile Funk Experience",
+        "title": "Baile Funk",
         "desc": "Erlebe authentische Carioca-Funkkultur mit einem vertrauenswürdigen lokalen Guide, sicherem VIP-Bereich und unvergesslicher Musik in der Favela.",
         "badge1": "Lokale Begleitung",
         "badge2": "Sicherer VIP-Zugang",
@@ -79,7 +75,7 @@
       }
     },
     "whyUs": {
-      "tag": "Warum Cactus Turismo?",
+      "tag": "Warum Wir",
       "title": "Authentischer, Sicherer und Nachhaltiger Tourismus",
       "subtitle": "Wir verbinden Reisende mit der wahren Seele von Rio de Janeiro.",
       "pillar1Title": "Einheimische Guides & Bewohner",
