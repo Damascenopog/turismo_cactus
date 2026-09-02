@@ -3,6 +3,19 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Perguntas Frequentes (FAQ) Fechadas por Padrão
+
+### 1. Inicialização do Acordeão de FAQ em Estado Recolhido (`PortalFooter.tsx` e `FooterSection.tsx`)
+- **O que foi feito:**
+  - Alterado o estado inicial do acordeão de FAQ (`openFaq`) de `0` para `null` nos componentes [`PortalFooter.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/portal/PortalFooter.tsx) e [`FooterSection.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/sections/FooterSection.tsx).
+- **Como funciona:**
+  - Ao carregar a página, todas as perguntas do FAQ aparecem fechadas/recolhidas por padrão. O usuário pode clicar em qualquer pergunta para expandi-la sob demanda e ler a resposta.
+- **Modificação de Comportamento:**
+  - *Antes:* A primeira pergunta do FAQ ("Como funcionam as reservas e o pagamento?") vinha aberta por padrão ao abrir o site.
+  - *Depois:* Todas as perguntas iniciam fechadas, deixando o visual da seção mais compacto, limpo e organizado.
+
+---
+
 ## [2026-09-02] - Pílulas Individuais para Cada Destino no Header (`Navbar.tsx`)
 
 ### 1. Botões em Pílula Independentes por Texto

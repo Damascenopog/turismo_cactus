@@ -6,7 +6,7 @@ import { ChevronDown, ShieldCheck, HelpCircle, Lock, Award } from "lucide-react"
 
 export function PortalFooter() {
   const { t } = useLanguage();
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
     {
