@@ -3,6 +3,25 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Cards da Vitrine Linkando Exclusivamente para as Páginas dos Tours
+
+### 1. Navegação Exclusiva para Páginas de Detalhes (`PortalServices.tsx`)
+- **O que foi feito:**
+  - Atualizados todos os 4 cards da vitrine de serviços para terem um único botão de ação claro (*"Conhecer o Tour"*) que direciona o visitante para a página específica de cada passeio:
+    - **Tour Rocinha** → [`/rocinha`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/rocinha/page.tsx)
+    - **Tour Vidigal & Morro Dois Irmãos** → [`/vidigal`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/vidigal/page.tsx)
+    - **Rio Tour Completo** → [`/rio-tour`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/rio-tour/page.tsx)
+    - **Baile Funk** → [`/bailes`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/bailes/page.tsx)
+  - Tornou-se também a imagem e o título dos cards totalmente clicáveis com navegação suave para a respectiva página.
+  - Removidos os botões de WhatsApp diretos dos cards da vitrine na página inicial.
+- **Como funciona:**
+  - O usuário acessa a página inicial, lê o resumo e, ao clicar no card ou no botão *"Conhecer o Tour"*, é levado à página detalhada daquele tour com fotos, roteiro passo a passo, pontos de parada e o formulário de agendamento próprio.
+- **Modificação de Comportamento:**
+  - *Antes:* Alguns cards possuíam botões diretos para o WhatsApp e outros botões divididos.
+  - *Depois:* Todos os 4 cards possuem um padrão visual idêntico e consistente, com botão único *"Conhecer o Tour"* direcionando para a página dedicada do passeio.
+
+---
+
 ## [2026-09-02] - Remoção da Seção "Diferenciais" da Página Inicial
 
 ### 1. Simplificação do Fluxo da Página Inicial (`src/app/page.tsx` e `Navbar.tsx`)
