@@ -3,6 +3,22 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Centralização Exclusiva do Agendamento na Página `/agendar`
+
+### 1. Remoção de Formulários e Seções de Agendamento Inline das Telas de Conteúdo
+- **O que foi feito:**
+  - Removida a seção de agendamento inline com calendário (`BookingSection.tsx`) da página da Rocinha ([`src/app/rocinha/page.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/rocinha/page.tsx)).
+  - Removido o formulário de agendamento inline (`<section id="agendamento">` com inputs de nome, data, pessoas e envio) do componente de paradas dos tours ([`src/components/tours/TourRouteView.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/tours/TourRouteView.tsx)), utilizado nas páginas do Vidigal, Rio Tour e Baile Funk.
+  - Substituído por um banner de chamada limpo e elegante com botão que direciona o usuário diretamente para a central de agendamento oficial ([`/agendar?tour=ID`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/agendar/page.tsx)).
+- **Como funciona:**
+  - Toda e qualquer seleção de datas, escolha de número de pessoas e preenchimento de dados de reserva agora ocorre **exclusivamente na página dedicada de agendamento** ([`/agendar`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/agendar/page.tsx)).
+  - As páginas dos passeios tornaram-se 100% focadas na narrativa, fotos, história, pontos de parada e roteiro detalhado.
+- **Modificação de Comportamento:**
+  - *Antes:* Cada página de tour continha formulários ou calendários de reserva duplicados embutidos no meio ou final do conteúdo.
+  - *Depois:* As páginas de tours focam exclusivamente na apresentação da experiência, com botões de CTA direcionando para a central de agendamento unificada em `/agendar`.
+
+---
+
 ## [2026-09-02] - Perguntas Frequentes (FAQ) Fechadas por Padrão
 
 ### 1. Inicialização do Acordeão de FAQ em Estado Recolhido (`PortalFooter.tsx` e `FooterSection.tsx`)
