@@ -35,7 +35,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const langContainerRef = useRef<HTMLDivElement>(null);
-  const mobileLangContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -63,9 +62,7 @@ export function Navbar() {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         langContainerRef.current &&
-        !langContainerRef.current.contains(event.target as Node) &&
-        mobileLangContainerRef.current &&
-        !mobileLangContainerRef.current.contains(event.target as Node)
+        !langContainerRef.current.contains(event.target as Node)
       ) {
         setLangMenuOpen(false);
       }
@@ -349,34 +346,8 @@ export function Navbar() {
               })}
             </nav>
 
-            {/* Language Selector in Mobile Drawer */}
-            <div className="pt-3 border-t border-slate-200/70 dark:border-slate-800 space-y-3">
-              <div className="flex items-center justify-between px-1">
-                <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400">
-                  {t("nav.selectLanguage")}
-                </span>
-                <div className="flex items-center bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/60 dark:border-slate-700/60 rounded-full p-0.5 text-xs">
-                  {(["pt", "en", "es", "de"] as Language[]).map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={() => {
-                        setLanguage(lang);
-                        setMobileMenuOpen(false);
-                      }}
-                      aria-label={`Selecionar idioma ${lang.toUpperCase()}`}
-                      className={`px-2.5 py-1 rounded-full font-bold uppercase transition-all ${
-                        language === lang
-                          ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
-                          : "text-slate-600 dark:text-slate-400"
-                      }`}
-                    >
-                      {lang}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile Booking CTA Button */}
+            {/* Mobile Booking CTA Button */}
+            <div className="pt-2 border-t border-slate-200/70 dark:border-slate-800">
               <Link
                 href="/agendar"
                 onClick={() => setMobileMenuOpen(false)}

@@ -3,6 +3,20 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Centralização da Mudança de Idioma Exclusivamente no Header
+
+### 1. Remoção do Seletor de Idioma de Dentro do Menu Mobile (`Navbar.tsx`)
+- **O que foi feito:**
+  - Removido o seletor duplicado de idiomas de dentro do drawer/modal mobile.
+  - A troca de idiomas permanece **exclusivamente no botão do cabeçalho/navbar principal**, disponível tanto no desktop quanto no mobile.
+- **Como funciona:**
+  - O usuário altera o idioma diretamente pela pílula de idiomas fixada no cabeçalho. O menu mobile fica mais limpo, contendo estritamente os links de navegação dos passeios e o botão de agendamento.
+- **Modificação de Comportamento:**
+  - *Antes:* O seletor de idiomas aparecia duplicado dentro da gaveta do menu mobile.
+  - *Depois:* O seletor de idiomas existe apenas no cabeçalho superior.
+
+---
+
 ## [2026-09-02] - Menu Mobile em Overlay Flutuante com Backdrop
 
 ### 1. Desacoplamento do Menu Mobile do Fluxo da Página (`Navbar.tsx`)
