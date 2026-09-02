@@ -1,20 +1,114 @@
 {
   "nav": {
-    "brand": "Tour Rocinha",
+    "brand": "Cactus Turismo",
+    "home": "Início",
+    "services": "Passeios",
+    "rocinha": "Tour Rocinha",
+    "vidigal": "Vidigal & Trilha",
+    "rioTour": "Rio Tour",
+    "baileFunk": "Baile Funk",
+    "whyUs": "Diferenciais",
+    "faq": "FAQ",
     "hero": "Início",
     "booking": "Agendar",
     "roteiro": "Roteiro",
     "miolo": "O Miolo",
     "arte": "Arte & Cultura",
     "base": "A Base",
-    "faq": "FAQ",
-    "bookNow": "Agendar Passeio",
+    "bookNow": "Agendar no WhatsApp",
     "selectLanguage": "Idioma",
-    "toggleTheme": "Alternar tema",
-    "langDetected": "Idioma detectado:",
-    "langChangePrompt": "Deseja navegar neste idioma ou escolher outro?",
-    "langChangeBtn": "Mudar Idioma",
-    "langKeepBtn": "Continuar"
+    "toggleTheme": "Alternar tema"
+  },
+  "portal": {
+    "hero": {
+      "tag": "Experiências Autênticas no Rio",
+      "titlePrefix": "Viva o Rio Além do Óbvio com ",
+      "titleHighlight": "Quem Vive a Cidade",
+      "subtitle": "Descubra as comunidades mais vibrantes, trilhas com vistas panorâmicas, pontos icônicos e a verdadeira cultura carioca com segurança e anfitriões locais.",
+      "chipFavela": "Favela Tours",
+      "chipTrails": "Trilhas & Mirantes",
+      "chipCity": "City Tour",
+      "chipNight": "Noite Carioca",
+      "ctaExplore": "Ver Todos os Passeios",
+      "ctaCustom": "Montar Roteiro Personalizado"
+    },
+    "services": {
+      "tag": "Nossos Passeios & Experiências",
+      "title": "Escolha Sua Próxima Aventura no Rio",
+      "subtitle": "Passeios com condutores nativos, imersão cultural real e total tranquilidade.",
+      "rocinha": {
+        "tag": "Mais Procurado • Imersão Cultural",
+        "title": "Tour Rocinha (Favela Experience)",
+        "desc": "Caminhe pelas vielas da maior favela da América Latina, conheça mirantes secretos 360°, murais de grafite e a culinária dos moradores.",
+        "badge1": "Mirante 360°",
+        "badge2": "Arte & Gastronomia",
+        "badge3": "Condutores Nativos",
+        "badge4": "Duração: ~3 a 4h",
+        "ctaPage": "Ver Roteiro Rocinha",
+        "ctaBook": "Agendar no WhatsApp"
+      },
+      "vidigal": {
+        "tag": "Aventura & Vista Panorâmica",
+        "title": "Tour Vidigal & Trilha Morro Dois Irmãos",
+        "desc": "Subida emocionante de moto-táxi pelo Vidigal seguida de uma caminhada guiada até o topo com a vista mais deslumbrante de toda a Zona Sul carioca.",
+        "badge1": "Subida de Moto-táxi",
+        "badge2": "Visual da Zona Sul",
+        "badge3": "Trilha Guiada Segura",
+        "badge4": "Duração: ~4h",
+        "ctaBook": "Agendar Trilha no WhatsApp"
+      },
+      "rioTour": {
+        "tag": "Cidade Maravilhosa • Clássicos",
+        "title": "Rio Tour Completo (City Tour)",
+        "desc": "Visite os cartões-postais imperdíveis: Cristo Redentor, Escadaria Selarón, Santa Teresa, Arcos da Lapa e praias em transporte confortável.",
+        "badge1": "Cristo Redentor",
+        "badge2": "Escadaria Selarón",
+        "badge3": "Santa Teresa & Lapa",
+        "badge4": "Transporte Confortável",
+        "ctaBook": "Agendar City Tour no WhatsApp"
+      },
+      "baileFunk": {
+        "tag": "Vida Noturna & Ritmo",
+        "title": "Baile Funk Carioca Experience",
+        "desc": "Conheça a verdadeira cultura do funk carioca com anfitrião local, acesso VIP seguro e vivência musical inesquecível no coração da comunidade.",
+        "badge1": "Acompanhamento Nativo",
+        "badge2": "Acesso VIP Seguro",
+        "badge3": "Cultura & Dança",
+        "badge4": "Experiência Noturna",
+        "ctaBook": "Reservar Baile no WhatsApp"
+      }
+    },
+    "whyUs": {
+      "tag": "Por Que a Cactus Turismo?",
+      "title": "Turismo Autêntico, Seguro e Consciente",
+      "subtitle": "Nascemos para conectar viajantes à verdadeira essência do Rio de Janeiro.",
+      "pillar1Title": "Anfitriões & Moradores Locais",
+      "pillar1Desc": "Quem te guia nasceu, vive e conhece cada recanto da cidade e das comunidades.",
+      "pillar2Title": "Segurança & Respeito em 1º Lugar",
+      "pillar2Desc": "Trânsito livre, protocolos rigorosos e respeito absoluto à rotina comunitária.",
+      "pillar3Title": "Impacto Social Direto",
+      "pillar3Desc": "Sua visita fomenta o comércio de bairro, artistas e famílias empreendedoras.",
+      "pillar4Title": "Atendimento Direto & Flexível",
+      "pillar4Desc": "Suporte rápido no WhatsApp no seu idioma, sem burocracias ou taxas ocultas."
+    },
+    "custom": {
+      "tag": "Roteiro Sob Medida",
+      "title": "Quer combinar passeios ou fazer um tour privado?",
+      "desc": "Montamos uma programação personalizada para você, sua família ou grupo de amigos.",
+      "btn": "Falar com Especialista no WhatsApp"
+    },
+    "faq": {
+      "tag": "Tire Suas Dúvidas",
+      "title": "Perguntas Frequentes sobre Nossos Passeios",
+      "q1": "Como funcionam as reservas e o pagamento?",
+      "a1": "Você escolhe o passeio desejado e clica no botão do WhatsApp. Nosso atendimento personalizado alinha datas, horários e ponto de encontro. O pagamento é realizado com total segurança e sem taxas antecipadas ocultas.",
+      "q2": "Os passeios em comunidades são seguros?",
+      "a2": "Sim! Todas as nossas experiências em comunidades (Rocinha, Vidigal, Baile Funk) são conduzidas exclusivamente por moradores locais respeitados e conhecidos na região.",
+      "q3": "É possível personalizar um pacote com múltiplos passeios?",
+      "a3": "Com certeza! É muito comum combinar, por exemplo, o Tour Rocinha pela manhã com a Trilha do Morro Dois Irmãos à tarde ou o Rio Tour clássico. Basta nos chamar no WhatsApp.",
+      "q4": "Em quais idiomas os passeios são realizados?",
+      "a4": "Oferecemos atendimento e passeios em Português, Inglês, Espanhol e Alemão."
+    }
   },
   "hero": {
     "badge": "Experiência Autêntica & Segura",
@@ -90,10 +184,10 @@
     "faqA2": "Aproximadamente 3 a 4 horas. Caminhada moderada com paradas frequentes, adequada para todas as idades.",
     "faqQ3": "Como funciona o agendamento e pagamento?",
     "faqA3": "Basta selecionar a data desejada em nosso calendário, informar seu nome e a quantidade de pessoas. Ao clicar no botão, você fala direto com o anfitrião local no WhatsApp com todos os dados organizados para confirmação rápida e sem pagamento antecipado.",
-    "rights": "© 2026 Tour Rocinha - Cactus Turismo. Todos os direitos reservados."
+    "rights": "© 2026 Cactus Turismo • Rio de Janeiro. Todos os direitos reservados."
   },
   "whatsapp": {
-    "defaultMsg": "Olá! Gostaria de agendar o Tour Rocinha. Poderia me passar mais informações?"
+    "defaultMsg": "Olá! Gostaria de informações sobre os passeios da Cactus Turismo no Rio. Poderia me atender?"
   },
   "route": {
     "officialRouteBadge": "Roteiro Oficial & Paradas",

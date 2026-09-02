@@ -3,35 +3,28 @@
 import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { TourRouteView } from "@/components/tours/TourRouteView";
-import { toursData } from "@/data/toursData";
-import { BookingSection } from "@/components/sections/BookingSection";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { FooterSection } from "@/components/sections/FooterSection";
-import { FootprintTrail } from "@/components/animations/FootprintTrail";
+import { PortalHero } from "@/components/portal/PortalHero";
+import { PortalServices } from "@/components/portal/PortalServices";
+import { PortalWhyUs } from "@/components/portal/PortalWhyUs";
+import { PortalFooter } from "@/components/portal/PortalFooter";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden relative">
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Dynamic Animated Footprint SVG Trail (Curved on Desktop, Vertical on Mobile) */}
-      <FootprintTrail />
-
-      {/* Main Narrative Sections */}
+      {/* Main Portal Sections */}
       <main className="flex-1 w-full relative z-20">
-        <HeroSection tourId="rocinha" />
-        <StatsSection />
-        <TourRouteView tourId="rocinha" />
-        <BookingSection />
+        <PortalHero />
+        <PortalServices />
+        <PortalWhyUs />
       </main>
 
-      {/* Footer & FAQ */}
-      <FooterSection />
+      {/* Portal Footer & Global FAQ */}
+      <PortalFooter />
 
-      {/* Floating WhatsApp CTA */}
+      {/* Floating WhatsApp Quick Contact Button */}
       <WhatsAppButton />
     </div>
   );

@@ -1,4 +1,4 @@
-# BACKLOG DE TAREFAS - TOUR ROCINHA
+# BACKLOG DE TAREFAS - TOUR ROCINHA & CACTUS TURISMO
 
 ## Fase 1: Setup e Infraestrutura
 - [x] Inicializar projeto Next.js com Tailwind CSS e TypeScript.
@@ -31,7 +31,18 @@
 - [x] Implementar animação fluida para âncoras com enquadramento centralizado no viewport (`SmoothScrollProvider.tsx`).
 - [x] Garantir que a animação de scroll seja desativada ou suavizada em preferências de reduced-motion para evitar travamentos.
 
-## Fase 5: Refinamento e Deploy
-- [x] Revisar acessibilidade (contraste do amarelo no tema claro).
+## Fase 5: Portal Inicial Multi-Serviços (Mobile-First Hub)
+- [x] Criar a nova página inicial em `/` (`src/app/page.tsx`) com foco prioritário em dispositivos móveis.
+- [x] Preservar integralmente a página detalhada e interativa do Tour Rocinha em `/rocinha` (`src/app/rocinha/page.tsx`).
+- [x] Desenvolver vitrine resumida de 4 serviços (`PortalServices.tsx`): Tour Rocinha, Tour Vidigal & Dois Irmãos, Rio Tour Completo e Baile Funk Carioca.
+- [x] Desenvolver Hero Section do Portal com chips rápidos de categoria (`PortalHero.tsx`).
+- [x] Desenvolver seção de diferenciais da marca e banner de roteiro personalizado (`PortalWhyUs.tsx`).
+- [x] Desenvolver FAQ global e rodapé corporativo (`PortalFooter.tsx`).
+- [x] Adaptar navegação contextual no `Navbar.tsx` para suporte dinâmico a rotas `/` e `/rocinha`.
+- [x] Adicionar suporte aos 4 idiomas (PT, EN, ES, DE) para todos os novos componentes do portal.
+
+## Fase 6: Refinamento, Acessibilidade e Deploy
+- [x] Revisar acessibilidade (contraste WCAG 2.2 AA/AAA e conformidade WAVE).
+- [x] Auditoria com a skill Impeccable (0 anti-patterns).
 - [x] Testes de layout em resolução Mobile (Mobile-first check).
-- [x] Preparar configuração e realizar deploy na Vercel.
+- [x] Deploy e sincronização no GitHub.
