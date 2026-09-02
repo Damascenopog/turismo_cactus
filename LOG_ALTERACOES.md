@@ -3,6 +3,17 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Pílulas Individuais para Cada Destino no Header (`Navbar.tsx`)
+
+### 1. Botões em Pílula Independentes por Texto
+- **O que foi feito:**
+  - Configurado para que cada item de navegação (**Início**, **Rocinha**, **Vidigal**, **Rio Tour**, **Baile Funk**) seja uma **pílula individual e independente**, com espaçamento próprio, bordas arredondadas (`rounded-full`), fundo translúcido e `whitespace-nowrap`.
+  - Eliminado o confinamento dos 5 links dentro de uma única sub-cápsula espremida, permitindo que cada botão respire visualmente sem quebra de linhas indesejada em *"Rio Tour"* ou *"Baile Funk"*.
+- **Como funciona:**
+  - Cada destino possui seu próprio botão em pílula tátil com efeito de hover. A pílula da página ativa recebe destaque escuro/verde contrastante, enquanto as demais permanecem com visual translúcido suave.
+
+---
+
 ## [2026-09-02] - Restauração do Header Estilo Pílula (Dynamic Island) e Links Fixos
 
 ### 1. Header com Logo e Botões Estilo Pílula (`Navbar.tsx`)

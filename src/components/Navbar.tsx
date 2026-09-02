@@ -75,15 +75,15 @@ export function Navbar() {
     <header className="sticky top-3 sm:top-5 z-40 w-full px-3 sm:px-6 lg:px-8 pointer-events-none transition-all duration-300">
       {/* Floating iPhone / Dynamic Island Capsule Bar */}
       <div
-        className={`pointer-events-auto max-w-6xl mx-auto rounded-full transition-all duration-300 border ${
+        className={`pointer-events-auto max-w-7xl mx-auto rounded-full transition-all duration-300 border ${
           scrolled
-            ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border-black/10 dark:border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.12)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5)] py-2 sm:py-2.5 px-4 sm:px-6"
-            : "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-black/5 dark:border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)] py-2.5 sm:py-3 px-4 sm:px-6"
-        } grid grid-cols-2 md:grid-cols-3 items-center`}
+            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-black/10 dark:border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.12)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5)] py-2 sm:py-2.5 px-3.5 sm:px-6"
+            : "bg-white/85 dark:bg-slate-900/85 backdrop-blur-xl border-black/5 dark:border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)] py-2.5 sm:py-3 px-3.5 sm:px-6"
+        } flex items-center justify-between gap-2 sm:gap-4`}
       >
         
-        {/* Left Column: Brand Logo */}
-        <div className="flex items-center justify-start min-w-0">
+        {/* Left: Brand Logo Pill */}
+        <div className="flex items-center justify-start flex-shrink-0 min-w-0">
           <Link
             href="/"
             className="flex items-center space-x-2 sm:space-x-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-full py-0.5 pr-2 pl-0.5"
@@ -110,33 +110,31 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Center Column: Perfectly Centered Segmented Capsule Navigation */}
-        <div className="hidden md:flex items-center justify-center">
-          <nav
-            className="flex items-center p-1 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/60 dark:border-slate-700/60 shadow-inner"
-            aria-label="Navegação Principal"
-          >
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-extrabold transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
-                    isActive
-                      ? "bg-white dark:bg-slate-700 text-emerald-700 dark:text-emerald-300 shadow-sm"
-                      : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-700/60"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
+        {/* Center: Individual Pill Buttons for Each Destination */}
+        <nav
+          className="hidden md:flex items-center space-x-1.5 lg:space-x-2.5"
+          aria-label="Navegação Principal"
+        >
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-black tracking-wide whitespace-nowrap transition-all duration-200 active:scale-95 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                  isActive
+                    ? "bg-slate-900 text-emerald-400 dark:bg-emerald-600 dark:text-white border-slate-700 dark:border-emerald-500 shadow-sm"
+                    : "bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 border-slate-200/60 dark:border-slate-700/60 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-950 dark:hover:text-white"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
 
-        {/* Right Column: Controls & Expandable Language Capsule */}
-        <div className="flex items-center justify-end space-x-2 sm:space-x-2.5">
+        {/* Right: Controls & Expandable Language Capsule */}
+        <div className="flex items-center justify-end space-x-1.5 sm:space-x-2 flex-shrink-0">
           
           {/* Expandable Language Capsule Menu Button with Notification Trigger */}
           <div className="relative" ref={langContainerRef}>
@@ -259,7 +257,7 @@ export function Navbar() {
             </button>
           )}
 
-          {/* Header Booking CTA Capsule */}
+          {/* Header Booking CTA Pill */}
           <Link
             href="/agendar"
             className="hidden sm:inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md shadow-emerald-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
@@ -285,7 +283,7 @@ export function Navbar() {
       {/* Mobile iOS Capsule Sheet Drawer */}
       {mobileMenuOpen && (
         <div className="pointer-events-auto max-w-md mx-auto mt-2 rounded-3xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-black/10 dark:border-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-4 space-y-3 animate-in slide-in-from-top-3 duration-200 md:hidden">
-          {/* Navigation Links as iOS Capsule List Items */}
+          {/* Navigation Links as Individual Pill List Items */}
           <nav className="flex flex-col space-y-1.5" aria-label="Menu Mobile">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -294,14 +292,14 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-2xl font-extrabold text-sm flex items-center justify-between transition-colors ${
+                  className={`px-4 py-2.5 rounded-full font-extrabold text-sm flex items-center justify-between border transition-all ${
                     isActive
-                      ? "bg-emerald-600 text-white shadow-sm"
-                      : "bg-slate-100/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/20"
+                      ? "bg-slate-900 text-emerald-400 dark:bg-emerald-600 dark:text-white border-slate-700 dark:border-emerald-500 shadow-sm"
+                      : "bg-slate-100/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 border-slate-200/60 dark:border-slate-700/60 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/20"
                   }`}
                 >
                   <span>{link.label}</span>
-                  <ChevronRight className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-400"}`} aria-hidden="true" />
+                  <ChevronRight className={`w-4 h-4 ${isActive ? "text-emerald-400 dark:text-white" : "text-slate-400"}`} aria-hidden="true" />
                 </Link>
               );
             })}
