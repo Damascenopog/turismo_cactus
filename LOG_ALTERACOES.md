@@ -3,6 +3,22 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Menu Mobile em Overlay Flutuante com Backdrop
+
+### 1. Desacoplamento do Menu Mobile do Fluxo da Página (`Navbar.tsx`)
+- **O que foi feito:**
+  - O menu mobile foi transformado em um **overlay flutuante independente** (`fixed inset-0 z-50`), separado do fluxo de layout do `<header>`.
+  - Adicionado um backdrop translúcido escurecido com desfoque (`fixed inset-0 bg-slate-950/70 backdrop-blur-md`) que cobre completamente o conteúdo do site que está embaixo.
+  - O cartão do menu flutua suavemente sobre o conteúdo com animação de slide + zoom, sem empurrar, expandir ou alterar a altura dos elementos da página.
+  - Implementado bloqueio de scroll no `body` (`overflow: hidden`) enquanto o menu estiver aberto, prevenindo movimentações indesejadas de rolagem ao fundo.
+- **Como funciona:**
+  - Ao tocar no botão de menu hambúrguer, o menu abre como um modal/drawer suspenso sobre a tela. Tocar no botão fechar, em qualquer link ou no fundo escurecido fecha o menu imediatamente.
+- **Modificação de Comportamento:**
+  - *Antes:* O menu mobile era renderizado dentro do cabeçalho em fluxo normal de documento, o que fazia o cabeçalho expandir para baixo e empurrar o conteúdo da página.
+  - *Depois:* O menu flutua como um overlay sobreposto, cobrindo o conteúdo de baixo com desfoque e mantendo a posição e o tamanho da página intactos.
+
+---
+
 ## [2026-09-02] - Auditoria e Validação de Responsividade Mobile
 
 ### 1. Otimizações de Layout e Tipografia para Telas Pequenas (320px a 768px)
