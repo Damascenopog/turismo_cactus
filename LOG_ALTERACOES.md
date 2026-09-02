@@ -3,6 +3,31 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Restauração do Header Estilo Pílula (Dynamic Island) e Links Fixos
+
+### 1. Header com Logo e Botões Estilo Pílula (`Navbar.tsx`)
+- **O que foi feito:**
+  - Restaurado o design de **Cápsula Flutuante / Dynamic Island** estilo iPhone no cabeçalho:
+    - **Logo oficial** à esquerda em moldura circular com efeito de hover (`/logo.png`) e tipografia de marca (*Tour Cactus | Turismo pela Rocinha • Rio*).
+    - **Controle central em cápsula segmentada com botões estilo pílula** contendo exatamente os destinos fixos:
+      - **Início** (`/`)
+      - **Rocinha** (`/rocinha`)
+      - **Vidigal** (`/vidigal`)
+      - **Rio Tour** (`/rio-tour`)
+      - **Baile Funk** (`/bailes`)
+    - **Controles à direita em pílula:**
+      - Dropdown expansível com bandeiras dos 4 idiomas (`PT 🇧🇷`, `EN 🇺🇸`, `ES 🇪🇸`, `DE 🇩🇪`) e notificação inteligente de idioma nativo.
+      - Botão circular de alternância de tema (Sol / Lua).
+      - Botão de ação em pílula verde (*"Agendar"* → `/agendar`).
+  - Menu gaveta mobile em estilo cartão suspenso iOS com os mesmos 5 links em cartões táteis com setas.
+- **Como funciona:**
+  - Os links de navegação permanecem **100% fixos e consistentes em todas as páginas** (Início, Rocinha, Vidigal, Rio Tour, Baile Funk), sem alternar para âncoras locais (`#roteiro`, `#arte`, etc.). O indicador da pílula ativa (`bg-white` / `bg-slate-700`) atualiza dinamicamente para a página correspondente.
+- **Modificação de Comportamento:**
+  - *Antes:* O header trocava seus links internos dependendo de qual página o usuário estava visitando (ex: ao entrar na Rocinha, exibia âncoras da página).
+  - *Depois:* O header mantém sua identidade visual de pílula flutuante e a lista fixa de destinos e páginas principais em todo o site.
+
+---
+
 ## [2026-09-02] - Cards da Vitrine Linkando Exclusivamente para as Páginas dos Tours
 
 ### 1. Navegação Exclusiva para Páginas de Detalhes (`PortalServices.tsx`)

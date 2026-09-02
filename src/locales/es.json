@@ -1,23 +1,22 @@
 {
   "nav": {
-    "brand": "Cactus Turismo",
+    "brand": "Tour Cactus",
     "home": "Inicio",
     "services": "Tours",
-    "rocinha": "Tour Rocinha",
-    "vidigal": "Vidigal y Caminata",
+    "rocinha": "Rocinha",
+    "vidigal": "Vidigal",
     "rioTour": "Rio Tour",
     "baileFunk": "Baile Funk",
     "whyUs": "Por Qué Elegirnos",
     "faq": "FAQ",
-    "hero": "Inicio",
     "booking": "Reservar",
-    "roteiro": "Itinerario",
-    "miolo": "Las Callejuelas",
-    "arte": "Arte y Cultura",
-    "base": "La Base",
-    "bookNow": "Reservar en WhatsApp",
+    "bookNow": "Reservar",
     "selectLanguage": "Idioma",
-    "toggleTheme": "Cambiar tema"
+    "toggleTheme": "Cambiar tema",
+    "langDetected": "Idioma detectado:",
+    "langChangePrompt": "¿Deseas cambiar a tu idioma nativo?",
+    "langKeepBtn": "Mantener",
+    "langChangeBtn": "Cambiar"
   },
   "portal": {
     "hero": {
