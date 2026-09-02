@@ -139,7 +139,7 @@ export function PortalServices() {
                     </p>
 
                     {/* Quick Feature Badges Grid */}
-                    <div className="grid grid-cols-2 gap-2.5 pt-2 border-t border-[var(--border-color)]">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-2.5 pt-2 border-t border-[var(--border-color)]">
                       {service.badges.map((badge, bIdx) => (
                         <div key={bIdx} className="flex items-center space-x-2 text-xs font-bold text-slate-800 dark:text-slate-200">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" aria-hidden="true" />

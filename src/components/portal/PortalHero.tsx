@@ -148,14 +148,14 @@ export function PortalHero() {
 
         {/* Quick Social Trust Metrics */}
         <FadeInScroll direction="up" delay={0.45}>
-          <div className="pt-4 flex items-center justify-center space-x-4 text-xs font-extrabold text-slate-300">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-extrabold text-slate-300">
             <span className="flex items-center space-x-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400" aria-hidden="true" />
               <span>Condutores Nativos</span>
             </span>
-            <span className="text-white/40">•</span>
+            <span className="text-white/40 hidden xs:inline">•</span>
             <span>+10.000 Turistas</span>
-            <span className="text-white/40">•</span>
+            <span className="text-white/40 hidden xs:inline">•</span>
             <span className="text-amber-300">★ 4.9/5</span>
           </div>
         </FadeInScroll>

@@ -3,6 +3,20 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Auditoria e Validação de Responsividade Mobile
+
+### 1. Otimizações de Layout e Tipografia para Telas Pequenas (320px a 768px)
+- **O que foi feito:**
+  - Realizada auditoria sistemática em todas as rotas e componentes:
+    - **Header & Drawer Mobile ([`Navbar.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/Navbar.tsx)):** Pílulas no topo recolhidas no breakpoint `md:hidden`, abrindo gaveta móvel fluida com botões táteis de 48px de altura mínima e dropdown de idiomas com bounding box seguro (`max-w-[calc(100vw-2rem)]`).
+    - **Portal Inicial ([`PortalHero.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/portal/PortalHero.tsx) e [`PortalServices.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/portal/PortalServices.tsx)):** Grid de badges adaptativo (`grid-cols-1 xs:grid-cols-2`), métricas sociais com quebra responsiva (`flex-wrap gap-2 sm:gap-4`) e cards de serviços com imagens em altura proporcional (`h-56 sm:h-64`).
+    - **Roteiros & Paradas ([`TourRouteView.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/tours/TourRouteView.tsx)):** Linha do tempo de paradas numeradas com carrossel tátil, sem quebra de containers ou overflow horizontal.
+    - **Página de Reservas ([`MultiTourBookingPage.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/booking/MultiTourBookingPage.tsx)):** Calendário interativo responsivo em grid com células quadradas táteis, inputs com `text-base` para evitar auto-zoom indesejado no iOS Safari.
+- **Como funciona:**
+  - O layout se adapta dinamicamente sem rolagem horizontal indesejada em larguras desde 320px (smartphones compactos) até 4K, garantindo experiência fluida e veloz.
+
+---
+
 ## [2026-09-02] - Centralização Exclusiva do Agendamento na Página `/agendar`
 
 ### 1. Remoção de Formulários e Seções de Agendamento Inline das Telas de Conteúdo
