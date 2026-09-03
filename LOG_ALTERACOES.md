@@ -3,6 +3,20 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Humanização e Simplificação dos Textos do Site
+
+### 1. Aplicação das Diretrizes do Humanizer (`pt.json`, `en.json`, `es.json`, `de.json`, `TourRouteView.tsx`)
+- **O que foi feito:**
+  - Realizada uma revisão completa de todos os textos em todos os 4 idiomas para remover jargões típicos de IA, exageros promocionais e construções artificiais:
+    - Removidos clichês publicitários inflados (*"vibrante"*, *"experiência transformadora"*, *"imersão profunda"*, *"verdadeira essência"*).
+    - Substituídos por uma linguagem natural, direta e humana, condizente com anfitriões locais de turismo no Rio de Janeiro.
+    - Eliminados travessões longos (*em-dashes* `—`) substituindo-os por vírgulas, pontos ou estruturas limpas de pontuação.
+    - Simplificados os CTAs e cartões de agendamento para frases objetivas e acessíveis.
+- **Como funciona:**
+  - O conteúdo agora soa genuíno, fluido e natural em português, inglês, espanhol e alemão, transmitindo acolhimento e confiança sem parecer gerado por robô.
+
+---
+
 ## [2026-09-02] - Remoção dos Chips de Categoria na Capa Inicial
 
 ### 1. Limpeza Visual do Hero no Portal Inicial (`PortalHero.tsx`)

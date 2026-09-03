@@ -190,13 +190,13 @@ export function TourRouteView({ tourId, tour: initialTour }: TourRouteViewProps)
           <div className="space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Reserva Oficial</span>
+              <span>Reserva Direta</span>
             </div>
             <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-              Pronto para viver o {tour.title}?
+              Quer fazer o {tour.title}?
             </h3>
             <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              Agende sua data na nossa central de reservas com anfitriões locais e sem taxas antecipadas.
+              Escolha a data no nosso calendário e combine os detalhes com o guia pelo WhatsApp.
             </p>
           </div>
 
@@ -206,7 +206,7 @@ export function TourRouteView({ tourId, tour: initialTour }: TourRouteViewProps)
               className="px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-black text-sm uppercase tracking-wider shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center space-x-2"
             >
               <Calendar className="w-4 h-4" />
-              <span>Agendar na Página de Reservas</span>
+              <span>Ir para o Agendamento</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
