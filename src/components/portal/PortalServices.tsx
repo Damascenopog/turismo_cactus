@@ -81,22 +81,8 @@ export function PortalServices() {
   ];
 
   return (
-    <section id="servicos" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] bg-[var(--bg-surface)]/40 scroll-mt-20">
-      <div className="max-w-7xl mx-auto space-y-12">
-        
-        {/* Section Header */}
-        <FadeInScroll direction="up" delay={0.1}>
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-[var(--text-primary)]">
-              {t("portal.services.title")}
-            </h2>
-
-            <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t("portal.services.subtitle")}
-            </p>
-          </div>
-        </FadeInScroll>
-
+    <section id="servicos" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-[var(--border-color)] bg-[var(--bg-surface)]/40 scroll-mt-20">
+      <div className="max-w-7xl mx-auto">
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {services.map((service, idx) => {

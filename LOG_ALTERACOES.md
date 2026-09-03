@@ -3,6 +3,16 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Remoção do Título "Experiências no Rio de Janeiro"
+
+### 1. Limpeza da Seção de Passeios no Portal Inicial (`PortalServices.tsx`)
+- **O que foi feito:**
+  - Removido o bloco de título e subtítulo ("Experiências no Rio de Janeiro" / "Escolha a experiência ideal...") acima da grade de cartões no componente [`PortalServices.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/portal/PortalServices.tsx).
+- **Como funciona:**
+  - A grade dos 4 passeios (*Tour Rocinha*, *Tour Vidigal*, *Rio Tour*, *Baile Funk*) flui diretamente após a capa e chips de navegação rápida, tornando a experiência na home ainda mais direta, focada e limpa especialmente no mobile.
+
+---
+
 ## [2026-09-02] - Pontos Turísticos com Nomes Traduzidos e em Inglês
 
 ### 1. Exibição Bilíngue de Pontos Turísticos e Paradas (`TourRouteView.tsx`)
