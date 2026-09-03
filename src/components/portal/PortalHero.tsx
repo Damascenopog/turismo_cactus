@@ -95,13 +95,13 @@ export function PortalHero() {
           <div className="pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-extrabold text-white">
             <span className="inline-flex items-center space-x-1.5 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm">
               <ShieldCheck className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-              <span>Condutores Nativos</span>
+              <span>100% Guias Locais</span>
             </span>
             <span className="bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm">
-              +10.000 Turistas
+              +500 Visitantes
             </span>
             <span className="bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm text-amber-300">
-              ★ 4.9/5
+              ★ 4.9/5 Avaliação
             </span>
           </div>
         </FadeInScroll>

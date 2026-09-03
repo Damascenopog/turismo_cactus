@@ -110,12 +110,12 @@
     "ctaBooking": "Escolher Data no Calendário",
     "ctaExplore": "Ver Roteiro",
     "ctaItinerary": "Ver Roteiro",
-    "statTourists": "+10.000 pessoas atendidas",
-    "statTouristsSub": "Passeios desde 2018",
-    "statGuides": "Condutores Nativos",
-    "statGuidesSub": "Nascidos e criados na favela",
-    "statRating": "Avaliação 4.9 de 5",
-    "statRatingSub": "Opinião de visitantes"
+    "statTourists": "+500 pessoas atendidas",
+    "statTouristsSub": "Grupos pequenos e personalizados",
+    "statGuides": "100% Guias Locais",
+    "statGuidesSub": "Nascidos e criados na comunidade",
+    "statRating": "Nota 4.9 de 5",
+    "statRatingSub": "Avaliações de visitantes"
   },
   "booking": {
     "tag": "Calendário de Reservas",

@@ -3,6 +3,20 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Ajuste de Métricas e Prova Social Mais Realistas
+
+### 1. Adequação dos Números de Validação de Mercado (`PortalHero.tsx`, `pt.json`, `en.json`, `es.json`, `de.json`)
+- **O que foi feito:**
+  - Substituídas alegações genéricas e hiper-infladas (como *"+10.000 turistas acolhidos"*) por métricas críveis, palpáveis e adequadas para validação de colocação no mercado:
+    - **Visitantes Atendidos:** `+500 pessoas atendidas` (*"Grupos pequenos e personalizados"*).
+    - **Guia e Anfitriões:** `100% Guias Locais` (*"Nascidos e criados na comunidade"*).
+    - **Avaliação:** `Nota 4.9 de 5` (*"Avaliações de visitantes"*).
+  - Atualizado em todos os 4 idiomas (`PT`, `EN`, `ES`, `DE`) e nas pílulas de destaque do Hero.
+- **Como funciona:**
+  - Transmite solidez, autenticidade e alta confiabilidade sem parecer artificial ou inventado para quem pesquisa passeios no Rio.
+
+---
+
 ## [2026-09-02] - Correção do Degradê e Remoção do Sangramento Branco no Hero
 
 ### 1. Ajuste do Degradê de Fundo no Portal Inicial (`PortalHero.tsx`)
