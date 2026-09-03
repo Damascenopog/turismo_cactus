@@ -34,14 +34,6 @@ export function TourRouteView({ tourId, tour: initialTour }: TourRouteViewProps)
             <MapPin className="w-4 h-4 text-emerald-500" />
             <span>{t("route.meetingPoint")}: {tour.meetingPoint}</span>
           </div>
-
-          <Link
-            href={`/agendar?tour=${tour.id}`}
-            className="inline-flex items-center space-x-1.5 px-4 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-extrabold shadow-sm active:scale-95 transition-all"
-          >
-            <Calendar className="w-3.5 h-3.5" />
-            <span>{t("route.bookThisTour")}</span>
-          </Link>
         </div>
       </section>
 

@@ -3,6 +3,17 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Remoção do Botão de Agendamento da Faixa de Informações
+
+### 1. Limpeza da Faixa de Resumo das Paradas (`TourRouteView.tsx`)
+- **O que foi feito:**
+  - Removido o botão verde de CTA ("Agendar Este Roteiro") da faixa flutuante superior de informações de cada roteiro.
+  - A faixa agora exibe exclusivamente as pílulas informativas de **Duração** e **Ponto de Encontro**.
+- **Como funciona:**
+  - A navegação pelas páginas de passeios fica estritamente focada na apresentação do roteiro e dos pontos de parada, mantendo os agendamentos centralizados na página de reservas ([`/agendar`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/agendar/page.tsx)) e no card final.
+
+---
+
 ## [2026-09-02] - Humanização e Simplificação dos Textos do Site
 
 ### 1. Aplicação das Diretrizes do Humanizer (`pt.json`, `en.json`, `es.json`, `de.json`, `TourRouteView.tsx`)
