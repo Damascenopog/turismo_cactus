@@ -7,7 +7,6 @@ import { getWhatsAppLink } from "@/lib/whatsapp";
 import { FadeInScroll } from "@/components/animations/FadeInScroll";
 import { DiaTextReveal, BRAZIL_COLORS } from "@/components/ui/dia-text-reveal";
 import {
-  Sparkles,
   ArrowRight,
   MessageCircle,
   ShieldCheck,
@@ -50,16 +49,8 @@ export function PortalHero() {
 
       <div className="relative z-20 max-w-4xl mx-auto space-y-6 sm:space-y-8">
         
-        {/* Portal Highlight Tag Badge */}
-        <FadeInScroll direction="down" delay={0.1}>
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-lg">
-            <Sparkles className="w-4 h-4 text-[var(--brand-yellow)]" aria-hidden="true" />
-            <span>{t("portal.hero.tag")}</span>
-          </div>
-        </FadeInScroll>
-
         {/* Dynamic Brazil DiaTextReveal Title */}
-        <FadeInScroll direction="up" delay={0.2}>
+        <FadeInScroll direction="up" delay={0.15}>
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] drop-shadow-lg">
             <DiaTextReveal
               colors={BRAZIL_COLORS}
@@ -75,7 +66,7 @@ export function PortalHero() {
         </FadeInScroll>
 
         {/* Subtitle */}
-        <FadeInScroll direction="up" delay={0.3}>
+        <FadeInScroll direction="up" delay={0.25}>
           <p className="text-base sm:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-sm px-2">
             {t("portal.hero.subtitle")}
           </p>

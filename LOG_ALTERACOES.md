@@ -3,6 +3,21 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Restauração do Título Principal do Hero e Remoção da Tag Superior
+
+### 1. Ajuste do Título e Remoção da Etiqueta no Hero (`PortalHero.tsx`, `pt.json`, `en.json`, `es.json`, `de.json`)
+- **O que foi feito:**
+  - Removido o badge/etiqueta superior que exibia *"Passeios Locais no Rio de Janeiro"*.
+  - Restaurado o título principal impactante: **"Viva o Rio Além do Óbvio com Quem Vive a Cidade"** (com animação dinâmica nas cores do Brasil via [`DiaTextReveal`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/ui/dia-text-reveal.tsx)).
+  - Sincronizado nos demais idiomas:
+    - EN: *"Experience Rio Beyond the Ordinary with Local Insiders"*
+    - ES: *"Vive Río Más Allá de lo Convencional con Gente Local"*
+    - DE: *"Erlebe Rio abseits der Massen mit Einheimischen"*
+- **Como funciona:**
+  - A capa do portal inicial abre de forma imersiva e marcante, sem elementos visuais redundantes no topo.
+
+---
+
 ## [2026-09-02] - Remoção do Botão de Agendamento da Faixa de Informações
 
 ### 1. Limpeza da Faixa de Resumo das Paradas (`TourRouteView.tsx`)
