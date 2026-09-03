@@ -3,6 +3,18 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Pontos Turísticos com Nomes Traduzidos e em Inglês
+
+### 1. Exibição Bilíngue de Pontos Turísticos e Paradas (`TourRouteView.tsx`)
+- **O que foi feito:**
+  - Configurada a exibição dos pontos turísticos para que apresentem simultaneamente o **nome traduzido no idioma ativo** e a **referência em inglês (ou português original)**:
+    - Ao selecionar **Português (`PT`)**, **Espanhol (`ES`)** ou **Alemão (`DE`)**: O cabeçalho da parada exibe o nome traduzido principal acompanhado de uma tag bilíngue com a versão em inglês (`🇺🇸 EN: ...`) e subtítulo contextual.
+    - Ao selecionar **Inglês (`EN`)**: O cabeçalho exibe o nome em inglês com a referência do nome local original em português (`🇧🇷 PT: ...`).
+- **Como funciona:**
+  - Facilita a identificação de locais icônicos tanto para quem lê em sua língua nativa quanto para quem busca referências globais de mapas e sinalização turística.
+
+---
+
 ## [2026-09-02] - Roteiro Oficial do Tour Rocinha com 5 Paradas
 
 ### 1. Atualização do Roteiro Oficial da Rocinha (`toursData.ts` e `/rocinha`)

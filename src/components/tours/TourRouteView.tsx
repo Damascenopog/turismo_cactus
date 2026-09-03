@@ -17,6 +17,8 @@ export function TourRouteView({ tourId, tour: initialTour }: TourRouteViewProps)
 
   const targetId = tourId || initialTour?.id || "rocinha";
   const tour = getTourData(targetId, language);
+  const englishTour = getTourData(targetId, "en");
+  const portugueseTour = getTourData(targetId, "pt");
 
   return (
     <div className="w-full pb-20">
@@ -62,23 +64,59 @@ export function TourRouteView({ tourId, tour: initialTour }: TourRouteViewProps)
         <div className="space-y-12 sm:space-y-16">
           {tour.stops.map((stop, index) => {
             const isEven = index % 2 === 0;
+            const englishStop = englishTour?.stops?.[index];
+            const portugueseStop = portugueseTour?.stops?.[index];
+
+            // Show English counterpart for non-English locales; Show Portuguese original for English locale
+            const secondaryTitle =
+              language !== "en"
+                ? englishStop?.title && englishStop.title.toLowerCase() !== stop.title.toLowerCase()
+                  ? englishStop.title
+                  : null
+                : portugueseStop?.title && portugueseStop.title.toLowerCase() !== stop.title.toLowerCase()
+                ? portugueseStop.title
+                : null;
+
+            const secondarySubtitle =
+              language !== "en"
+                ? englishStop?.subtitle && englishStop.subtitle.toLowerCase() !== stop.subtitle.toLowerCase()
+                  ? englishStop.subtitle
+                  : null
+                : portugueseStop?.subtitle && portugueseStop.subtitle.toLowerCase() !== stop.subtitle.toLowerCase()
+                ? portugueseStop.subtitle
+                : null;
+
             return (
               <div
                 key={stop.id}
                 className="relative bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg transition-all hover:shadow-xl"
               >
-                {/* Number Badge */}
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-emerald-600 text-white font-black text-lg sm:text-xl flex items-center justify-center shadow-md shadow-emerald-600/30 flex-shrink-0">
+                {/* Number Badge & Bilingual Spot Titles */}
+                <div className="flex items-start space-x-3 sm:space-x-4 mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-emerald-600 text-white font-black text-lg sm:text-xl flex items-center justify-center shadow-md shadow-emerald-600/30 flex-shrink-0 mt-0.5">
                     {String(stop.number).padStart(2, "0")}
                   </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-                      {stop.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                      {stop.subtitle}
-                    </p>
+                  <div className="space-y-1 min-w-0 flex-1">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                        {stop.title}
+                      </h3>
+                      {secondaryTitle && (
+                        <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[11px] sm:text-xs font-bold text-slate-600 dark:text-slate-300 border border-slate-200/70 dark:border-slate-700/70">
+                          <span className="opacity-70">{language !== "en" ? "🇺🇸 EN:" : "🇧🇷 PT:"}</span>
+                          <span className="font-extrabold">{secondaryTitle}</span>
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400 flex flex-wrap items-baseline gap-x-2">
+                      <span>{stop.subtitle}</span>
+                      {secondarySubtitle && (
+                        <span className="text-slate-500 dark:text-slate-400 font-normal text-[11px] sm:text-xs">
+                          • {secondarySubtitle}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
 
