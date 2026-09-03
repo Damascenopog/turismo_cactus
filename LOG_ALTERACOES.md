@@ -3,6 +3,22 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Atualização dos Idiomas dos Passeios (Português e Inglês)
+
+### 1. Atualização da Pergunta Frequente sobre Idiomas (`pt.json`, `en.json`, `es.json`, `de.json`)
+- **O que foi feito:**
+  - Ajustada a resposta da FAQ sobre idiomas de atendimento e condução de passeios:
+    - **Antes:** *"Atendemos e conduzimos passeios em português, inglês, espanhol e alemão."*
+    - **Depois:** *"Atendemos e conduzimos passeios em português e inglês."*
+  - Sincronizado em todos os idiomas:
+    - EN: *"We host and guide tours in Portuguese and English."*
+    - ES: *"Atendemos y guiamos tours en portugués e inglés."*
+    - DE: *"Wir betreuen und führen Touren auf Portugiesisch und Englisch."*
+- **Como funciona:**
+  - Informa com clareza aos visitantes quais idiomas são oficialmente suportados pelos guias locais durante os passeios presenciais.
+
+---
+
 ## [2026-09-02] - Ajuste de Métricas e Prova Social Mais Realistas
 
 ### 1. Adequação dos Números de Validação de Mercado (`PortalHero.tsx`, `pt.json`, `en.json`, `es.json`, `de.json`)
