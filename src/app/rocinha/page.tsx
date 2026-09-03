@@ -5,11 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { StatsSection } from "@/components/sections/StatsSection";
-import { MioloSection } from "@/components/sections/MioloSection";
-import { ArteSection } from "@/components/sections/ArteSection";
-import { BaseSection } from "@/components/sections/BaseSection";
+import { TourRouteView } from "@/components/tours/TourRouteView";
 import { FooterSection } from "@/components/sections/FooterSection";
-import { FootprintTrail } from "@/components/animations/FootprintTrail";
 
 export default function RocinhaPage() {
   return (
@@ -17,20 +14,15 @@ export default function RocinhaPage() {
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Dynamic Animated Footprint SVG Trail (Curved on Desktop, Vertical on Mobile) */}
-      <FootprintTrail />
-
       {/* Main Narrative Sections */}
       <main className="flex-1 w-full relative z-20">
         <HeroSection
           tourId="rocinha"
           bookingHref="/agendar?tour=rocinha"
-          itineraryHref="#roteiro"
+          itineraryHref="#roteiro-paradas"
         />
         <StatsSection />
-        <MioloSection />
-        <ArteSection />
-        <BaseSection />
+        <TourRouteView tourId="rocinha" />
       </main>
 
       {/* Footer & FAQ */}

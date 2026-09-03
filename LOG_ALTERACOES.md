@@ -3,6 +3,23 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Roteiro Oficial do Tour Rocinha com 5 Paradas
+
+### 1. Atualização do Roteiro Oficial da Rocinha (`toursData.ts` e `/rocinha`)
+- **O que foi feito:**
+  - Configurado o roteiro oficial do **Tour Rocinha** com exatamente as 5 paradas especificadas:
+    1. **Via Ápia:** Ponto de encontro, comércio local e centro dinâmico da comunidade.
+    2. **Laje da Moto:** Ponto clássico dos mototaxistas com primeira vista panorâmica e cultura do transporte local.
+    3. **Laje do Drone:** Mirante de topo aberto para fotos amplas de São Conrado, Pedra da Gávea e favela.
+    4. **Mirante Novo Visual:** Ponto alto com vista privilegiada para o mar de São Conrado e contraste com a mata atlântica.
+    5. **Descida da Favela:** Descer a pé conhecendo novos pontos autênticos, vielas históricas e murais, sem um roteiro rígido.
+  - Sincronizado em todos os 4 idiomas suportados (`PT`, `EN`, `ES`, `DE`).
+  - Integrado o componente [`TourRouteView.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/tours/TourRouteView.tsx) na página da Rocinha ([`src/app/rocinha/page.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/app/rocinha/page.tsx)), garantindo apresentação uniforme e padronizada com fotos, destaques e itens inclusos.
+- **Como funciona:**
+  - O usuário navega pela timeline numerada das 5 paradas, visualizando carrosséis de fotos reais de cada local e os detalhes de cada experiência.
+
+---
+
 ## [2026-09-02] - Centralização da Mudança de Idioma Exclusivamente no Header
 
 ### 1. Remoção do Seletor de Idioma de Dentro do Menu Mobile (`Navbar.tsx`)

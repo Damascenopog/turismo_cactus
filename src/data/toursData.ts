@@ -101,10 +101,10 @@ const toursDataPt: Record<string, TourDetail> = {
       {
         id: "descida-vielas",
         number: 5,
-        title: "Descida pela Favela",
-        subtitle: "Caminhada livre pelos becos e vielas",
-        description: "Descemos a pé sem pressa, passando por ruelas estreitas, murais de grafite, oficinas de arte e pequenos comércios. Uma conversa direta com quem mora aqui.",
-        highlights: ["Caminhada a pé pelos becos", "Murais de arte urbana", "Conversa com comerciantes"],
+        title: "Descida da Favela",
+        subtitle: "Conhecendo outros pontos sem roteiro específico",
+        description: "Descemos a favela a pé conhecendo outros pontos autênticos, becos e vielas históricas, murais de arte urbana e pequenos comércios locais, sem um roteiro rígido, vivenciando o ritmo real da comunidade.",
+        highlights: ["Caminhada a pé pelos becos", "Exploração livre de novos pontos", "Murais e comércio local"],
         images: [
           { src: "/image/hexa.jpg", alt: "Pinturas de chão e murais coloridos", caption: "Arte de rua e chão pintado" },
           { src: "/image/crianca_futebol.jpg", alt: "Crianças jogando futebol e convivência local", caption: "Cultura e dia a dia dos moradores" }
@@ -394,10 +394,10 @@ const toursDataEn: Record<string, TourDetail> = {
       {
         id: "descida-vielas",
         number: 5,
-        title: "Descent Through the Alleys",
-        subtitle: "Relaxed stroll through community pathways",
-        description: "We walk down through winding alleyways, street art murals, and local craft shops with plenty of time for genuine conversations.",
-        highlights: ["Walk through narrow alleys", "Street art & graffiti", "Conversations with shopkeepers"],
+        title: "Descent Through the Favela",
+        subtitle: "Exploring spontaneous spots with no rigid itinerary",
+        description: "We walk down the favela on foot exploring authentic hidden spots, historic winding alleys, urban art murals, and local shops with no fixed script, experiencing the real daily community life.",
+        highlights: ["Walk through community alleys", "Spontaneous local spots", "Street art & shopkeeper talks"],
         images: [
           { src: "/image/hexa.jpg", alt: "Painted street and colorful murals", caption: "Street art and decorated alleys" },
           { src: "/image/crianca_futebol.jpg", alt: "Children playing soccer and local life", caption: "Community culture & daily warmth" }
@@ -687,10 +687,10 @@ const toursDataEs: Record<string, TourDetail> = {
       {
         id: "descida-vielas",
         number: 5,
-        title: "Descenso por los Callejones",
-        subtitle: "Paseo tranquilo por los pasajes interiores",
-        description: "Descendemos a pie sin prisa por callejones históricos, murales de arte urbano y talleres artesanales con amables charlas.",
-        highlights: ["Paseo por callejones", "Murales y grafiti", "Charlas con comerciantes"],
+        title: "Bajada por la Favela",
+        subtitle: "Conociendo otros puntos sin itinerario rígido",
+        description: "Descendemos la favela a pie conociendo otros rincones auténticos, callejones históricos, murales de arte urbano y comercios locales sin un guion cerrado, viviendo el ritmo real de la comunidad.",
+        highlights: ["Caminata por callejones", "Exploración libre de nuevos puntos", "Murales y comercios locales"],
         images: [
           { src: "/image/hexa.jpg", alt: "Murales coloridos", caption: "Arte urbano en las calles" },
           { src: "/image/crianca_futebol.jpg", alt: "Fútbol y convivencia local", caption: "Cultura y calidez comunitaria" }
@@ -980,10 +980,10 @@ const toursDataDe: Record<string, TourDetail> = {
       {
         id: "descida-vielas",
         number: 5,
-        title: "Abstieg durch die Gassen",
-        subtitle: "Entspannter Spaziergang durch die Passagen",
-        description: "Wir gehen zu Fuß durch historische Gassen, Graffiti-Motive und Kunstwerkstätten mit herzlichen Begegnungen.",
-        highlights: ["Fußweg durch enge Gassen", "Street-Art & Wandmalerei", "Gespräche mit Anwohnern"],
+        title: "Abstieg durch die Favela",
+        subtitle: "Weitere Orte entdecken ohne starre Route",
+        description: "Wir steigen zu Fuß durch die Favela ab und erkunden spontan authentische Orte, historische Gassen, Street-Art und kleine lokale Läden im echten Rhythmus der Gemeinschaft.",
+        highlights: ["Fußweg durch Gassen", "Freies Erkunden neuer Ecken", "Street-Art & Begegnungen"],
         images: [
           { src: "/image/hexa.jpg", alt: "Bunte Wandgemälde", caption: "Straßenkunst in den Gassen" },
           { src: "/image/crianca_futebol.jpg", alt: "Fußball und Gemeinschaft", caption: "Kultur und herzliche Gastfreundschaft" }
