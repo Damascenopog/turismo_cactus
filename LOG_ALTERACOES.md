@@ -3,6 +3,16 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Remoção dos Chips de Categoria na Capa Inicial
+
+### 1. Limpeza Visual do Hero no Portal Inicial (`PortalHero.tsx`)
+- **O que foi feito:**
+  - Removidos os botões em formato de chip/etiquetas de categoria ("Favela tour", "Trilhas e mirantes", "Rio tour histórico", "Vida noturna & ritmo") do componente [`PortalHero.tsx`](file:///c:/Users/arfda/Documents/Code/Projetos/turismo_cactus/src/components/portal/PortalHero.tsx).
+- **Como funciona:**
+  - A capa inicial concentra a atenção do usuário no título principal com efeito de revelação nas cores do Brasil, no subtítulo e nos botões primários de ação ("Explorar Passeios" e "Roteiro Personalizado").
+
+---
+
 ## [2026-09-02] - Remoção do Título "Experiências no Rio de Janeiro"
 
 ### 1. Limpeza da Seção de Passeios no Portal Inicial (`PortalServices.tsx`)

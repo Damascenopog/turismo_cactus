@@ -11,66 +11,60 @@ import {
   ArrowRight,
   MessageCircle,
   ShieldCheck,
-  Compass,
-  Mountain,
-  Music,
-  Landmark,
 } from "lucide-react";
 
 export function PortalHero() {
   const { language, t } = useLanguage();
   const whatsappUrl = getWhatsAppLink(language);
-  const heroFullTitle = `${t("portal.hero.titlePrefix")}${t("portal.hero.titleHighlight")}`.trim();
 
   return (
-    <section className="relative min-h-[75vh] sm:min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-12 sm:py-20 overflow-hidden">
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 overflow-hidden">
       {/* Background Hero Image - Dynamic Day/Night Mode */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/image/hero_rocinha_hd.jpg"
-          alt="Vista panorâmica do Rio de Janeiro"
+          alt="Vista panorâmica da Rocinha e Rio de Janeiro"
           fill
           priority
-          quality={100}
-          unoptimized
           sizes="100vw"
-          className="dark:hidden block object-cover object-center"
+          className="object-cover object-center brightness-[0.75] contrast-[1.08] dark:hidden transition-all duration-700"
         />
         <Image
           src="/image/hero_rocinha_night_hd.jpg"
-          alt="Vista noturna panorâmica do Rio de Janeiro"
+          alt="Vista noturna panorâmica da Rocinha"
           fill
           priority
-          quality={100}
-          unoptimized
           sizes="100vw"
-          className="hidden dark:block object-cover object-center"
+          className="object-cover object-center brightness-[0.65] contrast-[1.12] hidden dark:block transition-all duration-700"
         />
-        {/* Dark Tint Overlay for High Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950/70 dark:from-slate-950/80 dark:via-slate-950/50 dark:to-[var(--bg-primary)]"></div>
+        {/* Cinematic Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-black/40 to-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[var(--bg-primary)] z-10" />
       </div>
 
-      <div className="relative z-10 max-w-4xl w-full mx-auto space-y-6 sm:space-y-8">
+      {/* Floating Accent Glows */}
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none z-10"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-20 max-w-4xl mx-auto space-y-6 sm:space-y-8">
         
-        {/* Top Tag */}
-        <FadeInScroll direction="up" delay={0.1}>
-          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-300 border border-amber-500/30 text-xs font-black uppercase tracking-wider shadow-lg">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+        {/* Portal Highlight Tag Badge */}
+        <FadeInScroll direction="down" delay={0.1}>
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-lg">
+            <Sparkles className="w-4 h-4 text-[var(--brand-yellow)]" aria-hidden="true" />
             <span>{t("portal.hero.tag")}</span>
           </div>
         </FadeInScroll>
 
-        {/* Main Title with DiaTextReveal */}
+        {/* Dynamic Brazil DiaTextReveal Title */}
         <FadeInScroll direction="up" delay={0.2}>
-          <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.15] sm:leading-[1.1] drop-shadow-md">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] drop-shadow-lg">
             <DiaTextReveal
-              key={heroFullTitle}
-              text={heroFullTitle}
               colors={BRAZIL_COLORS}
-              textColor="#ffffff"
-              duration={2.4}
-              delay={0.2}
-              repeat={false}
+              duration={2.5}
+              className="inline"
             >
               {t("portal.hero.titlePrefix")}
               <span className="text-[var(--brand-yellow)] font-black drop-shadow-sm block sm:inline sm:ml-2 mt-1 sm:mt-0">
@@ -87,42 +81,8 @@ export function PortalHero() {
           </p>
         </FadeInScroll>
 
-        {/* Quick Category Chips for Fast Mobile Scanning */}
-        <FadeInScroll direction="up" delay={0.35}>
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 max-w-lg mx-auto">
-            <a
-              href="#servicos"
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-white text-xs font-bold border border-white/15 backdrop-blur-md transition-all active:scale-95"
-            >
-              <Compass className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-              <span>{t("portal.hero.chipFavela")}</span>
-            </a>
-            <a
-              href="#servicos"
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-white text-xs font-bold border border-white/15 backdrop-blur-md transition-all active:scale-95"
-            >
-              <Mountain className="w-3.5 h-3.5 text-emerald-400" aria-hidden="true" />
-              <span>{t("portal.hero.chipTrails")}</span>
-            </a>
-            <a
-              href="#servicos"
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-white text-xs font-bold border border-white/15 backdrop-blur-md transition-all active:scale-95"
-            >
-              <Landmark className="w-3.5 h-3.5 text-blue-400" aria-hidden="true" />
-              <span>{t("portal.hero.chipCity")}</span>
-            </a>
-            <a
-              href="#servicos"
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-white text-xs font-bold border border-white/15 backdrop-blur-md transition-all active:scale-95"
-            >
-              <Music className="w-3.5 h-3.5 text-rose-400" aria-hidden="true" />
-              <span>{t("portal.hero.chipNight")}</span>
-            </a>
-          </div>
-        </FadeInScroll>
-
         {/* CTAs */}
-        <FadeInScroll direction="up" delay={0.4}>
+        <FadeInScroll direction="up" delay={0.35}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
             <a
               href="#servicos"
@@ -147,7 +107,7 @@ export function PortalHero() {
         </FadeInScroll>
 
         {/* Quick Social Trust Metrics */}
-        <FadeInScroll direction="up" delay={0.45}>
+        <FadeInScroll direction="up" delay={0.4}>
           <div className="pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-extrabold text-slate-300">
             <span className="flex items-center space-x-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400" aria-hidden="true" />
