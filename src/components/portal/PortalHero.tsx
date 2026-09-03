@@ -17,7 +17,7 @@ export function PortalHero() {
   const whatsappUrl = getWhatsAppLink(language);
 
   return (
-    <section className="relative min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 overflow-hidden">
+    <section className="relative min-h-[70vh] sm:min-h-[82vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-14 sm:py-20 overflow-hidden">
       {/* Background Hero Image - Dynamic Day/Night Mode */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -26,7 +26,7 @@ export function PortalHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center brightness-[0.75] contrast-[1.08] dark:hidden transition-all duration-700"
+          className="object-cover object-center dark:hidden transition-all duration-700"
         />
         <Image
           src="/image/hero_rocinha_night_hd.jpg"
@@ -34,24 +34,17 @@ export function PortalHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center brightness-[0.65] contrast-[1.12] hidden dark:block transition-all duration-700"
+          className="object-cover object-center hidden dark:block transition-all duration-700"
         />
-        {/* Cinematic Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-black/40 to-black/60 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[var(--bg-primary)] z-10" />
+        {/* Balanced Cinematic Dark Tint (Crystal-clear photo with high contrast text, no white washout) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/65 via-slate-950/40 to-slate-950/75 z-10" />
       </div>
-
-      {/* Floating Accent Glows */}
-      <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none z-10"
-        aria-hidden="true"
-      />
 
       <div className="relative z-20 max-w-4xl mx-auto space-y-6 sm:space-y-8">
         
         {/* Dynamic Brazil DiaTextReveal Title */}
         <FadeInScroll direction="up" delay={0.15}>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] drop-shadow-xl">
             <DiaTextReveal
               colors={BRAZIL_COLORS}
               duration={2.5}
@@ -67,7 +60,7 @@ export function PortalHero() {
 
         {/* Subtitle */}
         <FadeInScroll direction="up" delay={0.25}>
-          <p className="text-base sm:text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-sm px-2">
+          <p className="text-base sm:text-xl text-slate-100 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-md px-2">
             {t("portal.hero.subtitle")}
           </p>
         </FadeInScroll>
@@ -97,17 +90,19 @@ export function PortalHero() {
           </div>
         </FadeInScroll>
 
-        {/* Quick Social Trust Metrics */}
+        {/* Quick Social Trust Metrics in Crisp Frosted Capsules */}
         <FadeInScroll direction="up" delay={0.4}>
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-extrabold text-slate-300">
-            <span className="flex items-center space-x-1.5">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-extrabold text-white">
+            <span className="inline-flex items-center space-x-1.5 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm">
               <ShieldCheck className="w-4 h-4 text-emerald-400" aria-hidden="true" />
               <span>Condutores Nativos</span>
             </span>
-            <span className="text-white/40 hidden xs:inline">•</span>
-            <span>+10.000 Turistas</span>
-            <span className="text-white/40 hidden xs:inline">•</span>
-            <span className="text-amber-300">★ 4.9/5</span>
+            <span className="bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm">
+              +10.000 Turistas
+            </span>
+            <span className="bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-sm text-amber-300">
+              ★ 4.9/5
+            </span>
           </div>
         </FadeInScroll>
 

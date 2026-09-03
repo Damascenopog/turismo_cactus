@@ -3,6 +3,18 @@
 ## Regra de Documentação
 > **Importante:** Qualquer nova tarefa, funcionalidade extra ou alteração de comunidade em relação ao planejamento original deve ser registrada neste documento e nos arquivos do projeto (`tasks.md`, `context.md`), detalhando **o que foi feito**, **como funciona** e **quais comportamentos anteriores foram modificados**.
 
+## [2026-09-02] - Correção do Degradê e Remoção do Sangramento Branco no Hero
+
+### 1. Ajuste do Degradê de Fundo no Portal Inicial (`PortalHero.tsx`)
+- **O que foi feito:**
+  - Removido o degradê inferior branco leitoso (`from-[var(--bg-primary)]`) que ofuscava a metade inferior da foto panorâmica e tornava as métricas de confiança ilegíveis no modo claro.
+  - Aplicado um degradê cinematográfico escuro balanceado (`bg-gradient-to-b from-slate-950/65 via-slate-950/40 to-slate-950/75`), preservando as cores e a visibilidade de toda a foto do morro.
+  - Envolvidas as métricas de confiança (*Condutores Nativos*, *+10.000 Turistas*, *★ 4.9/5*) em pílulas com efeito de vidro fosco (`bg-black/40 backdrop-blur-md border border-white/15`), garantindo contraste e legibilidade máximos.
+- **Como funciona:**
+  - A imagem da favela e da praia é vista com nitidez total de ponta a ponta, enquanto todos os textos e botões permanecem com contraste profissional.
+
+---
+
 ## [2026-09-02] - Restauração do Título Principal do Hero e Remoção da Tag Superior
 
 ### 1. Ajuste do Título e Remoção da Etiqueta no Hero (`PortalHero.tsx`, `pt.json`, `en.json`, `es.json`, `de.json`)
